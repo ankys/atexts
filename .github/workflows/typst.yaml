@@ -1,0 +1,28 @@
+
+name: Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v4
+      # Compile main.typ
+      - name: Setup fonts
+        run: sudo bash .setup/fonts.sh
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+      - name: Compile Typst file
+        run: typst compile main.typ ${{github.event.repository.name}}-${{github.ref_name}}.pdf --no-pdf-tags
+      # Create Release
+      - name: Create Release
+        run: gh release create ${{github.ref_name}} ${{github.event.repository.name}}-${{github.ref_name}}.pdf --generate-notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
