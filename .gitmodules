@@ -1,3 +1,6 @@
+[submodule "cal1t"]
+	path = cal1t
+	url = https://github.com/ankys/cal1t.git
 [submodule "calc1t"]
 	path = calc1t
 	url = https://github.com/ankys/calc1t.git
