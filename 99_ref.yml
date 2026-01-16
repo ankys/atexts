@@ -1,0 +1,11 @@
+
+r_z15:
+  type: Article
+  author: Zorzi, Alberto
+  title: An elementary proof for the equidistribution theorem
+  parent:
+    title: Math. Intelligencer
+    volume: 37
+    issue: 3
+  page-range: 1-2
+  date: 2015
