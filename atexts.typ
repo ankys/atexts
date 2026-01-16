@@ -11,7 +11,7 @@
 	lang: "ja",
 	// seriffont: "New Computer Modern",
 	// seriffont-cjk: "Harano Aji Mincho",
-	sansfont: "Source Sans 3",
+	// sansfont: "Source Sans Pro",
 	// sansfont-cjk: "Harano Aji Gothic",
 )
 #set par(first-line-indent: 1em) // why
