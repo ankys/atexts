@@ -36,6 +36,7 @@
 
 #outline()
 
+#part[微分積分学１]
 #include "cal1t/01_set.typ"
 #include "cal1t/02_number.typ"
 #include "cal1t/03_supinf.typ"
@@ -44,6 +45,7 @@
 #include "cal1t/06_functions.typ"
 #include "cal1t/07_equidist.typ"
 
+#part[微分積分学２]
 #include "cal2t/01_differential.typ"
 #include "cal2t/02_integral.typ"
 #include "cal2t/03_series.typ"
