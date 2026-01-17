@@ -1,9 +1,9 @@
 [submodule "cal1t"]
 	path = cal1t
 	url = https://github.com/ankys/cal1t.git
-[submodule "calc1t"]
-	path = calc1t
-	url = https://github.com/ankys/calc1t.git
+[submodule "cal2t"]
+	path = cal2t
+	url = https://github.com/ankys/cal2t.git
 [submodule "lina1t"]
 	path = lina1t
 	url = https://github.com/ankys/lina1t.git
