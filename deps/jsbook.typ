@@ -17,5 +17,9 @@
 	set ref(supplement: auto)
 	set par(first-line-indent: 1em) // why
 	show math.equation.where(block: true): block.with(width: 100%)
+	// level 1 heading
+	set heading(numbering: "第1章")
+	// level 2 heading
+	show heading.where(level: 2): set heading(numbering: "1.1")
 	body
 }
