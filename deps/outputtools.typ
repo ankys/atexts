@@ -1,21 +1,22 @@
 
-#let tostring(content) = {
-	if content.has("text") {
-		if type(content.text) == "string" {
-			content.text
+#let tostring(x) = {
+	if (type(x) == content) {
+		if (x.has("text")) {
+			tostring(x.text)
+		} else if (x.has("children")) {
+			x.children.map(tostring).join()
+		} else if (x.has("body")) {
+			tostring(x.body)
 		} else {
-			tostring(content.text)
+			" "
 		}
-	} else if content.has("children") {
-		content.children.map(tostring).join()
-	} else if content.has("body") {
-		tostring(content.body)
-	} else if content == [ ] {
-		" "
+	} else {
+		str(x)
 	}
 }
 #let output_outline() = context {
 	let hs = query(heading)
+	let lines = ()
 	for h in hs {
 		let level = h.level;
 		let body = h.body;
@@ -25,7 +26,9 @@
 		let number = if n == none { "" } else {
 			numbering(n, ..counter(heading).at(loc))
 		}
-		// [#(indent)- #(number) #(body)\ ]
-		raw((indent, "- ", number, " ", tostring(body), "\n").join())
+		let line = (indent, "- ", number, " ", tostring(body), "\n").join()
+		lines.push(line)
 	}
+	let text = lines.join()
+	panic(text)
 }
