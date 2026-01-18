@@ -34,7 +34,9 @@
 
 #include "00_preface.typ"
 
-#outline()
+#outline(
+	target: heading.where().or(figure.where(kind: "jsbook-part")),
+)
 
 #part[微分積分学１]
 #include "cal1t/01_set.typ"
