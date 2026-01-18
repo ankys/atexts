@@ -45,3 +45,7 @@
 #let part(body) = {
 	return figure(kind: "jsbook-part", supplement: [], numbering: "第I部", caption: body, body)
 }
+#let outline-part() = {
+	let target = heading.where().or(figure.where(kind: "jsbook-part"))
+	return outline(target: target)
+}
