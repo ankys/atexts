@@ -39,6 +39,19 @@
 	set heading(numbering: "第1章")
 	// level 2 heading
 	show heading.where(level: 2): set heading(numbering: "1.1")
+	// outline
+	set outline(indent: 2em)
+	show outline.entry: it => {
+		if it.element.has("kind") and it.element.kind == "jsbook-part" and it.fill != none {
+			strong(outline.entry(it.level, it.element, fill: none))
+		} else if it.level == 1 and it.fill != none {
+			outline.entry(it.level, it.element, fill: none)
+		} else if it.level == 2 and it.fill != repeat([・]) {
+			outline.entry(it.level, it.element, fill: repeat([・]))
+		} else {
+			it
+		}
+	}
 	body
 }
 
