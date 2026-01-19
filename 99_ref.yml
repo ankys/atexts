@@ -1,4 +1,28 @@
 
+r_cal1t:
+  type: Web
+  author: 中安淳
+  title: 微分積分学１
+  url: https://github.com/ankys/cal1t/releases/download/20260105/cal1t-20260105.pdf
+  date: 2024-1-5
+r_cal2t:
+  type: Web
+  author: 中安淳
+  title: 微分積分学２
+  url: https://github.com/ankys/cal2t/releases/download/20260117/cal2t-20260117.pdf
+  date: 2026-1-17
+r_o08:
+  type: Web
+  author: 小澤徹
+  title: 非有界区間に於ける広義リーマン積分の条件収束
+  url: http://www.ozawa.phys.waseda.ac.jp/
+  date: 2008-12
+r_y19:
+  type: Web
+  author: 吉田伸生
+  title: ちょっとマニアックな（？）級数・積分の計算
+  url: http://www.math.nagoya-u.ac.jp/~noby/pdf/mania.pdf
+  date: 2019-6-24
 r_z15:
   type: Article
   author: Zorzi, Alberto
