@@ -14,21 +14,30 @@
 		str(x)
 	}
 }
-#let output_outline() = context {
+#let output_outline(fmt: (level, number, body) => [#("  " * (level - 1))- #number #body\ ]) = context {
 	let hs = query(heading)
-	let lines = ()
+	let content = []
 	for h in hs {
-		let level = h.level;
-		let body = h.body;
-		let n = h.numbering;
-		let loc = h.location();
-		let indent = if level == 1 { "" } else if (level == 2) { "  " }
+		let level = h.level
+		let body = h.body
+		let n = h.numbering
+		let loc = h.location()
 		let number = if n == none { "" } else {
 			numbering(n, ..counter(heading).at(loc))
 		}
-		let line = (indent, "- ", number, " ", tostring(body), "\n").join()
-		lines.push(line)
+		content += fmt(level, number, body)
 	}
-	let text = lines.join()
-	panic(text)
+	return content
+}
+#let output_labels(fmt: (key, value) => [#key: #value\ ]) = context {
+	let targets = query(selector.or(heading, figure, math.equation))
+	let labels = targets.filter(t => t.has("label")).map(t => t.label)
+	let content = []
+	for l in labels {
+		let key = str(l)
+		let value = ref(l)
+		let indent = "  "
+		content += fmt(key, value)
+	}
+	return content
 }

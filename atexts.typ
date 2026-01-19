@@ -23,8 +23,13 @@
 	numbering("(1.1)", ..count, it)
 })
 
-// #import "deps/outputtools.typ": output_outline
+// #import "deps/outputtools.typ": *
 // #output_outline()
+// #output_outline(fmt: (level, number, body) => [#("  " * (level - 1))- #number #body\\n])
+// #pagebreak()
+// #output_labels()
+// #output_labels(fmt: (key, value) => [  #key: \@\[#value\],\\n])
+// #pagebreak()
 
 #maketitle(
 	title: title,
