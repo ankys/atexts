@@ -37,6 +37,20 @@
 	date: date,
 )
 
+#import "../references.typ": get_all_labels
+#let all_labels = get_all_labels()
+#import "references.typ": custom_labels
+#show ref: it => {
+	let key = str(it.target)
+	if key in custom_labels {
+		it
+	} else if key in all_labels {
+		all_labels.at(key)
+	} else {
+		it
+	}
+}
+
 #include "00_preface.typ"
 
 #outline()
