@@ -46,4 +46,4 @@
 #include "03_series.typ"
 #include "04_functions.typ"
 
-#bibliography("../99_ref.yml")
+#bibliography("../references.yml")

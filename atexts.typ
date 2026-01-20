@@ -66,4 +66,4 @@
 #include "cal2t/03_series.typ"
 #include "cal2t/04_functions.typ"
 
-#bibliography("99_ref.yml")
+#bibliography("references.yml")

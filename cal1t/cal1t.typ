@@ -49,4 +49,4 @@
 #include "06_functions.typ"
 #include "07_equidist.typ"
 
-#bibliography("../99_ref.yml")
+#bibliography("../references.yml")
