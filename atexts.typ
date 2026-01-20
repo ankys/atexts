@@ -10,7 +10,7 @@
 	lang: "ja",
 )
 
-#import "@preview/ctheorems:1.1.3": thmrules
+#import "deps/theorem.typ": thmrules
 #show: thmrules.with()
 
 #import "deps/autoeqnum.typ": autoeqnum

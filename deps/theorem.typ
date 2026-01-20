@@ -18,3 +18,4 @@
 		【#name】#body#h(1fr)【証明終わり】
 	]
 }
+#import "@preview/ctheorems:1.1.3": thmrules
