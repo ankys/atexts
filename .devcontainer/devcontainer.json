@@ -1,7 +1,7 @@
 {
 	"name": "Dev",
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-	"postCreateCommand": "sudo bash .setup/fonts.sh",
+	"postCreateCommand": "sudo bash .scripts/setup_fonts.sh",
 	"customizations": {
 		"vscode": {
 			"extensions": [
