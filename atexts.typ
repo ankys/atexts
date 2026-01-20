@@ -37,15 +37,16 @@
 	date: date,
 )
 
-// #import "98_ref.typ": custom_labels
-// #show ref: it => {
-// 	let key = str(it.target)
-// 	if key in custom_labels {
-// 		custom_labels.at(key)
-// 	} else {
-// 		it
-// 	}
-// }
+#import "references.typ": get_all_labels
+#let custom_labels = get_all_labels()
+#show ref: it => {
+	let key = str(it.target)
+	if key in custom_labels {
+		custom_labels.at(key)
+	} else {
+		it
+	}
+}
 
 #include "00_preface.typ"
 
