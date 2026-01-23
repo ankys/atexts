@@ -1,6 +1,6 @@
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "@preview/physica:0.9.4": dd
+#import "../deps/physics.typ": dd
 #let area = $op("area")$
 #let vol = $op("vol")$
 

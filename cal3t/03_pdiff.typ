@@ -1,6 +1,6 @@
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "@preview/physica:0.9.4": dd, dv, pdv, eval
+#import "../deps/physics.typ": dd, dv, pdv, evaluated
 
 = 偏微分
 
@@ -22,11 +22,11 @@ $
 $
 f_(x_i) (a_1, dots, a_N),
 quad pdv(f, x_i) (a_1, dots, a_N),
-quad eval(pdv(f, x_i))_((x_1, dots, x_N) = (a_1, dots, a_N)), \
-eval((f(x_1, dots, x_N))_(x_i))_((x_1, dots, x_N) = (a_1, dots, a_N)),
-quad eval(pdv(, x_i)(f(x_1, dots, x_N)))_((x_1, dots, x_N) = (a_1, dots, a_N)), \
-eval(y_(x_i))_((a_1, dots, a_N)),
-quad eval(pdv(y, x_i))_((a_1, dots, a_N))
+quad evaluated(pdv(f, x_i))_((x_1, dots, x_N) = (a_1, dots, a_N)), \
+evaluated((f(x_1, dots, x_N))_(x_i))_((x_1, dots, x_N) = (a_1, dots, a_N)),
+quad evaluated(pdv(, x_i)(f(x_1, dots, x_N)))_((x_1, dots, x_N) = (a_1, dots, a_N)), \
+evaluated(y_(x_i))_((a_1, dots, a_N)),
+quad evaluated(pdv(y, x_i))_((a_1, dots, a_N))
 $
 などで表す。
 
@@ -221,7 +221,7 @@ $
 $RR^M$値関数$f(x) = (f_1 (x), dots, f_M (x))$が点$x = a$で微分可能で$M$変数関数$g(y) = g(y_1, dots, y_M)$が点$y = f(a)$で全微分可能とする。
 この時、合成関数$f(g(x))$も$x = a$で微分可能で、
 $
-eval((g(f(x)))')_(x = a)
+evaluated((g(f(x)))')_(x = a)
 &= gradient g(f(a)) dot f'(a) \
 &= g_(y_1)(f(a))f_1 '(a)+dots+g_(y_M)(f(a))f_M '(a)
 $

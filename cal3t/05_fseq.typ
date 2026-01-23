@@ -1,6 +1,6 @@
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "@preview/physica:0.9.4": dd, dv, eval
+#import "../deps/physics.typ": dd, dv, evaluated
 #let area = $op("area")$
 
 = 関数列
@@ -354,7 +354,7 @@ $X$を面積確定集合、$Y$を開区間とする。
 $X times Y$上定義された二変数関数$f(x, y)$が各$y in Y$に対して$x in X$で積分可能で各$x in X$に対して$y in Y$について$C^1$級で$y -> b$で$f_y (x, y)$は$f_y (x, b)$に一様収束するとする。
 このとき、$f_y (x, b)$も$x in X$で積分可能で
 $
-integral_X f_y (x, b) dd(x) = eval(dv(, y)(integral_X f(x, y) dd(x)))_(y = b)
+integral_X f_y (x, b) dd(x) = evaluated(dv(, y)(integral_X f(x, y) dd(x)))_(y = b)
 $
 が成り立つ。
 ]
@@ -362,7 +362,7 @@ $
 #proof[
 微分の定義より
 $
-eval(dv(, y)(integral_X f(x, y) dd(x)))_(y = b)
+evaluated(dv(, y)(integral_X f(x, y) dd(x)))_(y = b)
 = lim_(h -> 0) (integral_X f(x, b+h) dd(x)-integral_X f(x, b) dd(x))/h
 = lim_(h -> 0) integral_X (1/h) (f(x, b+h)-f(x, b)) dd(x)
 $
