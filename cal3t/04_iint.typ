@@ -146,8 +146,8 @@ $
 任意の$x, y in D$に対して
 $
 abs(f(x)g(x)-f(y)g(y))
-<= abs(f(x))abs(g(x)-g(y))+abs(g(y))abs(f(x)-f(y))
-<= sup abs(f)abs(g(x)-g(y))+sup abs(g)abs(f(x)-f(y))
+&<= abs(f(x))abs(g(x)-g(y))+abs(g(y))abs(f(x)-f(y)) \
+&<= sup abs(f)abs(g(x)-g(y))+sup abs(g)abs(f(x)-f(y))
 $
 よって、$f, g$が積分可能なので、$f g$も積分可能である。
 ]
@@ -526,7 +526,7 @@ B
 &= { (x, y, z) in RR^3 mid(|) -1 <= z <= +1, x^2+y^2 <= 1-z^2 }
 $
 として表される。
-そのため半径$r$の円板を\$D(r) =  { (x, y) in  RR^2 mid(|) x^2+y^2 <= r^2 }\$として、
+そのため半径$r$の円板を$D(r) = { (x, y) in RR^2 mid(|) x^2+y^2 <= r^2 }$として、
 $
 vol(B)
 = integral_(D(1)) 2 sqrt(1-x^2-y^2) dd((x, y))
@@ -707,8 +707,9 @@ $
 $f(x, y, z)$を縦線集合$D = { (x, y, z) mid(|) x in A, a <= y <= b, c(x, y) <= z <= c(x, y)+d }$を含む開集合上の$C^1$級関数であり、$A$は面積確定有界閉集合、$a, b, d$は定数で$c(x, y)$は$A times [a, b]$上の連続関数とする。
 このとき
 $
-&integral.triple_D f_y (x, y, z) dd((x, y, z)) \
-&= integral_A integral_0^d [f(x, b, c(x, b)+t)-f(x, a, c(x, a)+t)] dd(t)dd(x)-integral_A integral_a^b [f(x, y, c(x, y)+d)-f(x, y, c(x, y))]c_y (x, y) dd(y)dd(x)
+integral.triple_D f_y (x, y, z) dd((x, y, z))
+= &integral_A integral_0^d [f(x, b, c(x, b)+t)-f(x, a, c(x, a)+t)] dd(t)dd(x) \
+  &-integral_A integral_a^b [f(x, y, c(x, y)+d)-f(x, y, c(x, y))]c_y (x, y) dd(y)dd(x)
 $
 が成り立つ。
 ]
@@ -889,8 +890,8 @@ $
 である。
 ここで、
 $
-abs(integral.double_(A_n times B_n) f(x, y) dd((x, y))-integral_(A_n) integral_Y f(x, y) dd(y) dd(x))
-<= integral_(A_n) integral_(Y\\B_n) abs(f(x, y)) dd(y) dd(x)
+&abs(integral.double_(A_n times B_n) f(x, y) dd((x, y))-integral_(A_n) integral_Y f(x, y) dd(y) dd(x)) \
+&quad <= integral_(A_n) integral_(Y\\B_n) abs(f(x, y)) dd(y) dd(x)
 <= integral.double_((X times Y)\\(A_n times B_n)) abs(f(x, y)) dd((x, y))
 -> 0
 $
