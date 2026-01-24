@@ -28,7 +28,7 @@ D_N (a) = { (x_1, dots, x_N) in RR^N mid(|) abs(x_1)+dots+abs(x_N) <= a }
 $
 として定義される。
 この正軸体の体積はカヴァリエリの原理より次数についての帰納法で求めることができる。
-つまり、$D_(N+1) (a)$において$x_(N+1) = y$を固定した時の切り口は$D_N(a-abs(y))$より
+つまり、$D_(N+1) (a)$において$x_(N+1) = y$を固定した時の切り口は$D_N (a-abs(y))$より
 $
 vol(D_(N+1) (a))
 = integral_(-a)^(+a) area(D_N (a-abs(y))) dd(y)
@@ -45,9 +45,9 @@ $
 c_(N+1) = frac(2, N+1) c_N,
 quad c_1 = 2
 $
-なので、$c_N = 2^N/(n!)$であり、
+なので、$c_N = 2^N/(N!)$であり、
 $
-vol(D_N (a)) = 2^N/(n!) a^N
+vol(D_N (a)) = 2^N/(N!) a^N
 $
 を得る。
 
@@ -62,7 +62,7 @@ $
 $
 vol(B_(N+1) (a))
 = integral_(-a)^(+a) area(B_N (sqrt(a^2-y^2)))dd(y)
-= 2 integral_0^1 area(B_N(sqrt(1-t^2) a))a dd(t)
+= 2 integral_0^1 area(B_N (sqrt(1-t^2) a))a dd(t)
 $
 で$B_1 (a) = 2 a$に注意して、$vol(B_N (a)) = c_N a^N$とできることがわかる。
 このとき$c_N$を求めることは積分
@@ -76,8 +76,8 @@ $
 $
 vol(B_(N+2) (a))
 = c_(N+2) a^(N+2)
-= integral.double_(D(a)) area(B_N (sqrt(a^2-x^2-y^2))) dd((x, y))
-= integral.double_(D(a)) c_N sqrt(a^2-x^2-y^2)^N dd((x, y))
+&= integral.double_(D(a)) area(B_N (sqrt(a^2-x^2-y^2))) dd((x, y)) \
+&= integral.double_(D(a)) c_N sqrt(a^2-x^2-y^2)^N dd((x, y))
 $
 となり、極座標変換$x = a r cos theta, y = a r sin theta$により
 $
@@ -94,19 +94,20 @@ $
 $
 vol(B_N (a))
 = cases(
-	(2^M pi^(M-1))/((2 M-1)(2 M-3)dots 3 dot 1) a^(2 M-1) & (N = 2 M-1),
-	(2^M pi^M)/((2 M)(2 M-2)dots 4 dot 2) a^(2 M) & (N = 2 M)
+	(2^M pi^(M-1))/((2 M-1)(2 M-3)dots 3 dot 1) a^(2 M-1) &quad (N = 2 M-1),
+	(2^M pi^M)/((2 M)(2 M-2)dots 4 dot 2) a^(2 M) &quad (N = 2 M)
 )
 $
 がわかる。
 なおこれはガンマ関数$Gamma(s)$を使えば、$Gamma(s+1) = s Gamma(s)$, $Gamma(1) = 1$, $Gamma(1/2) = sqrt(pi)$より、
 $
-vol(B_N (a)) = (pi^(N/2))/(Gamma(N/2+1) a^N
+vol(B_N (a)) = (pi^(N/2))/Gamma(N/2+1) a^N
 $
 と表すことができる。
 
 == ガウス積分
-ガウス積分とはガウス関数の広義積分
+
+_ガウス積分_とはガウス関数の広義積分
 $
 I
 = integral_(-oo)^(+oo) exp(-x^2) dd(x)
@@ -153,7 +154,7 @@ $
 == ベータ関数
 
 ガンマ関数が階乗の実数への拡張だったように、二項係数の実数への拡張がベータ関数である。
-ベータ関数は二変数である。
+ベータ関数は二変数関数である。
 二項係数は階乗を使って表されるように、ベータ関数$B(x, y)$はガンマ関数$Gamma$を使って
 $
 B(x, y) = (Gamma(x) Gamma(y))/Gamma(x+y)
@@ -169,7 +170,7 @@ $
 を対応させる関数を_ベータ関数_という。
 ]
 
-$0 < x < 1$または$0 < y < 1$の場合、この積分は広義積分となるが$t = 0, 1$の周辺で$t$の$-1$より大きい次数なので積分は常に収束し、ベータ関数は$(0, oo)^2$で定義される。
+$0 < x < 1$または$0 < y < 1$の場合、この積分は広義積分となるが$t = 0, 1$の周辺で$t$の$-1$より大きい次数なので積分は常に収束し、ベータ関数は$(x, y) in (0, oo)^2$で定義される。
 
 ここで$t = cos^2 theta$と置換することで
 $
@@ -227,7 +228,7 @@ integral_0^1 cos x y dd(y)
 = sinc x
 $
 であることに注意する。
-さらにこの式は$x = 0$でも、$sinc x = 0$なので、成立する。
+さらにこの式は$x = 0$でも、$sinc x = 1$なので、成立する。
 そのためディリクレ積分は累次積分
 $
 integral_0^oo sinc x dd(x)
@@ -251,8 +252,8 @@ $
 先に$x$で積分することを考えると$b in [0, 1]$に対して
 $
 integral e^(-a x) cos b x dd(x)
-= -1/a e^(-a x) cos b x-b/a integral e^(-a x) sin b x dd(x)
-= -1/a e^(-a x) cos b x+b/a^2 e^(-a x) sin b x-b^2/a^2 integral e^(-a x) cos b x dd(x)
+&= -1/a e^(-a x) cos b x-b/a integral e^(-a x) sin b x dd(x) \
+&= -1/a e^(-a x) cos b x+b/a^2 e^(-a x) sin b x-b^2/a^2 integral e^(-a x) cos b x dd(x)
 $
 より
 $
@@ -309,9 +310,9 @@ $
 実際、
 $
 abs(integral_0^oo e^(-t y)/(1+y^2) (y sin t+cos t) dd(y))
-<= integral_0^oo e^(-t y)/(1+y^2) abs(y sin t+cos t) dd(y)
-<= integral_0^oo e^(-t y)/sqrt(1+y^2) dd(y)
-<= integral_0^oo e^(-t y) dd(y)
+&<= integral_0^oo e^(-t y)/(1+y^2) abs(y sin t+cos t) dd(y)
+<= integral_0^oo e^(-t y)/sqrt(1+y^2) dd(y) \
+&<= integral_0^oo e^(-t y) dd(y)
 = 1/t
 -> 0
 $
@@ -360,21 +361,23 @@ $
 = integral_0^b abs(sin x)/sqrt(x) dd(x)
 <= integral_0^b sqrt(x) dd(x)
 = 2/3 sqrt(b)^3
+< oo
 $
 なので、積分の順序交換により
 $
 integral_0^b (sin x)/sqrt(x) dd(x)
 &= 2/sqrt(pi) integral_0^b integral_0^oo e^(-x y^2) sin x dd(y) dd(x)
 = 2/sqrt(pi) integral_0^oo integral_0^b e^(-x y^2) sin x dd(x) dd(y) \
-&= 2/sqrt(pi) integral_0^oo [-e^(-x y^2)/(1+y^4) (y^2 sin x+cos x)]_(x = 0)^b dd(y)
-= 2/sqrt(pi) integral_0^oo (1/(1+y^4)-e^(-b y^2)/(1+y^4) (y^2 sin b+cos b)) dd(y) \
-&= sqrt(pi/2)-2/sqrt(pi) integral_0^oo e^(-b y^2)/(1+y^4) (y^2 sin b+cos b) dd(y)
+&= 2/sqrt(pi) integral_0^oo [-e^(-x y^2)/(1+y^4) (y^2 sin x+cos x)]_(x = 0)^b dd(y) \
+&= 2/sqrt(pi) integral_0^oo (1/(1+y^4)-e^(-b y^2)/(1+y^4) (y^2 sin b+cos b)) dd(y) \
+&= sqrt(pi/2)-2/sqrt(pi) integral_0^oo e^(-b y^2)/(1+y^4) (y^2 sin b+cos b) dd(y).
 $
-ここで
+ここで$b -> oo$において
 $
 abs(2/sqrt(pi) integral_0^oo e^(-b y^2)/(1+y^4) (y^2 sin b+cos b) dd(y))
 <= 2/sqrt(pi) integral_0^oo e^(-b y^2) dd(y)
 = 1/sqrt(b)
+-> 0
 $
 なので、フレネル積分とその収束の速さ
 $
@@ -393,4 +396,4 @@ $
 を考える問題である。
 答えから述べるとこの級数は収束してその値は$pi^2/6$である。
 バーゼル問題を解く方法は様々なものが知られているが、ここではこれまでの知識でこの問題に取り組んでみる。
-答えに円周率が出ることから計算途中に円の面積や三角関数が現れることに注意する。
+答えに円周率が出ることから計算途中に円の面積や三角関数が現れるであろうことに注意する。
