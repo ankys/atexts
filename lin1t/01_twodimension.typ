@@ -1,5 +1,6 @@
 
 = 二次の理論
+<h_twodim>
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
 

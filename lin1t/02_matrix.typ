@@ -34,7 +34,7 @@ _体_とは集合に四則演算（加減乗除）の構造が入ったものの
 
 $M = 1, 2, 3, dots$, $N = 1, 2, 3, dots$として、$M times N$個の体$K$の元
 $
-a_(1 1), a_(1 2), a_(1 3), dots a_(1 N), a_(2 1), a_(2 2), a_(2 3), dots a_(2 N), a_(3 1), a_(3 2), a_(3 3), dots, a_(3 N), dots, a_(M 1), a_(M 2), a_(M 3), dots a_(M N) in K
+a_(1 1), a_(1 2), a_(1 3), dots, a_(1 N), a_(2 1), a_(2 2), a_(2 3), dots, a_(2 N), a_(3 1), a_(3 2), a_(3 3), dots, a_(3 N), dots, a_(M 1), a_(M 2), a_(M 3), dots, a_(M N) in K
 $
 を縦に$M$個、横に$N$個、長方形状にならべた
 $
@@ -55,8 +55,9 @@ $
 mat(1, 2, 3, 4, 5; 6, 7, 8, 9, 10; 11, 12, 13, 14, 15;)
 $
 は実数上の$3 times 5$型の行列であり（整数上でもある）、
+回転行列
 $
-mat(cos theta, -sin theta; sin theta, cos theta) quad (theta in K)
+mat(cos theta, -sin theta; sin theta, cos theta) quad (theta in RR)
 $
 は実数上の$2 times 2$型の行列である。
 
@@ -114,7 +115,7 @@ $
 より詳しくは前者を_右上三角行列_、後者を_左下三角行列_という。
 以上をまとめると正方行列の中に三角行列があり、さらにその中に対角行列があり、対角行列の特殊なものとして単位行列がある。
 
-$K$上の$N$次正方行列全体を$upright(M)_N(K)$と表す。
+$K$上の$N$次正方行列全体を$upright(M)_N (K)$と表す。
 また、零行列$O_(N times N)$である$N$次正方行列は$O_N$とも書かれる。
 
 $N = 1$の時の$M times 1$型の行列は$M$次の_縦ベクトル_と呼ばれ、
@@ -192,7 +193,7 @@ $
 となっている。
 
 このように一つの成分を見てもたくさんのかけ算と足し算で成り立っており一見妥当性がわからないが、
-実際にはさまざまな場面でこの行列の積が現れる（第1章参照）。
+実際にはさまざまな場面でこの行列の積が現れる（@h_twodim 参照）。
 
 + （行列積の結合法則）任意の$A in upright(M)_(M times K) (K), B in upright(M)_(K times L) (K), C in upright(M)_(L times N) (K)$に対して$(A B) C = A (B C)$が成り立つ。
 + （分配法則１）任意の$A, B in upright(M)_(M times L) (K)$と$B in upright(M)_(L times N) (K)$に対して$(A+B) C = A C+B C$が成り立つ。
