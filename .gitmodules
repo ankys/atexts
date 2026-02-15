@@ -1,6 +1,3 @@
-[submodule "lina1t"]
-	path = lina1t
-	url = https://github.com/ankys/lina1t.git
 [submodule "vecat"]
 	path = vecat
 	url = https://github.com/ankys/vecat.git
