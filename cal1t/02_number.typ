@@ -1,5 +1,6 @@
 
 = 数
+<h_number>
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
 

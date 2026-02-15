@@ -36,9 +36,9 @@
 		set page(header: auto)
 	}
 	// level 1 heading
-	set heading(numbering: "第1章")
+	set heading(numbering: "第1章", supplement: "章")
 	// level 2 heading
-	show heading.where(level: 2): set heading(numbering: "1.1")
+	show heading.where(level: 2): set heading(numbering: "1.1", supplement: "節")
 	// outline
 	set outline(indent: 2em)
 	show outline.entry: it => {
