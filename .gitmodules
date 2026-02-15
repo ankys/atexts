@@ -1,6 +1,0 @@
-[submodule "vecat"]
-	path = vecat
-	url = https://github.com/ankys/vecat.git
-[submodule "meast"]
-	path = meast
-	url = https://github.com/ankys/meast.git
