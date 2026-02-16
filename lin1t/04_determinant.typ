@@ -2,7 +2,8 @@
 = 行列式
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#let sgn = $op("sgn")$
+#import "../deps/physics.typ": super-T-as-transpose, sgn
+#show: super-T-as-transpose
 
 == 行列式の導入
 
@@ -135,9 +136,9 @@ $sgn(s)^2 = 1$を示せばよい。
 計算すると
 $
 sgn(s)^2
-= product_(i < j) (s(j)-s(i))/(j-i) product_(i < j) (s(j)-s(i))/(j-i)
-= product_(i < j) (s(j)-s(i))/(j-i) product_(i < j) (s(i)-s(j))/(i-j)
-= product_(i eq.not j) (s(i)-s(j))/(i-j)
+&= product_(i < j) (s(j)-s(i))/(j-i) product_(i < j) (s(j)-s(i))/(j-i)
+= product_(i < j) (s(j)-s(i))/(j-i) product_(i < j) (s(i)-s(j))/(i-j) \
+&= product_(i eq.not j) (s(i)-s(j))/(i-j)
 = (product_(i eq.not j) (s(i)-s(j)))/(product_(i eq.not j) (i-j)).
 $
 ここで$s$は置換より、$i, j$が$i eq.not j$を満たしながら動く時$s(i), s(j)$が$s(i) eq.not s(j)$を満たしながら動くので、
@@ -343,7 +344,7 @@ $
 $N$次の横ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)$と$i eq.not j$を満たす$i, j = 1, dots, N$に対して
 $
 mat(delim: "|", dots.v; bold(a)_j; dots.v; bold(a)_i; dots.v)
-= -mat(delim: "|", dots.v; bold(a)_i; dots.v; bold(a)_j; dots.v)
+= -mat(delim: "|", dots.v; bold(a)_i; dots.v; bold(a)_j; dots.v),
 quad
 mat(delim: "|", dots.v; bold(a); dots.v; bold(a); dots.v) = 0
 $
@@ -351,7 +352,7 @@ $
 また、$N$次の縦ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)$と$i eq.not j$を満たす$i, j = 1, dots, N$に対して
 $
 mat(delim: "|", dots.c, bold(a)_j, dots.c, bold(a)_i, dots.c)
-= -mat(delim: "|", dots.c, bold(a)_i, dots.c, bold(a)_j, dots.c)
+= -mat(delim: "|", dots.c, bold(a)_i, dots.c, bold(a)_j, dots.c),
 quad
 mat(delim: "|", dots.c, bold(a), dots.c, bold(a), dots.c) = 0
 $
@@ -498,7 +499,7 @@ $A$を$N$次正方行列、$tilde(A)$をその余因子行列として$bold(b)$�
 この時、
 $
 tilde(A)bold(b)
-= mat(det A_(1, bold(b)), dots.c, det A_(N, bold(b)))
+= mat(det A_(1, bold(b)); dots.v; det A_(N, bold(b)))
 $
 が成り立つ。
 ただし、$A_(k, bold(b))$は行列$A = mat(bold(a)_1, dots.c, bold(a)_N)$の第$k = 1, dots, N$列をベクトル$bold(b)$で置き換えて得られる行列
@@ -547,9 +548,9 @@ $A$は逆行列を持ち、それは余因子行列を用いて$A = frac(1, det 
 
 行列の基本変形は基本行列との積を取ることと考えられることと基本行列の行列式は簡単な計算で
 $
-det P_n(i, j) = -1,
-quad det Q_n(i, c) = c,
-quad det R_n(i, j, c) = 1
+det P_N (i, j) = -1,
+quad det Q_N (i, c) = c,
+quad det R_N (i, j, c) = 1
 $
 と求まることから、基本変形をすると行列式の値は次のように変化する。
 
@@ -568,7 +569,7 @@ $
 - $R$個の行（または列）に$R$次の正則行列$A$を左からかけると行列式の値は$det A$倍になる。
 - ある$L$個の行（または列）に、別の$R$個の行（列）に$L times R$型の行列を左からかけたものを加えても行列式は変化しない。
 
-ここで(2)は正則行列が基本行列の積として表されることから正当化される。
+ここで二つ目は正則行列が基本行列の積として表されることから正当化される。
 
 #example[
 ]
@@ -822,10 +823,10 @@ mat(bold(b)_1; dots.v; bold(b)_M)
 $
 よって多重線形性と交代性より、
 $
-det(A^T B) =
-sum_(i_1 = 1)^M dots sum_(i_N = 1)^M a_(i_1 1) dots a_(i_N N) mat(delim: "|", bold(b)_(i_1); dots.v; bold(b)_(i_N))
-= sum_(k in S_(N, M)) a_(k(1) 1) dots a_(k(N) N) mat(delim: "|", bold(b)_(k(1)); dots.v; bold(b)_(k(N)))
-= sum_(t in macron(S)_(N, M)) sum_(s in S_N) a_(t(s(1)) 1) dots a_(t(s(N)) N) mat(delim: "|", bold(b)_(t(s(1))); dots.v; bold(b)_(t(s(N)))).
+det(A^T B)
+&= sum_(i_1 = 1)^M dots sum_(i_N = 1)^M a_(i_1 1) dots a_(i_N N) mat(delim: "|", bold(b)_(i_1); dots.v; bold(b)_(i_N))
+= sum_(k in S_(N, M)) a_(k(1) 1) dots a_(k(N) N) mat(delim: "|", bold(b)_(k(1)); dots.v; bold(b)_(k(N))) \
+&= sum_(t in macron(S)_(N, M)) sum_(s in S_N) a_(t(s(1)) 1) dots a_(t(s(N)) N) mat(delim: "|", bold(b)_(t(s(1))); dots.v; bold(b)_(t(s(N)))).
 $
 行を並べ替えて、
 $
