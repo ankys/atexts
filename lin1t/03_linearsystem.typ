@@ -2,7 +2,8 @@
 = 連立一次方程式
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#let rank = $op("rank")$
+#import "../deps/physics.typ": super-T-as-transpose, rank
+#show: super-T-as-transpose
 
 == 拡大係数行列
 
@@ -16,7 +17,7 @@ cases(
 $
 のことを_連立一次方程式_あるいは_線形方程式系_などという。
 $M$と$N$が異なる場合は解がなかったり複数あったりするのでそのような場合を考える必要を感じないかもしれないが、さまざまな場合を扱えた方が良いのでここでは$M$と$N$が異なる場合を含めて考える（そもそも$M = N$でも解がなかったり複数あったりする場合が存在する）。
-第1章で扱ったように連立一次方程式は行列とベクトルを用いて
+@h_twodim で扱ったように、この連立一次方程式は行列とベクトルを用いて
 $
 mat(a_(1 1), dots.c, a_(1 N); dots.v, dots.down, dots.v; a_(M 1), dots.c, a_(M N);)vec(x_1, dots.v, x_N)
 = vec(b_1, dots.v, b_M)
@@ -46,7 +47,7 @@ $
 
 == 基本変形
 
-第1章で紹介した連立一次方程式の解法は方程式
+@h_twodim で紹介した連立一次方程式の解法は方程式
 $
 A bold(x) = bold(b)
 $
@@ -283,7 +284,7 @@ $macron(A)$は$A$の行簡約行列である。
 $macron(B)$の方は$B$の行簡約行列とは限らない。
 ]
 
-この節の最後に第2章で触れた逆行列の同値な条件の証明を与える。
+この節の最後に@h_matrix で触れた逆行列の同値な条件の証明を与える。
 
 #theorem([逆行列の同値な条件])[
 $A, X$を$N$次正方行列とする。
@@ -425,7 +426,7 @@ quad I_N = mat(bold(e)_1, dots.c, bold(e)_N)
 $
 と区分けする（$bold(e)_1, dots, bold(e)_N$は$N$次の標準基底ベクトル）と、
 $
-A bold(x)_1 = bold(e)_1, dots, A bold(x)_N = bold(e)_N
+A bold(x)_1 = bold(e)_1, quad dots, quad A bold(x)_N = bold(e)_N
 $
 となる。
 これらは連立一次方程式になっていて、つまり逆行列を求めることは上記の$N$個の連立一次方程式を解くことに帰着される。

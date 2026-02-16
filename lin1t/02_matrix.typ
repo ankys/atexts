@@ -1,7 +1,10 @@
 
 = 行列
+<h_matrix>
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": super-T-as-transpose
+#show: super-T-as-transpose
 
 == 体
 
