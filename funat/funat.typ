@@ -12,16 +12,6 @@
 #import "../deps/theorem.typ": thmrules
 #show: thmrules.with()
 
-#import "../deps/autoeqnum.typ": autoeqnum
-#show heading.where(level: 2): it => {
-	counter(math.equation).update(0)
-	it
-}
-#show: autoeqnum.with(mode: "ref", numbering: it => {
-	let count = counter(heading).get()
-	numbering("(1.1)", ..count, it)
-})
-
 // #import "../deps/outputtools.typ": *
 // #output_outline()
 // #output_outline(fmt: (level, number, body) => [#("  " * (level - 1))- #number #body\\n])

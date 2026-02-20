@@ -1,5 +1,6 @@
 
 #import "@preview/js:0.1.3": js, maketitle
+#import "autoeqnum.typ": autoeqnum
 
 #let jsbook(
 	lang: "ja",
@@ -52,6 +53,16 @@
 			it
 		}
 	}
+	// equation
+	show heading.where(level: 2): it => {
+		counter(math.equation).update(0)
+		it
+	}
+	show: autoeqnum.with(mode: "ref", numbering: it => {
+		let count = counter(heading).get()
+		numbering("(1.1)", ..count, it)
+	})
+	set math.equation(supplement: none)
 	body
 }
 
