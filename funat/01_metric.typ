@@ -2,6 +2,7 @@
 = 完備距離空間
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": dd
 
 == 距離空間
 
@@ -201,7 +202,6 @@ $
 である。
 ]
 
-
 == バナッハの不動点定理
 
 本節ではこの章の中心的な定理であるバナッハの不動点定理を紹介する。
@@ -288,6 +288,75 @@ d(T^m x, T^n x)
 = c^(min(m, n))/(1-c) d(x, T x)
 $
 TODO
+]
+
+== 微分方程式への応用
+
+常微分方程式は定数係数線形常微分方程式をはじめとして$N$次元の一階常微分方程式
+$
+x'(t) = F(t, x(t)),
+quad x(0) = x_0
+$ <e_ode>
+に帰着されることが多い。
+この微分方程式は積分方程式
+$
+x(t) = x_0+integral_0^t F(s, x(s)) dd(s)
+$ <e_inteq>
+に書き換えることができ、
+その解をバナッハの不動点定理を用いて求めるというのが本節の目的である。
+
+#theorem([常微分方程式の解の存在と一意性])[
+$-oo < a <= 0 <= b < +oo$として$F: [a, b] times RR^N -> RR^N$を連続な関数であって次のリプシッツ条件を満たすとする。
+つまり$t$によらない定数$L < oo$が存在して
+$
+d(F(t, x), F(t, y)) <= L d(x, y)
+$
+が任意の$t in [a, b]$と$x, y in RR^N$に対して成り立つとする。
+ただし、$d$は先述の$RR^N$の距離$d_p$ ($p in [1, oo]$)のいずれかである。
+このとき、関数空間$C([a, b], RR^N)$において積分方程式@e_inteq の解$x$がただ一つ存在する。
+]
+
+#proof[
+$[a, b]$は有界閉区間であり$(RR^N, d)$は完備距離空間であるから、$C([a, b], RR^N)$は完備距離空間である。
+さらに$C([a, b], RR^N)$上の変換$T$を
+$
+T x (t) = x_0+integral_0^t F(s, x(s)) dd(s)
+$
+で定めてバナッハの不動点定理の適用を試みる。
+実際
+$
+d(T x(t), T y(t))
+<= abs(integral_0^t d(F(s, x(s)), F(s, y(s))) dd(s))
+<= L abs(integral_0^t d(x(s), y(s)) dd(s))
+$
+である。
+ここから$d_oo (T x, T y) <= L(b-a) d_oo (x, y)$が得られる。
+さらに$T$を施して
+$
+d(T^2 x(t), T^2 y(t))
+<= L abs(integral_0^t d(T x(s), T y(s)) dd(s))
+<= L^2 abs(integral_0^t abs(integral_0^s d(x(tau), y(tau)) dd(tau)) dd(s))
+$
+が得られ、$d_oo (T^2 x, T^2 y) <= 1/2 L^2 (b-a)^2 d_oo (x, y)$が得られる。
+さらに$T$を施して
+$
+d(T^3 x(t), T^3 y(t))
+<= L^3 abs(integral_0^t abs(integral_0^(t_1) abs(integral_0^(t_2) d(x(t_3), y(t_3)) dd(t_3)) dd(t_2)) dd(t_1))
+$
+が得られ、$d_oo (T^2 x, T^2 y) <= 1/(3!) L^3 (b-a)^3 d_oo (x, y)$が得られる。
+このようにして帰納的に
+$
+d_oo (T^n x, T^n y) <= 1/(n!) L^n (b-a)^n d_oo (x, y)
+$
+がわかり、
+$
+sum_(n = 0)^oo d_oo (T^n x, T^n y)
+<= sum_(n = 0)^oo 1/(n!) L^n (b-a)^n d_oo (x, y)
+= exp(L(b-a)) d_oo (x, y)
+< oo
+$
+が得られる。
+したがって、バナッハの不動点定理から$T$の不動点つまり積分方程式@e_inteq の解が$C([a, b], RR^N)$の中にただ一つ存在することがわかる。
 ]
 
 == エクランドの変分原理
