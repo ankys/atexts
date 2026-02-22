@@ -44,8 +44,8 @@
 
 #outline()
 
-#include "01_metric.typ"
-// #include "02_number.typ"
+#include "01_metricsp.typ"
+#include "02_banachsp.typ"
 // #include "03_supinf.typ"
 // #include "04_sequence.typ"
 // #include "05_limit.typ"
