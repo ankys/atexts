@@ -2,6 +2,7 @@
 = バナッハ空間
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": dd
 
 == ノルム空間
 
@@ -97,4 +98,20 @@ $
 lim_(n -> oo) norm(x_n-x) = 0
 $
 が成り立つということである。
+]
+
+== バナッハ空間の例
+
+$(X, m)$を測度空間、$K$を実数$RR$または複素数$CC$として$1 <= p < oo$とする。
+$X$から$K$への可測関数$f$であって
+$
+norm(f)_p := (integral_X abs(f)^p dd(m))^(1/p) < oo
+$
+を満たすもの全体は後述するように半ノルム空間をなし、
+誘導するノルム空間を$L^p (X, m; K)$とおき$p$を次数とする_ルベーグ空間_と呼ぶ。
+ここで測度$m$や$K$はしばしば省略される。
+
+#proposition([ルベーグ空間])[
+$(X, m)$を測度空間、$K$を実数$RR$または複素数$CC$として$1 <= p < oo$とすると、
+ルベーグ空間$L^p (X, m; K)$はバナッハ空間である。
 ]
