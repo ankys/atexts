@@ -1,5 +1,6 @@
 
 = 連立一次方程式
+<h_linsys>
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
 #import "../deps/physics.typ": super-T-as-transpose, rank

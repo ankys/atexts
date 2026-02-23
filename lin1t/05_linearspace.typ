@@ -2,8 +2,8 @@
 = 線形空間
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": Set, rank
 #let Span = $op("Span")$
-#let rank = $op("rank")$
 #let Img = $op("Img")$
 #let Ker = $op("Ker")$
 #let Id = $op("Id")$
@@ -15,7 +15,7 @@
 なお、「線形」という単語は「線型」や「一次」とも書かれたりする。
 
 #definition([線形空間])[
-集合$V$に加法$+$（$bold(u), bold(v) in V$に対して$bold(u)+bold(v) in V$）とスカラー乗法（$c in K$と$bold(v) in V$に対して$c bold(v) in V$）が入っていて次を満たす時、$V$を$K$上の_線形空間_という。
+集合$V$に加法（$bold(u), bold(v) in V$に対して$bold(u)+bold(v) in V$）とスカラー乗法（$c in K$と$bold(v) in V$に対して$c bold(v) in V$）が入っていて次を満たす時、$V$を$K$上の_線形空間_という。
 
 + （加法の結合法則）任意の$bold(u), bold(v), bold(w) in V$に対して$(bold(u)+bold(v))+bold(w) = bold(u)+(bold(v)+bold(w))$が成り立つ。
 + （加法の交換法則）任意の$bold(u), bold(v) in V$に対して$bold(u)+bold(v) = bold(v)+bold(u)$が成り立つ。
@@ -26,14 +26,14 @@
 + （反ベクトル）任意の$bold(v) in V$に対して$bold(v)+bold(x) = bold(x)+bold(v) = bold(0)$が成り立つような$bold(x) = -bold(v) in V$がただ一つ存在する。
 + （単位元）$1 in K$は任意の$bold(v) in K$に対して$1 bold(v) = bold(v)$を満たす。
 
-線形空間$V$の元を_ベクトル_と呼ぶ。
+線形空間$V$の元$bold(v)$を_ベクトル_と呼ぶ。
 線形空間がいくつかある時$V$の零ベクトル$bold(0)$は$bold(0)_V$と表されたりする。
 ]
 
 この線形空間の定義は非常に抽象度が高くてさまざまな具体例が考えられる。
 
 #example([自明な線形空間])[
-線形空間$V$は必ず零ベクトル$bold(0)$を元として含んでいるが、逆に$V$として零ベクトルのみからなる集合$O = { bold(0) }$として加法を$bold(0)+bold(0) = bold(0)$、スカラー乗法を$c bold(0) = bold(0)$とすると$O$は線形空間である。
+線形空間$V$は必ず零ベクトル$bold(0)$を元として含んでいるが、逆に$V$として零ベクトルのみからなる集合$O = Set(bold(0))$として加法を$bold(0)+bold(0) = bold(0)$、スカラー乗法を$c bold(0) = bold(0)$とすると$O$は線形空間である。
 このような線形空間$O$を自明な線形空間という。
 ]
 
@@ -109,7 +109,7 @@ $K$上の線形空間$V$に対して、その部分集合$W$であって$V$の�
 本テキストでは$W$が$V$の線形部分空間であることを部分集合の記号を使って$W subset V$と表すことがある。
 ]
 
-線形空間$V$に対して、$V$自身と零ベクトルのみからなる集合$O = O_V = { bold(0)_V }$はいずれも$V$の線形部分空間であり、自明な線形部分空間と呼ばれる。
+線形空間$V$に対して、$V$自身と零ベクトルのみからなる集合$O = O_V = Set(bold(0)_V)$はいずれも$V$の線形部分空間であり、自明な線形部分空間と呼ばれる。
 
 #example([連立一次方程式の解空間])[
 $N, M = 1, 2, 3, dots$として$A$を$M times N$型の$K$上の行列とする。
@@ -121,7 +121,7 @@ $
 ]
 
 #example([行列空間の部分空間])[
-$N = 1, 2, 3, dots$次の対角行列、右上三角行列、左下三角行列、対称行列の集合はいずれも$op("M")_N(K)$の線形部分空間である。
+$N = 1, 2, 3, dots$次の対角行列、右上三角行列、左下三角行列、対称行列の集合はいずれも$op("M")_N (K)$の線形部分空間である。
 ]
 
 #example([有限次多項式空間])[
@@ -136,7 +136,7 @@ $
 #example[
 $RR$の部分集合
 $
-QQ[sqrt(2)] = { a+b sqrt(2) mid(|) a, b in QQ }
+QQ[sqrt(2)] = Set(a+b sqrt(2); a, b in QQ)
 $
 は有理数体$QQ$上の線形空間としての$RR$の線形部分空間である。
 ]
@@ -152,7 +152,7 @@ $
 と表される$V$の元（ベクトル）を$bold(v)_1, dots, bold(v)_N$の_線形結合_という。
 また、$bold(v)_1, dots, bold(v)_N$の線形結合全体からなる集合
 $
-Span(bold(v)_1, dots, bold(v)_N) = { c_1 bold(v)_1+dots+c_N bold(v)_N mid(|) c_1, dots, c_N in K }
+Span(bold(v)_1, dots, bold(v)_N) = Set(c_1 bold(v)_1+dots+c_N bold(v)_N; c_1, dots, c_N in K)
 $
 は$V$の線形部分空間であり、$bold(v)_1, dots, bold(v)_N$が_張る_または_線形生成する_線形部分空間と呼ばれる。
 また、$N = 0$の時は線形結合は零ベクトルとして、張る線形部分空間は自明な$O$と考える。
@@ -163,8 +163,8 @@ $
 #definition([交わりと和])[
 $U$を$K$上の線形空間として、$V, W$を$U$の部分空間とする。
 
-- 共通部分$V inter W = { bold(v) in U mid(|) bold(v) in V, bold(v) in W }$は$U$の線形部分空間であり、$V$と$W$の_交空間_と呼ばれる。
-- $V+W = { bold(v)+bold(w) mid(|) bold(v) in V, bold(w) in W }$は$U$の線形部分空間であり、$V$と$W$の_和空間_と呼ばれる。
+- 共通部分$V inter W = Set(bold(v) in U; bold(v) in V, bold(v) in W)$は$U$の線形部分空間であり、$V$と$W$の_交空間_と呼ばれる。
+- $V+W = Set(bold(v)+bold(w); bold(v) in V, bold(w) in W)$は$U$の線形部分空間であり、$V$と$W$の_和空間_と呼ばれる。
 - 交空間が$V inter W = O_U$を満たす時、和空間$V+W$は$V xor W$と書かれ、$V$と$W$の_直和空間_と呼ばれる。
 ]
 
@@ -202,8 +202,8 @@ $
 また、後でわかることとして
 $
 dim K^N = N,
-quad dim K^(M times N) = M N,
-quad dim K^(NN) = oo,
+quad dim K^(M times N) = M N, \
+dim K^(NN) = oo,
 quad dim K[x] = oo,
 quad dim K^X = \# X,
 quad dim K^N [x] = N+1
@@ -277,7 +277,7 @@ $
 $V$を$K$上の線形空間として、$N = 0, 1, 2, 3, dots$個のベクトル$bold(v)_1, dots, bold(v)_N in V$が線形独立ならば$N <= dim V$である。
 ]
 
-この補題の証明のために第3章で学んだ連立一次方程式の理論を用いる。
+この補題の証明のために@h_linsys で学んだ連立一次方程式の理論を用いる。
 
 #proof[
 $M = dim V$として$M, N = 1, 2, 3, dots$の場合を考えればよい。
@@ -322,7 +322,7 @@ $V$を線形生成するので$N >= dim V$である。
 #proposition[
 $V$を$K$上の有限次元線形空間とする。
 このとき$V$の任意の線形部分空間$W$に対して線形補空間$U$が存在する。
-] <t:complement>
+] <t_complement>
 
 証明は$W$の基底を取ってきて、そこに$V$の元をいくつか足して$V$の基底を作るという基底の延長と呼ばれる手法で行う。
 そのために次の補題を用意する。
@@ -364,10 +364,11 @@ $V$を生成しないとすると、補題より$N+1$個の線形独立なベク
 和空間の次元について次が成り立つ。
 
 #theorem([和空間の次元])[
-$K$上の線形空間$U$の線形部分空間$V, W$について次が成り立つ。
+$K$上の線形空間$U$の線形部分空間$V, W$について
 $
-dim (V+W)+dim (V inter W) = dim V+dim W.
+dim (V+W)+dim (V inter W) = dim V+dim W
 $
+が成り立つ。
 特に
 $
 dim (V xor W) = dim V+dim W
@@ -378,8 +379,8 @@ $
 #proof[
 まず、定義からすぐわかることとして
 $
-max{ dim V, dim W } <= dim (V+W) <= dim V+dim W,
-quad dim (V inter W) <= min{ dim V, dim W }
+max(dim V, dim W) <= dim (V+W) <= dim V+dim W,
+quad dim (V inter W) <= min(dim V, dim W)
 $
 がある（詳細省略）。
 これにより$V$または$W$が無限次元の時は$V+W$も無限次元となり等式は成立する。
@@ -401,7 +402,7 @@ $bold(v)_1, dots, bold(v)_N$と$bold(w)_1, dots, bold(w)_M$の線形独立性か
 よって、この場合$dim (V+W) = dim V+dim W$である。
 
 一般の場合を示す。
-$V inter W$は有限次元線形空間$W$の線形部分空間なので、@t:complement より、線形補空間が存在しそれぞれ$W'$とおく。
+$V inter W$は有限次元線形空間$W$の線形部分空間なので、@t_complement より、線形補空間が存在しそれぞれ$W'$とおく。
 ここで$V+W = V xor W'$を示す。
 まず$v in V inter W'$とすると特に$v in V inter W$なので$v in (V inter W) inter W' = O_U$である。
 次に$v+w in V+W$とすると$w = u+w'$, $u in V inter W$,
@@ -454,8 +455,8 @@ $
 #proposition([合成線形写像])[
 $V, W$を$K$上の線形空間として、$F$を$V$から$W$への線形写像とする。
 
-- $U$を$V$の線形部分空間とする時、像$F U = { F bold(v) mid(|) bold(v) in U }$は$W$の線形部分空間である。
-- $U$を$W$の線形部分空間とする時、逆像$F^(-1) U = { bold(v) in V mid(|) F bold(v) in U }$は$V$の線形部分空間である。
+- $U$を$V$の線形部分空間とする時、像$F U = Set(F bold(v); bold(v) in U)$は$W$の線形部分空間である。
+- $U$を$W$の線形部分空間とする時、逆像$F^(-1) U = Set(bold(v) in V; F bold(v) in U)$は$V$の線形部分空間である。
 ]
 
 #proof[

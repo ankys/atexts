@@ -343,7 +343,7 @@ $K$上の$N$次正方行列全体$upright(M)_N (K)$のうち正則行列全体�
 
 すぐわかる逆行列の性質として以下がある。
 
-+ （逆行列の逆行列）任意の$A in upright(G L)_N (K)$に対して$A^{-1} in upright(G L)_N (K)$であり$(A^(-1))^(-1) = A$が成り立つ。
++ （逆行列の逆行列）任意の$A in upright(G L)_N (K)$に対して$A^(-1) in upright(G L)_N (K)$であり$(A^(-1))^(-1) = A$が成り立つ。
 + （スカラー倍の逆行列）任意の$A in upright(G L)_N (K)$と$0$でない$c in K$に対して$c A in upright(G L)_N (K)$であり$(c A)^(-1) = c^(-1) A^(-1)$が成り立つ。
 + （積の逆行列）任意の$A, B in upright(G L)_N (K)$に対して$A B in upright(G L)_N (K)$であり$(A B)^(-1) = B^(-1) A^(-1)$が成り立つ。
 
