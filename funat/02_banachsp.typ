@@ -72,10 +72,29 @@ $
 スカラー倍は
 $
 d(c x, c_n x_n)
-&= norm(c_n x_n-c x) \
-&<= norm(c_n x_n-c_n x)+norm(c_n x-c x)
-<= abs(c_n)norm(x_n-x)+abs(c_n-c)norm(x)
+&= norm(c_n x_n-c x)
+<= norm(c_n x_n-c_n x)+norm(c_n x-c x) \
+&<= abs(c_n)norm(x_n-x)+abs(c_n-c)norm(x)
+= abs(c_n)d(x, x_n)+abs(c_n-c)norm(x)
 $
 となり、
 $abs(c_n)$は$abs(c)$に収束し特に有界なので、スカラー倍も連続である。
+]
+
+== バナッハ空間
+
+完備なノルム空間をバナッハ空間という。
+
+#definition([バナッハ空間])[
+ノルム空間$(X, norm(dot))$に対して、任意のコーシーベクトル列$(x_n)$が収束するときそれを_バナッハ空間_という。
+ここで$X$上のベクトル列$(x_n)$が_コーシーベクトル列_であるとは
+$
+lim_(m, n -> oo) norm(x_n-x_m) = 0
+$
+が成り立つことをいい、
+それが_収束する_ということはあるベクトル$x in X$が存在して
+$
+lim_(n -> oo) norm(x_n-x) = 0
+$
+が成り立つということである。
 ]
