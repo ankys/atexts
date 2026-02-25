@@ -2,9 +2,10 @@
 = 対角化
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": Set, braket
+#import "../deps/physics.typ": super-T-as-transpose, super-plus-as-dagger, Set, braket, Re, dmat
+#show: super-T-as-transpose
+#show: super-plus-as-dagger
 #let Span = $op("Span")$
-#let Re = $op("Re")$
 
 == 共役と内積
 
@@ -85,7 +86,7 @@ $
 
 #example[
 一般の非退化とは限らない体$K$上の共役を$overline(a) = a$で定め、$K$を$K$上の線形空間として見た時内積を単なる積$braket(u, v) = u v$で定めると$K$は内積空間になる。
-つまり、$N = 1$の時$CC^N$は二通りの内積の入れ方があることになる。
+つまり、$N = 1$の時$CC^N = CC$には二通りの内積の入れ方があることになる。
 ]
 
 == シュミットの直交化
@@ -118,7 +119,7 @@ $bold(v)_1, dots, bold(v)_N$を$K$上の内積空間$V$の直交系とする時�
 $
 c_1 bold(v)_1+dots+c_N bold(v)_N = bold(0)
 $
-が成り立ったとする時、各$i = 1, dots, N$に対して、$bold(v)_i$との内積を取って
+が成り立ったとする時、各$i = 1, dots, N$に対して$bold(v)_i$との内積を取って
 $
 braket(bold(v)_i, c_1 bold(v)_1+dots+c_N bold(v)_N)
 = c_i braket(bold(v)_i, bold(v)_i)
@@ -242,9 +243,9 @@ $
 標準内積の入った数ベクトル空間$K^N$を考える。
 $N$次正方行列$A$に対して、
 $
-braket(A^* bold(u), bold(v)) = braket(bold(u), A bold(v))
+braket(A^+ bold(u), bold(v)) = braket(bold(u), A bold(v))
 $
-が任意の$bold(u), bold(v) in K^N$に対して成り立つような$N$次正方行列$A^*$のことを$A$の_随伴行列_という。
+が任意の$bold(u), bold(v) in K^N$に対して成り立つような$N$次正方行列$A^+$のことを$A$の_随伴行列_という。
 すぐ後でわかる通り随伴行列は$A$の共役転置行列で実現される。
 $M times N$型の行列$A$の_共役転置行列_は
 $
@@ -254,7 +255,7 @@ $
 として定義される。
 
 #proposition([随伴行列])[
-$N$次正方行列$A$の随伴行列は$A^* = overline(A)^T$で与えられる。
+$N$次正方行列$A$の随伴行列は$A^+ = overline(A)^T$で与えられる。
 ]
 
 #proof[
@@ -265,7 +266,7 @@ braket(bold(u), A bold(v))
 = overline(overline(A)^T bold(u))^T bold(v)
 = braket(overline(A)^T bold(u), bold(v)).
 $
-よって、$A^* = overline(A)^T$である。
+よって、$A^+ = overline(A)^T$である。
 ]
 
 ここからいくつかの行列の種類を導入する。
@@ -273,7 +274,7 @@ $
 #definition([エルミート行列])[
 $N$次正方行列$A$が
 $
-A^* = A
+A^+ = A
 $
 を満たす時、$A$は_エルミート行列_という。
 ]
@@ -281,12 +282,12 @@ $
 #definition([ユニタリ行列])[
 $N$次正方行列$A$が
 $
-A^* A = A A^*
+A^+ A = A A^+
 $
 であってそれらが正則な対角行列である時、$A$は_直交行列_という。
 さらに
 $
-A^* A = A A^* = I_N
+A^+ A = A A^+ = I_N
 $
 を満たす時、$A$は_正規直交行列_または_ユニタリ行列_という。
 ]
@@ -301,12 +302,12 @@ TODO
 一般的な用語としては直交行列は実数上のユニタリ行列のことを指すが、本テキストでは直交基底という用語との兼ね合いでこのように定義する。
 
 直交行列と正規直交行列の違いは正規化されているかどうかだが、
-正規直交行列$A$の逆行列は計算するまでもなく直ちに随伴$A^*$であることがわかる。
+正規直交行列$A$の逆行列は直ちに随伴$A^+$であることがわかる。
 
 #definition([正規行列])[
 $N$次正方行列$A$が
 $
-A^* A = A A^*
+A^+ A = A A^+
 $
 を満たす時、$A$は_正規行列_という。
 ]
@@ -370,13 +371,13 @@ $A$が正規直交行列（ユニタリ行列）で三角化していたらこ�
 
 #proof[
 $A$は直交行列$P = mat(bold(v)_1, dots.c, bold(v)_N)$と三角行列$T = (c_(i j))^(i = 1, dots, N)_(j = 1, dots, N)$を使って$A = P T P^(-1)$と表されて、このとき$T$は対角行列であることを示す。
-ここで、$A^* A = (P^(-1))^* T^* P^* P T P^(-1)$と$A A^* = P T P^(-1) (P^(-1))^* T^* P^*$で$A$は正規なのでこの二つが等しいので、
+ここで、$A^+ A = (P^(-1))^* T^* P^* P T P^(-1)$と$A A^+ = P T P^(-1) (P^(-1))^* T^* P^*$で$A$は正規なのでこの二つが等しいので、
 $
 T^* P^* P T (P^* P)^(-1) = P^* P T (P^* P)^(-1) T^*.
 $
 ここで、$P$は直交行列より$P^* P$は対角行列
 $
-D = P^* P = mat(braket(bold(v)_1, bold(v)_1), , ; , dots.down, ; , , braket(bold(v)_N, bold(v)_N))
+D = P^* P = dmat(braket(bold(v)_1, bold(v)_1), dots.down, braket(bold(v)_N, bold(v)_N))
 $
 なので対角成分を$d_1, dots, d_N$とおくと、
 $
@@ -396,7 +397,7 @@ $
 $
 overline(c_(1 N)) c_(1 N) d_1+dots+overline(c_(N-1 N)) c_(N-1 N) d_(N-1) = 0
 $
-で、$K$が非退化である条件が使える状況になっていて、$c_(1 N) = dots = c_(N-1 N)$がわかる。
+で、$K$が非退化である条件が使える状況になっていて、$c_(1 N) = dots = c_(N-1 N) = 0$がわかる。
 これを繰り返していけば$T$は対角行列にならざるを得ないことがわかり、定理の証明が完成する。
 ]
 
@@ -420,7 +421,7 @@ braket(bold(v), A bold(v))
 = braket(bold(v), c bold(v))
 = c braket(bold(v), bold(v)).
 $
-また、$A$はエルミート行列より随伴行列$A^*$は$A$自身なので、
+また、$A$はエルミート行列より随伴行列$A^+$は$A$自身なので、
 $
 braket(bold(v), A bold(v))
 = braket(A bold(v), bold(v))
