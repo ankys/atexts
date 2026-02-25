@@ -165,7 +165,7 @@ $U$を$K$上の線形空間として、$V, W$を$U$の部分空間とする。
 
 - 共通部分$V inter W = Set(bold(v) in U; bold(v) in V, bold(v) in W)$は$U$の線形部分空間であり、$V$と$W$の_交空間_と呼ばれる。
 - $V+W = Set(bold(v)+bold(w); bold(v) in V, bold(w) in W)$は$U$の線形部分空間であり、$V$と$W$の_和空間_と呼ばれる。
-- 交空間が$V inter W = O_U$を満たす時、和空間$V+W$は$V xor W$と書かれ、$V$と$W$の_直和空間_と呼ばれる。
+- 交空間が$V inter W = O_U$を満たす時、和空間$V+W$は$V plus.o W$と書かれ、$V$と$W$の_直和空間_と呼ばれる。
 ]
 
 #remark[
@@ -177,7 +177,7 @@ $U$を$K$上の線形空間として、$V, W$を$U$の部分空間とする。
 
 #definition([線形補空間])[
 $V$を$K$上の線形空間として、$W$を$V$の線形部分空間とする。
-ここで$V$の線形部分空間$U$であって$W xor U = V$、つまり$W inter U = O_V$かつ$W+U = V$を満たすものを$W$の_線形補空間_という。
+ここで$V$の線形部分空間$U$であって$W plus.o U = V$、つまり$W inter U = O_V$かつ$W+U = V$を満たすものを$W$の_線形補空間_という。
 ]
 
 == 次元と基底
@@ -371,7 +371,7 @@ $
 が成り立つ。
 特に
 $
-dim (V xor W) = dim V+dim W
+dim (V plus.o W) = dim V+dim W
 $
 である。
 ]
@@ -403,11 +403,11 @@ $bold(v)_1, dots, bold(v)_N$と$bold(w)_1, dots, bold(w)_M$の線形独立性か
 
 一般の場合を示す。
 $V inter W$は有限次元線形空間$W$の線形部分空間なので、@t_complement より、線形補空間が存在しそれぞれ$W'$とおく。
-ここで$V+W = V xor W'$を示す。
+ここで$V+W = V plus.o W'$を示す。
 まず$v in V inter W'$とすると特に$v in V inter W$なので$v in (V inter W) inter W' = O_U$である。
 次に$v+w in V+W$とすると$w = u+w'$, $u in V inter W$,
 $w' in W'$とでき、$v+w = (v+u)+w' in V+W'$である。
-以上より$V+W = V xor W'$かつ$W = (V inter W) xor W'$なので、先ほど示したことから
+以上より$V+W = V plus.o W'$かつ$W = (V inter W) plus.o W'$なので、先ほど示したことから
 $
 dim (V+W) = dim V+dim W',
 quad dim W = dim (V inter W)+dim W'.
@@ -570,7 +570,7 @@ F(bold(v)-c_1 bold(u)_1-dots-c_N bold(u)_N)
 = bold(0)_W.
 $
 よって、$bold(v)-c_1 bold(u)_1-dots-c_N bold(u)_N in Ker F$である。
-以上より$U xor Ker F = V$なので、
+以上より$U plus.o Ker F = V$なので、
 $
 dim V = dim U+dim Ker F = rank F+dim Ker F
 $

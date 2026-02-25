@@ -101,7 +101,7 @@ $
 
 #theorem([対角化の十分条件])[
 $A$を$K$上の$N$次元正方行列として、$c_1, dots, c_L in K$を相異なる固有値とする。
-ここで固有空間が$W(c_1) xor dots xor W(c_L) = K^N$、つまり$dim W(c_1)+dots+dim W(c_L) = N$を満たすとき、$A$は対角化可能である。
+ここで固有空間が$W(c_1) plus.o dots plus.o W(c_L) = K^N$、つまり$dim W(c_1)+dots+dim W(c_L) = N$を満たすとき、$A$は対角化可能である。
 
 特に$K$上の$N$次元正方行列$A$が相異なる$N$個の固有値を持つならば、$A$は対角化可能である。
 ]
@@ -118,7 +118,7 @@ $ <e_tri>
 まず、三角化できるならば固有多項式が因数分解されることを紹介する。
 
 #proposition[
-$N$次正方行列$A$が@e_tri と三角化されたとすると固有多項式は
+$N$次正方行列$A$が@e_tri のように三角化されたとすると固有多項式は
 $
 det(x I-A) = (x-c_1) dots (x-c_N)
 $ <e_eigenfactor>
@@ -129,7 +129,7 @@ $ <e_eigenfactor>
 $x I-A$を書き直すと
 $
 x I-A
-= P mat(x-c_1, dots.c, *; , dots.down, dots.v; , , x-c_N) P^(-1)
+= P mat(x-c_1, dots.c, *; , dots.down, dots.v; , , x-c_N) P^(-1).
 $
 この行列式を取ると、
 $
@@ -143,7 +143,7 @@ $
 逆に固有多項式が因数分解されるならば三角化できる。
 
 #theorem([一般の三角化])[
-$N$次正方行列$A$に対して、固有多項式が@e_eigenfactor と因数分解されたとすると、$A$は@e_tri と三角化される。
+$N$次正方行列$A$に対して、固有多項式が@e_eigenfactor のように因数分解されたとすると、$A$は@e_tri のように三角化される。
 ] <t_tri>
 
 #proof[
