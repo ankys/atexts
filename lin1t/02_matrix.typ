@@ -3,7 +3,7 @@
 <h_matrix>
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": super-T-as-transpose
+#import "../deps/physics.typ": super-T-as-transpose, dmat
 #show: super-T-as-transpose
 
 == 体
@@ -64,13 +64,13 @@ mat(cos theta, -sin theta; sin theta, cos theta) quad (theta in RR)
 $
 は実数上の$2 times 2$型の行列である。
 
-本テキストでは$0$である成分はしばしば省略され、値を記入したり文字を割り当てるほどではない成分に関しては$\*$で表したりする。
+本テキストでは$0$である成分はしばしば省略され、値を記入したり文字を割り当てるほどではない成分に関しては$*$で表したりする。
 つまり、
 $
 mat(1, 0, 0, 0; 0, 2, 0, 0; 0, 0, 3, 0; 0, 0, 0, 4;)
-= mat(1, , , ; , 2, , ; , , 3, ; , , , 4;),
+= dmat(1, 2, 3, 4),
 quad mat(1, 2, 0, 4, 5; 0, 0, 1, 9, 0; 0, 0, 0, 1, 0;)
-= mat(1, \*, 0, \*, \*; , , 1, \*, 0; , , , 1, 0;)
+= mat(1, *, 0, *, *; , , 1, *, 0; , , , 1, 0;)
 $
 などである。
 
@@ -100,19 +100,19 @@ $M = N$のときの$M times N$型の行列を$N$次_正方行列_という。
 $N$次正方行列の成分のうち、第$(i, i)$成分($i = 1, dots, N$)であるものを_対角成分_といい、それ以外を_非対角成分_という。
 非対角成分が全て$0$である正方行列
 $
-mat(\*, , ; , dots.down, ; , , \*;)
+dmat(*, dots.down, *)
 $
 は_対角行列_と呼ばれ、応用上の扱いが便利である。
 対角行列の中でも対角成分が全て$1$である正方行列
 $
-mat(1, , ; , dots.down, ; , , 1;)
+dmat(1, dots.down, 1)
 $
 は_単位行列_と呼ばれ特別な扱いを受ける。
 $N$次の単位行列は$I_N$あるいは$E_N$または単に$I$や$E$と表される。
 また、正方行列のうち対角成分より左下または右上の成分がすべて$0$である行列
 $
-mat(\*, dots.c, \*; , dots.down, dots.v; , , \*;),
-quad mat(\*, , ; dots.v, dots.down, ; \*, dots.c, \*;)
+mat(*, dots.c, *; , dots.down, dots.v; , , *;),
+quad mat(*, , ; dots.v, dots.down, ; *, dots.c, *;)
 $
 をまとめて_三角行列_という。
 より詳しくは前者を_右上三角行列_、後者を_左下三角行列_という。
@@ -218,11 +218,11 @@ $N$次正方行列$A$に対しては自分自身との積$A A$が定義できこ
 #example[
 対角行列
 $
-A = mat(a_1, , ; , dots.down, ; , , a_N;)
+A = dmat(a_1, dots.down, a_N)
 $
 の$n$乗は
 $
-A^n = mat(a_1^n, , ; , dots.down, ; , , a_N^n;)
+A^n = dmat(a_1^n, dots.down, a_N^n)
 $
 である（省略されている部分は$0$であることに注意）。
 ]
@@ -321,7 +321,7 @@ $
 は逆行列を持たない。
 なぜなら
 $
-mat(0, 1; 0, 0)mat(\*, \*; \*, \*) = mat(\*, \*; 0, 0)
+mat(0, 1; 0, 0)mat(*, *; *, *) = mat(*, *; 0, 0)
 $
 なので対角成分である第$(2, 2)$成分が$1$にならないためである。
 ]
@@ -329,11 +329,11 @@ $
 #example[
 対角成分$a_i$がいずれも$0$でない対角行列
 $
-A = mat(a_1, , ; , dots.down, ; , , a_N;)
+A = dmat(a_1, dots.down, a_N)
 $
 の逆行列は
 $
-A^(-1) = mat(a_1^(-1), , ; , dots.down, ; , , a_N^(-1);)
+A^(-1) = dmat(a_1^(-1), dots.down, a_N^(-1))
 $
 である。
 ]

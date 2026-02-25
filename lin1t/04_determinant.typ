@@ -2,7 +2,7 @@
 = 行列式
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": super-T-as-transpose, Set, sgn
+#import "../deps/physics.typ": super-T-as-transpose, sgn, mdet
 #show: super-T-as-transpose
 
 == 行列式の導入
@@ -12,7 +12,7 @@
 実は$2$次正方行列の行列式はすでに登場していて、逆行列の公式の係数の分母がそれである。
 つまり$2$次正方行列$A = mat(a, b; c, d)$の行列式の値は
 $
-det A = det mat(a, b; c, d) = mat(delim: "|", a, b; c, d) = a d-b c
+det A = det mat(a, b; c, d) = mdet(a, b; c, d) = a d-b c
 $
 である。
 このように行列式を表すためには$det$を使ったり、行列を表すのに丸括弧を使う代わりに縦棒を使ったりして記述する。
@@ -40,7 +40,7 @@ $
 == 置換と符号
 
 $N = 1, 2, 3, dots$として、$1, dots, N$の並べ替えを$N$次の_置換_という。
-より詳しくは$N$次の置換$s$は$N$個の元の集合$Set(1, dots, N)$から$Set(1, dots, N)$への写像であって逆写像$s^(-1)$を持つもの、
+より詳しくは$N$次の置換$s$は$N$個の元の集合${ 1, dots, N }$から${ 1, dots, N }$への写像であって逆写像$s^(-1)$を持つもの、
 つまり各$i = 1, dots, N$に対して$s(i) = 1, dots, N$がただ一つ対応し$j = 1, dots, N$に対して$s(i) = j$となる$i$がただ一つ対応するので$i = s^(-1) (j)$とする。
 $N$次の置換は$1, dots, N$の並べ替えなので$N!$個あることに注意して、
 $N$次の置換全体の集合を$S_N$とおく。
@@ -75,7 +75,7 @@ $s$を$N$次の置換とする時、$s$は$N-1$個以下の互換の合成とし
 
 #proof[
 $N$に関する数学的帰納法で証明する。
-$N = 1$の時は$S_1 = Set(id)$なので成立する。
+$N = 1$の時は$S_1 = { id }$なので成立する。
 $N$で成立する時、$N+1$次の置換$s$について考える。
 $s(N+1) = N+1$の時は$s$を$1, dots, N$に制限すると$N$次の置換になっているので$N-1$個以下の互換の合成として表される。
 $s(N+1) eq.not N+1$の時は$i = s(N+1)$とすると$i = 1, dots, N$であり、$s$に$i$と$N+1$の互換をすると$N+1$を$N+1$に移すようになるので$N-1$個以下の互換の合成として表され、従って$s$は$N$個以下の互換の合成として表される。
@@ -92,28 +92,28 @@ $s(N+1) eq.not N+1$の時は$i = s(N+1)$とすると$i = 1, dots, N$であり、
 #example[
 - $N = 1$の時は
 	$
-	S_1 = S_1 (0) = Set(mat(1)).
+	S_1 = S_1 (0) = { mat(1) }.
 	$
 - $N = 2$の時は
 	$
-	S_2 = Set(mat(1, 2), mat(2, 1)),
+	S_2 = { mat(1, 2), mat(2, 1) },
 	$
 	$
-	S_2 (0) = Set(mat(1, 2)),
-	quad S_2 (1) = Set(mat(2, 1)).
+	S_2 (0) = { mat(1, 2) },
+	quad S_2 (1) = { mat(2, 1) }.
 	$
 - $N = 3$の時は
 	$
-	S_3 = Set(mat(1, 2, 3), mat(2, 1, 3), mat(1, 3, 2), mat(3, 2, 1), mat(2, 3, 1), mat(3, 1, 2)),
+	S_3 = { mat(1, 2, 3), mat(2, 1, 3), mat(1, 3, 2), mat(3, 2, 1), mat(2, 3, 1), mat(3, 1, 2) },
 	$
 	$
-	S_3 (0) = Set(mat(1, 2, 3)),
-	quad S_3 (1) = Set(mat(2, 1, 3), mat(1, 3, 2), mat(3, 2, 1)),
-	quad S_3 (2) = Set(mat(2, 3, 1), mat(3, 1, 2)).
+	S_3 (0) = { mat(1, 2, 3) },
+	quad S_3 (1) = { mat(2, 1, 3), mat(1, 3, 2), mat(3, 2, 1) },
+	quad S_3 (2) = { mat(2, 3, 1), mat(3, 1, 2) }.
 	$
 ]
 
-すぐわかることとして$S_N (0) = Set(id_N)$である。
+すぐわかることとして$S_N (0) = { id_N }$である。
 
 以降では偶置換に対して正の符号を奇置換に対して負の符号を割り当てたいが、今の互換の個数の最小値に基づく定義では扱いづらいので別の方法でいったん符号を定義する。
 
@@ -224,10 +224,10 @@ $
 $K$上の$N$次正方行列$A = (a_(i j))$の_行列式_を以下で定義する。
 $
 det A = abs(A)
-= mat(delim: "|", a_(1 1), dots.c, a_(1 N); dots.v, dots.down, dots.v; a_(N 1), dots.c, a_(N N);)
+= mdet(a_(1 1), dots.c, a_(1 N); dots.v, dots.down, dots.v; a_(N 1), dots.c, a_(N N);)
 = sum_(s in S_N) sgn(s) a_(1 s(1)) dots a_(N s(N)).
 $
-正確には\$sgn(s)\$は実数の$plus.minus 1$として定義されたがこれを$K$の$plus.minus 1$と同一視して、
+正確には$sgn(s)$は実数の$plus.minus 1$として定義されたがこれを$K$の$plus.minus 1$と同一視して、
 行列式は$K$の元つまりスカラーとして定義する。
 ]
 
@@ -236,15 +236,15 @@ $N$が小さいうちはこの定義によって直接行列式を定義する�
 #proposition([サラスの公式])[
 - $1$次正方行列（スカラー）の行列式は以下になる。
 	$
-	mat(delim: "|", a) = +a.
+	mdet(a) = +a.
 	$
 - $2$次正方行列の行列式は以下になる。
 	$
-	mat(delim: "|", a, b; c, d) = +a d-b c.
+	mdet(a, b; c, d) = +a d-b c.
 	$
 - $3$次正方行列の行列式は以下になる。
 	$
-	mat(delim: "|", a, b, c; d, e, f; g, h, i) = +a e i+b f g+c d h-c e g-b d i-a f h.
+	mdet(a, b, c; d, e, f; g, h, i) = +a e i+b f g+c d h-c e g-b d i-a f h.
 	$
 ]
 
@@ -272,26 +272,27 @@ det A^T
 = sum_(s in S_N) sgn(s) a_(1 s^(-1) (1)) dots a_(N s^(-1) (N)) \
 &= sum_(s in S_N) sgn(s^(-1)) a_(1 s(1)) dots a_(N s(N))
 = sum_(s in S_N) sgn(s) a_(1 s(1)) dots a_(N s(N))
-= det A.
+= det A
 $
+である。
 ]
 
 #proposition[
 第$1$行または第$1$列が第$(1, 1)$成分を残して他がすべて零の行列の行列式について、
 $
-mat(delim: "|",
+mdet(
 	a_(1 1), 0, dots.c, 0;
 	a_(2 1), a_(2 2), dots.c, a_(2 N);
 	dots.v, dots.v, dots.down, dots.v;
 	a_(N 1), a_(N 2), dots.c, a_(N N);
 )
-= mat(delim: "|",
+= mdet(
 	a_(1 1), a_(1 2), dots.c, a_(1 N);
 	0, a_(2 2), dots.c, a_(2 N);
 	dots.v, dots.v, dots.down, dots.v;
 	0, a_(N 2), dots.c, a_(N N);
 )
-= a_(1 1) mat(delim: "|", a_(2 2), dots.c, a_(2 N); dots.v, dots.down, dots.v; a_(N 2), dots.c, a_(N N);)
+= a_(1 1) mdet(a_(2 2), dots.c, a_(2 N); dots.v, dots.down, dots.v; a_(N 2), dots.c, a_(N N);)
 $
 が成り立つ。
 ]
@@ -307,8 +308,8 @@ $
 #proposition([三角行列の行列式])[
 三角行列の行列式は対角成分を掛け合わせることで得られる。 つまり
 $
-mat(delim: "|", a_(1 1), dots.c, a_(1 N); , dots.down, dots.v; , , a_(N N);)
-= mat(delim: "|", a_(1 1), , ; dots.v, dots.down, ; a_(N 1), dots.c, a_(N N);)
+mdet(a_(1 1), dots.c, a_(1 N); , dots.down, dots.v; , , a_(N N);)
+= mdet(a_(1 1), , ; dots.v, dots.down, ; a_(N 1), dots.c, a_(N N);)
 = a_(1 1) dots a_(N N)
 $
 が成り立つ。
@@ -324,14 +325,14 @@ $
 #proposition([多重線形性])[
 $N$次の横ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)'_1, dots, bold(a)'_N$とスカラー$c_1, dots, c_N, c'_1, dots, c'_N$に対して、
 $
-mat(delim: "|", dots.v; c_i bold(a)_i+c'_i bold(a)'_i; dots.v)
-= c_i mat(delim: "|", dots.v; bold(a)_i; dots.v)+c'_i mat(delim: "|", dots.v; bold(a)'_i; dots.v)
+mdet(dots.v; c_i bold(a)_i+c'_i bold(a)'_i; dots.v)
+= c_i mdet(dots.v; bold(a)_i; dots.v)+c'_i mdet(dots.v; bold(a)'_i; dots.v)
 $
 が成り立つ。
 また、$N$次の縦ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)'_1, dots, bold(a)'_N$とスカラー$c_1, dots, c_N, c'_1, dots, c'_N$に対して、
 $
-mat(delim: "|", dots.c, c_i bold(a)_i+c'_i bold(a)'_i, dots.c)
-= c_i mat(delim: "|", dots.c, bold(a)_i, dots.c)+c'_i mat(delim: "|", dots.c, bold(a)'_i, dots.c)
+mdet(dots.c, c_i bold(a)_i+c'_i bold(a)'_i, dots.c)
+= c_i mdet(dots.c, bold(a)_i, dots.c)+c'_i mdet(dots.c, bold(a)'_i, dots.c)
 $
 が成り立つ。
 ]
@@ -343,18 +344,18 @@ $
 #proposition([交代性])[
 $N$次の横ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)$と$i eq.not j$を満たす$i, j = 1, dots, N$に対して
 $
-mat(delim: "|", dots.v; bold(a)_j; dots.v; bold(a)_i; dots.v)
-= -mat(delim: "|", dots.v; bold(a)_i; dots.v; bold(a)_j; dots.v),
+mdet(dots.v; bold(a)_j; dots.v; bold(a)_i; dots.v)
+= -mdet(dots.v; bold(a)_i; dots.v; bold(a)_j; dots.v),
 quad
-mat(delim: "|", dots.v; bold(a); dots.v; bold(a); dots.v) = 0
+mdet(dots.v; bold(a); dots.v; bold(a); dots.v) = 0
 $
 が成り立つ。
 また、$N$次の縦ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)$と$i eq.not j$を満たす$i, j = 1, dots, N$に対して
 $
-mat(delim: "|", dots.c, bold(a)_j, dots.c, bold(a)_i, dots.c)
-= -mat(delim: "|", dots.c, bold(a)_i, dots.c, bold(a)_j, dots.c),
+mdet(dots.c, bold(a)_j, dots.c, bold(a)_i, dots.c)
+= -mdet(dots.c, bold(a)_i, dots.c, bold(a)_j, dots.c),
 quad
-mat(delim: "|", dots.c, bold(a), dots.c, bold(a), dots.c) = 0
+mdet(dots.c, bold(a), dots.c, bold(a), dots.c) = 0
 $
 が成り立つ。
 ]
@@ -381,13 +382,13 @@ $
 
 二つ目を示すために第$i$行と第$j$行がともに$bold(a)_i+bold(a)_j$である行列の行列式を考えると多重線形性と先ほど示したことより、
 $
-mat(delim: "|", dots.v; bold(a)_i+bold(a)_j; dots.v; bold(a)_i+bold(a)_j; dots.v)
+mdet(dots.v; bold(a)_i+bold(a)_j; dots.v; bold(a)_i+bold(a)_j; dots.v)
 =
-mat(delim: "|", dots.v; bold(a)_i; dots.v; bold(a)_i; dots.v)
-+mat(delim: "|", dots.v; bold(a)_i; dots.v; bold(a)_j; dots.v)
-+mat(delim: "|", dots.v; bold(a)_j; dots.v; bold(a)_i; dots.v)
-+mat(delim: "|", dots.v; bold(a)_j; dots.v; bold(a)_j; dots.v)
-= mat(delim: "|", dots.v; bold(a)_i; dots.v; bold(a)_j; dots.v)+mat(delim: "|", dots.v; bold(a)_j; dots.v; bold(a)_i; dots.v)
+mdet(dots.v; bold(a)_i; dots.v; bold(a)_i; dots.v)
++mdet(dots.v; bold(a)_i; dots.v; bold(a)_j; dots.v)
++mdet(dots.v; bold(a)_j; dots.v; bold(a)_i; dots.v)
++mdet(dots.v; bold(a)_j; dots.v; bold(a)_j; dots.v)
+= mdet(dots.v; bold(a)_i; dots.v; bold(a)_j; dots.v)+mdet(dots.v; bold(a)_j; dots.v; bold(a)_i; dots.v)
 $
 でこれが$0$に等しいので、証明すべき等式が得られる。
 ]
@@ -411,17 +412,17 @@ $
 よって多重線形性より、
 $
 det(A B) =
-sum_(j_1 = 1)^N dots sum_(j_N = 1)^N a_(1 j_1) dots a_(N j_N) mat(delim: "|", bold(b)_(j_1); dots.v; bold(b)_(j_N))
+sum_(j_1 = 1)^N dots sum_(j_N = 1)^N a_(1 j_1) dots a_(N j_N) mdet(bold(b)_(j_1); dots.v; bold(b)_(j_N))
 $
 交代性より同じ行がある場合の行列式は$0$なので、
 $
 det(A B) =
-sum_(s in S_N) a_(1 s(1)) dots a_(N s(N)) mat(delim: "|", bold(b)_(s(1)); dots.v; bold(b)_(s(N)))
+sum_(s in S_N) a_(1 s(1)) dots a_(N s(N)) mdet(bold(b)_(s(1)); dots.v; bold(b)_(s(N)))
 $
 行を並べ替えて、
 $
 det(A B) =
-sum_(s in S_N) sgn(s) a_(1 s(1)) dots a_(N s(N)) mat(delim: "|", bold(b)_1; dots.v; bold(b)_N)
+sum_(s in S_N) sgn(s) a_(1 s(1)) dots a_(N s(N)) mdet(bold(b)_1; dots.v; bold(b)_N)
 $
 よって$det (A B) = det A det B$である。
 ]
@@ -431,11 +432,12 @@ $
 $N$次正方行列$A$と$i, j = 1, dots, N$に対して、$A$の第$i$行と第$j$列を取り除いて得られる$N-1$次正方行列の行列式を$(-1)^(i+j)$倍した数を$A$の$(i, j)$_余因子_という。
 つまり、$A$を
 $
-A = mat(A_(U L), \*, A_(U R); \*, a_(i j), \*; A_(L L), \*, A_(L R);)
+A = mat(A_(U L), *, A_(U R); *, a_(i j), *; A_(L L), *, A_(L R);)
 $
 と区分けした時に
 $
-tilde(A)_(i j) = (-1)^(i+j) mat(delim: "|", A_(U L), A_(U R); A_(L L), A_(L R);) $
+tilde(A)_(i j) = (-1)^(i+j) mdet(A_(U L), A_(U R); A_(L L), A_(L R);)
+$
 を定義する。
 
 元の行列$A$の行列式は余因子を使って次のように表現される。
@@ -581,7 +583,7 @@ $
 #theorem([ヴァンデルモンドの行列式])[
 $a_1, dots, a_N in K$に対して、
 $
-mat(delim: "|",
+mdet(
 	1, a_1, a_1^2, dots.c, a_1^(N-1);
 	1, a_2, a_2^2, dots.c, a_2^(N-1);
 	dots.v, dots.v, dots.down, dots.v;
@@ -597,24 +599,24 @@ $N$についての数学的帰納法で示す。
 $N = 1$の時は両辺ともに$1$である。
 $N-1$次で成立する時、第$(1, 1)$成分で第$1$行を掃き出すことで、
 $
-mat(delim: "|",
+mdet(
 	1, a_1, a_1^2, dots.c, a_1^(N-1);
 	1, a_2, a_2^2, dots.c, a_2^(N-1);
 	dots.v, dots.v, dots.v, dots.down, dots.v;
 	1, a_N, a_N^2, dots.c, a_N^(N-1);
 )
-&= mat(delim: "|",
+&= mdet(
 	1, a_1, a_1^2, dots.c, a_1^(N-1);
 	0, a_2-a_1, a_2^2-a_1^2, dots.c, a_2^(N-1)-a_1^(N-1);
 	dots.v, dots.v, dots.v, dots.down, dots.v;
 	0, a_N-a_1, a_N^2-a_1^2, dots.c, a_N^(N-1)-a_1^(N-1);
 )
-= mat(delim: "|",
+= mdet(
 	a_2-a_1, a_2^2-a_1^2, dots.c, a_2^(N-1)-a_1^(N-1);
 	dots.v, dots.v, dots.down, dots.v;
 	a_N-a_1, a_N^2-a_1^2, dots.c, a_N^(N-1)-a_1^(N-1);
 ) \
-&= (a_2-a_1)dots(a_N-a_1) mat(delim: "|",
+&= (a_2-a_1)dots(a_N-a_1) mdet(
 	1, a_2+a_1, dots.c, a_2^(N-2)+a_2^(N-3)a_1+dots+a_1^(N-2);
 	dots.v, dots.v, dots.down, dots.v;
 	1, a_N+a_1, dots.c, a_N^(N-2)+a_N^(N-3)a_1+dots+a_1^(N-2);
@@ -622,13 +624,13 @@ mat(delim: "|",
 $
 ここで最右辺の行列式は$N-1$次で、第$N-1$列から第$N-2$列の$a_1$倍を引き、第$N-2$列から第$N-3$列の$a_1$倍を引き、ということを続けると、
 $
-mat(delim: "|",
+mdet(
 	1, a_1, a_1^2, dots.c, a_1^(N-1);
 	1, a_2, a_2^2, dots.c, a_2^(N-1);
 	dots.v, dots.v, dots.v, dots.down, dots.v;
 	1, a_N, a_N^2, dots.c, a_N^(N-1);
 )
-= (a_2-a_1)dots(a_N-a_1) mat(delim: "|",
+= (a_2-a_1)dots(a_N-a_1) mdet(
 	1, a_2, dots.c, a_2^(N-2);
 	dots.v, dots.v, dots.down, dots.v;
 	1, a_N, dots.c, a_N^(N-2);
@@ -636,7 +638,7 @@ mat(delim: "|",
 $
 よって、数学的帰納法の仮定より、
 $
-mat(delim: "|",
+mdet(
 	1, a_1, a_1^2, dots.c, a_1^(N-1);
 	1, a_2, a_2^2, dots.c, a_2^(N-1);
 	dots.v, dots.v, dots.v, dots.down, dots.v;
@@ -652,7 +654,7 @@ $
 $a, b, c in K$に対して$N$次正方行列の行列式
 $
 D_N
-= mat(delim: "|",
+= mdet(
 	a, b, 0, dots.c, 0;
 	c, a, b, dots.c, 0;
 	0, c, a, dots.c, 0;
@@ -684,12 +686,12 @@ $D_1$, $D_2$はサラスの公式より成立する。
 第$1$行に関する余因子展開をして、
 $
 D_N
-= a mat(delim: "|",
+= a mdet(
 	a, b, dots.c, 0;
 	c, a, dots.c, 0;
 	dots.v, dots.v, dots.down, dots.v;
 	0, 0, dots.c, a;
-)-b mat(delim: "|",
+)-b mdet(
 	c, b, dots.c, 0;
 	0, a, dots.c, 0;
 	dots.v, dots.v, dots.down, dots.v;
@@ -699,12 +701,12 @@ $
 さらに後ろの行列式は第$1$列に関する余因子展開をして、
 $
 D_N
-= a mat(delim: "|",
+= a mdet(
 	a, b, dots.c, 0;
 	c, a, dots.c, 0;
 	dots.v, dots.v, dots.down, dots.v;
 	0, 0, dots.c, a;
-)-b c mat(delim: "|",
+)-b c mdet(
 	a, dots.c, 0;
 	dots.v, dots.down, dots.v;
 	0, dots.c, a;
@@ -729,7 +731,7 @@ $
 #proposition[
 $x, a_1, dots, a_N in K$に対して、
 $
-mat(delim: "|",
+mdet(
 	x, -1, 0, dots.c, 0, 0;
 	0, x, -1, dots.c, 0, 0;
 	0, 0, x, dots.c, 0, 0;
@@ -747,7 +749,7 @@ $N$についての数学的帰納法で示す。 $N = 1$の時は成立する。
 $N-1$次で成立する時、$N$次を考える。
 第$1$列についての余因子展開をすると、
 $
-mat(delim: "|",
+mdet(
 	x, -1, 0, dots.c, 0, 0;
 	0, x, -1, dots.c, 0, 0;
 	0, 0, x, dots.c, 0, 0;
@@ -755,13 +757,13 @@ mat(delim: "|",
 	0, 0, 0, dots.c, x, -1;
 	a_1, a_2, a_3, dots.c, a_(N-1), x+a_N;
 )
-&= x mat(delim: "|",
+&= x mdet(
 	x, -1, dots.c, 0, 0;
 	0, x, dots.c, 0, 0;
 	dots.v, dots.v, dots.down, dots.v, dots.v;
 	0, 0, dots.c, x, -1;
 	a_2, a_3, dots.c, a_(N-1), x+a_N;
-)-(-1)^(N+1) a_1 mat(delim: "|",
+)-(-1)^(N+1) a_1 mdet(
 	-1, 0, dots.c, 0, 0;
 	x, -1, dots.c, 0, 0;
 	0, x, dots.c, 0, 0;
@@ -782,8 +784,8 @@ $
 そこでスカラー積の要領で積の行列式$det A^T B$を考える。
 この行列式は$M = N$の時には$det A det B$に一致し、$M < N$の時には零となるので、問題になるのは$M > N$の場合である。
 
-$N$次の置換が$Set(1, dots, N)$から$Set(1, dots, N)$への可逆写像だったことを拡張して、
-$k$を$Set(1, dots, N)$から$Set(1, dots, M)$への単射、つまり任意の$i eq.not j$に対して$k(i) eq.not k(j)$を満たす写像としてそれら全体の集合を$S_(N, M)$と表すことにする。
+$N$次の置換が${ 1, dots, N }$から${ 1, dots, N }$への可逆写像だったことを拡張して、
+$k$を${ 1, dots, N }$から${ 1, dots, M }$への単射、つまり任意の$i eq.not j$に対して$k(i) eq.not k(j)$を満たす写像としてそれら全体の集合を$S_(N, M)$と表すことにする。
 さらに$k in S_(N, M)$の中で単調増加になっているもの全体を$macron(S)_(N, M)$と書く。
 すなわち$t in macron(S)_(N, M)$は
 $
@@ -824,14 +826,14 @@ $
 よって多重線形性と交代性より、
 $
 det(A^T B)
-&= sum_(i_1 = 1)^M dots sum_(i_N = 1)^M a_(i_1 1) dots a_(i_N N) mat(delim: "|", bold(b)_(i_1); dots.v; bold(b)_(i_N))
-= sum_(k in S_(N, M)) a_(k(1) 1) dots a_(k(N) N) mat(delim: "|", bold(b)_(k(1)); dots.v; bold(b)_(k(N))) \
-&= sum_(t in macron(S)_(N, M)) sum_(s in S_N) a_(t(s(1)) 1) dots a_(t(s(N)) N) mat(delim: "|", bold(b)_(t(s(1))); dots.v; bold(b)_(t(s(N)))).
+&= sum_(i_1 = 1)^M dots sum_(i_N = 1)^M a_(i_1 1) dots a_(i_N N) mdet(bold(b)_(i_1); dots.v; bold(b)_(i_N))
+= sum_(k in S_(N, M)) a_(k(1) 1) dots a_(k(N) N) mdet(bold(b)_(k(1)); dots.v; bold(b)_(k(N))) \
+&= sum_(t in macron(S)_(N, M)) sum_(s in S_N) a_(t(s(1)) 1) dots a_(t(s(N)) N) mdet(bold(b)_(t(s(1))); dots.v; bold(b)_(t(s(N)))).
 $
 行を並べ替えて、
 $
 det(A^T B) =
-sum_(t in macron(S)_(N, M)) sum_(s in S_N) a_(t(s(1)) 1) dots a_(t(s(N)) N) sgn(s) mat(delim: "|", bold(b)_(t(1)); dots.v; bold(b)_(t(N))).
+sum_(t in macron(S)_(N, M)) sum_(s in S_N) a_(t(s(1)) 1) dots a_(t(s(N)) N) sgn(s) mdet(bold(b)_(t(1)); dots.v; bold(b)_(t(N))).
 $
 一番後ろの行列式は$det B_t$である。
 ここでスカラーの積を並べ替えて
@@ -857,7 +859,7 @@ det(A^T B)
 $
 $
 sum_(t in macron(S)_(2, N)) det A_t det B_t
-= sum_(i < j) mat(delim: "|", a_i, b_i; a_j, b_j) mat(delim: "|", c_i, d_i; c_j, d_j)
+= sum_(i < j) mdet(a_i, b_i; a_j, b_j) mdet(c_i, d_i; c_j, d_j)
 = sum_(i < j) (a_i b_j-a_j b_i)(c_i d_j-c_j d_i)
 $
 なので、
