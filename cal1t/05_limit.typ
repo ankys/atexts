@@ -2,6 +2,7 @@
 = 極限
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": Set
 
 == $epsilon$論法
 
@@ -442,8 +443,8 @@ $(n)_(n = 0)^oo$は単調増加であり、$(1/n)_(n = 1)^oo$は単調減少で�
 #definition([数列の有界性])[
 $(a_n)_(n in NN)$を実数列とする。
 
-- 集合${ a_n mid(|) n in NN }$が上に有界の時、すなわちある実数$m$が存在して任意の$n in NN$に対して$a_n <= m$の時、$(a_n)$は上に有界という。
-- 集合${ a_n mid(|) n in NN }$が下に有界の時、すなわちある実数$m$が存在して任意の$n in NN$に対して$a_n >= m$の時、$(a_n)$は下に有界という。
+- 集合$Set(a_n; n in NN)$が上に有界の時、すなわちある実数$m$が存在して任意の$n in NN$に対して$a_n <= m$の時、$(a_n)$は上に有界という。
+- 集合$Set(a_n; n in NN)$が下に有界の時、すなわちある実数$m$が存在して任意の$n in NN$に対して$a_n >= m$の時、$(a_n)$は下に有界という。
 - 上に有界かつ下に有界の時、$(a_n)$は有界であるという。
 ]
 
@@ -466,7 +467,7 @@ $(a_n)$を実数列とする。
 
 #proof[
 $(a_n)$が単調増加かつ上に有界の場合のみ証明する。
-まず、$(a_n)$が上に有界であることから集合${ a_n mid(|) n in NN }$には上限$sup_n a_n in RR$が存在する。
+まず、$(a_n)$が上に有界であることから集合$Set(a_n; n in NN)$には上限$sup_n a_n in RR$が存在する。
 $epsilon > 0$を固定すると、上限の同値な条件から$a_N > sup_n a_n-epsilon$を満たす$N in NN$が存在する。
 ここで、$(a_n)$が単調増加であることから$N$以上の$n in NN$に対して$a_n >= a_N > sup_n a_n-epsilon$、また$a_n <= sup_n a_n$であるから、$abs(a_n-sup_n a_n) < epsilon$である。
 したがって、$a_n -> sup_n a_n$が得られ、特に$(a_n)$は収束する。
@@ -616,23 +617,23 @@ $(a_n)_(n in NN)$を実数列とする。
 
 - 上限・下限を使って定義される次の数を$(a_n)$の$n -> oo$での_上極限_という。
   $
-  limsup_(n -> oo) a_n = inf_(k in NN) sup { a_n mid(|) n in NN, n >= k }.
+  limsup_(n -> oo) a_n = inf_(k in NN) sup Set(a_n; n in NN, n >= k).
   $
 - 上限・下限を使って定義される次の数を$(a_n)$の$n -> oo$での_下極限_という。
   $
-  liminf_(n -> oo) a_n = sup_(k in NN) inf { a_n mid(|) n in NN, n >= k }.
+  liminf_(n -> oo) a_n = sup_(k in NN) inf Set(a_n; n in NN, n >= k).
   $
 ]
 
 上極限・下極限は上限・下限で定義されるので（$plus.minus oo$を認めれば）必ず存在するという利点がある。
 
 #remark[
-自然数$n$に対して$n$以上の自然数の集合は$n$が増えると小さくなるので$sup { a_k mid(|) k in NN, k >= n }$は単調減少である。
+自然数$n$に対して$n$以上の自然数の集合は$n$が増えると小さくなるので$sup Set(a_k; k in NN, k >= n)$は単調減少である。
 したがって上極限の定義の中の下限は極限にかえることができる。
 下極限も同様で、つまり
 $
-limsup_(n -> oo) a_n = lim_(k -> oo) sup { a_n mid(|) n in NN, n >= k },
-quad liminf_(n -> oo) a_n = lim_(k -> oo) inf { a_n mid(|) n in NN, n >= k }
+limsup_(n -> oo) a_n = lim_(k -> oo) sup Set(a_n; n in NN, n >= k),
+quad liminf_(n -> oo) a_n = lim_(k -> oo) inf Set(a_n; n in NN, n >= k)
 $
 が成立する。
 ]
@@ -655,7 +656,7 @@ $(a_n)_(n in NN)$を実数列とする。
 前半はすぐわかるので証明を省略する。
 後半について任意の$k in NN$に対して
 $
-inf { a_n mid(|) n in NN, n >= k } <= a_k <= sup { a_n mid(|) n in NN, n >= k }
+inf Set(a_n; n in NN, n >= k) <= a_k <= sup Set(a_n; n in NN, n >= k)
 $
 であり最左辺と最右辺がともに$liminf a_n = limsup a_n$に収束するので、
 はさみうちの原理より$a_n -> liminf a_n = limsup a_n$である。
@@ -694,15 +695,15 @@ $(a_n)_(n in NN)$を実数列とする。
 #proof[
 上極限のみ示す。
 $limsup_(n -> oo) a_n$が$+oo$でないつまり実数の場合を証明する。
-各$k in NN$に対して実数$b_k = limsup a_n-1/(k+1)$を定めると$b_k -> limsup a_n$であり、$b_k < sup { a_n mid(|) n in NN, n >= k }$であることに注意する。
+各$k in NN$に対して実数$b_k = limsup a_n-1/(k+1)$を定めると$b_k -> limsup a_n$であり、$b_k < sup Set(a_n; n in NN, n >= k)$であることに注意する。
 よって$b_k < a_n$となる$k$以上の$n in $が存在するので、自然数列$n_k$を
 $
-n_(k+1) = min { n in NN mid(|) b_(k+1) < a_n, n >= n_k+1 > n_k },
-quad n_0 = min { n in NN mid(|) b_0 < a_n }
+n_(k+1) = min Set(n in NN; b_(k+1) < a_n, n >= n_k+1 > n_k),
+quad n_0 = min Set(n in NN; b_0 < a_n)
 $
 で定義すると、$(a_(n_k))$は$(a_n)$の部分列であり、
 $
-b_k < a_(n_k) <= sup { a_n mid(|) n in NN, n >= k }
+b_k < a_(n_k) <= sup Set(a_n; n in NN, n >= k)
 $
 を満たす。
 最左辺も最右辺も$limsup_(n -> oo) a_n$に収束するので、はさみうちの原理より部分列$(a_(n_k))$も$limsup_(n -> oo) a_n$に収束する。
@@ -805,7 +806,7 @@ $
 $f$の極限を定義するにあたって、実数$a$は任意の正の数$delta$に対して、$0 < abs(x-a) < delta$を満たす$x in X$の存在を暗に仮定している。
 このような$a$を$X$の_極限点_という。
 $X$として閉区間から有限個の点を取り除いて得られる集合を想定していてその場合は$a$はもとの閉区間の点なら何でもよいが、
-${ 1/n mid(|) n = 1, 2, 3, dots }$のような集合の場合は極限点は$0$のみでありそれ以外の点では極限を考えられないことに注意する。
+$Set(1/n; n = 1, 2, 3, dots)$のような集合の場合は極限点は$0$のみでありそれ以外の点では極限を考えられないことに注意する。
 
 #definition([関数の極限])[
 $f$を実数の集合$X$上で定義された実数値関数、$a$を$X$の極限点、$l$を実数とする。
@@ -1252,7 +1253,7 @@ $
 
 実数の集合$X$上の関数$f(x)$と点$a in X$に対して
 $
-omega(r) = sup { abs(f(x)-f(a)) mid(|) x in X, abs(x-a) <= r }
+omega(r) = sup Set(abs(f(x)-f(a)); x in X, abs(x-a) <= r)
 $
 で定義される関数$omega(r)$を考える。
 この関数は$\[0, oo\)$上定義された非負値関数であり$omega(0) = 0$で$r$が大きくなると上限を取る$x$の範囲が広くなるので広義単調増加し、

@@ -3,6 +3,7 @@
 <h_number>
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": Set
 
 == 自然数
 
@@ -208,13 +209,13 @@ _実数_はこのような有理数の切断であり、一つの有理数を取
 有理数の切断の本質的な条件は最初のものであり、これにより有理数を数直線上で左($A$)と右($A^c$)に分けて（切断して）いる。
 実数は切断する点に相当し切断する点が左には入れないとしたものである。
 
-$a$を有理数とすると、$a$以下の有理数全体${ x in QQ mid(|) x <= a }$は有理数の切断である。
-また、$a$未満の有理数全体${ x in QQ mid(|) x < a }$も有理数の切断である。
+$a$を有理数とすると、$a$以下の有理数全体$Set(x in QQ; x <= a)$は有理数の切断である。
+また、$a$未満の有理数全体$Set(x in QQ; x < a)$も有理数の切断である。
 これらの有理数の切断は$a$が元としてあるかないかの違いであり、後者はこれ以上有理数を取り除けないので実数となり、有理数$a$と同一視する。
 
 #example[
 実数であるが有理数ではない（有理数とはみなせない）数として$2$の平方根$sqrt(2)$がある。
-この有理数の切断としての表現は${ x in QQ mid(|) x < sqrt(2) }$ということになるが$sqrt(2)$は定義されていないので、今までの記号で書くならば${ x in QQ mid(|) x < 0 or x dot x < 2 }$となり確かにこれは有理数でない有理数の切断（実数）になっている。
+この有理数の切断としての表現は$Set(x in QQ; x < sqrt(2))$ということになるが$sqrt(2)$は定義されていないので、今までの記号で書くならば$Set(x in QQ; x < 0 or x dot x < 2)$となり確かにこれは有理数でない有理数の切断（実数）になっている。
 ]
 
 実数のうち有理数でないものを_無理数_という。
@@ -239,7 +240,7 @@ _実数全体の集合_を$RR$で表す。
 実数$a$の有理数の切断としての表現を$A$、実数$b$の有理数の切断としての表現を$B$とする。
 ここで、$overline(A)$を$a$が有理数のとき$A union {a}$、そうでないとき$A$として定義すると$overline(A)$も有理数の切断で、仮定より$c in B\\overline(A)$となる有理数$c$が存在する。
 この$c$に対して$a < c < b$を示せばよい。
-有理数$c$の有理数の切断としての表現を$C$とすると、$C = { x in QQ mid(|) x < c }$であった。
+有理数$c$の有理数の切断としての表現を$C$とすると、$C = Set(x in QQ; x < c)$であった。
 まず$c in B$だが$c in.not C$なので、$C supset B$ではなく、$c < b$である。
 次に$overline(A) subset C$を示すために有理数$x in overline(A)$を取ると$c in.not overline(A)$より有理数の切断の定義から$x < c$が成り立ち$x in C$である。
 ここから、$A supset C$とすると$overline(A) = A = C$となるが、これは$a$が無理数かつ$a = c$である場合にしか成り立たないので、$a < c$が成り立つ。
@@ -248,18 +249,18 @@ _実数全体の集合_を$RR$で表す。
 
 $a, b$を$a <= b$を満たす実数として、以下の集合を定義し、まとめて_区間_という。
 $
-[a, b] = { x in RR mid(|) a <= x <= b },
-quad [a, b\) = { x in RR mid(|) a <= x < b },
-quad [a, +oo\) = { x in RR mid(|) a <= x },
+[a, b] = Set(x in RR; a <= x <= b),
+quad [a, b\) = Set(x in RR; a <= x < b),
+quad [a, +oo\) = Set(x in RR; a <= x),
 $
 $
-\(a, b] = { x in RR mid(|) a < x <= b },
-quad (a, b) = { x in RR mid(|) a < x < b },
-quad (a, +oo) = { x in RR mid(|) a < x },
+\(a, b] = Set(x in RR; a < x <= b),
+quad (a, b) = Set(x in RR; a < x < b),
+quad (a, +oo) = Set(x in RR; a < x),
 $
 $
-\(-oo, b] = { x in RR mid(|) x <= b },
-quad (-oo, b) = { x in RR mid(|) x < b },
+\(-oo, b] = Set(x in RR; x <= b),
+quad (-oo, b) = Set(x in RR; x < b),
 quad (-oo, +oo) = RR.
 $
 このうち$[a, b], [a, +oo\), \(-oo, b], (-oo, +oo)$を_閉区間_といい、
@@ -270,14 +271,14 @@ $(a, b), (a, +oo), (-oo, b), (-oo, +oo)$を_開区間_という。
 #proposition([実数と有理数の切断の対応])[
 $a$を実数とすると、$a$の有理数の切断としての表現は
 $
-(-oo, a) inter QQ = { x in QQ mid(|) x < a }
+(-oo, a) inter QQ = Set(x in QQ; x < a)
 $
 である。
 ] <t_real_cut>
 
 #proof[
-$B = { x in QQ mid(|) x < a }$が有理数の切断であることを示す。
-実際、有理数範囲での補集合は$B^c = { x in QQ mid(|) x >= a }$であるので、$x in B$, $y in B^c$ならば$x < a <= y$である。
+$B = Set(x in QQ; x < a)$が有理数の切断であることを示す。
+実際、有理数範囲での補集合は$B^c = Set(x in QQ; x >= a)$であるので、$x in B$, $y in B^c$ならば$x < a <= y$である。
 また、$a-1 < a < a+1$として有理数の稠密性（@t_dense_rational）を用いれば$B$も$B^c$も空集合でないことがわかる。
 さらに$B$から一つの有理数$b$を取り除くことを考えると$b < a$よりやはり有理数の稠密性から$b < c < a$なる$c in B$が存在するので、$B\\{b}$は有理数の切断ではない。
 以上により$B$に対応する実数が存在し、その実数を$b$とする。
@@ -327,12 +328,12 @@ $
 
 $a, b$を$a <= b$を満たす拡大実数として、区間は次の4種類に集約される。
 $
-[a, b] = { x in macron(RR) mid(|) a <= x <= b },
-quad [a, b\) = { x in macron(RR) mid(|) a <= x < b },
+[a, b] = Set(x in macron(RR); a <= x <= b),
+quad [a, b\) = Set(x in macron(RR); a <= x < b),
 $
 $
-\(a, b] = { x in macron(RR) mid(|) a < x <= b },
-quad (a, b) = { x in macron(RR) mid(|) a < x < b }.
+\(a, b] = Set(x in macron(RR); a < x <= b),
+quad (a, b) = Set(x in macron(RR); a < x < b).
 $
 特に$macron(RR) = [-oo, +oo]$で$RR = (-oo, +oo)$である。
 

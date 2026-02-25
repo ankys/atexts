@@ -3,6 +3,7 @@
 <h_set>
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": Set
 
 == 集合と命題と写像
 <h_set_prop_map>
@@ -63,7 +64,7 @@ _命題_とは真か偽か判定可能な条件を記述した文字列である
 命題はしばしば$P$や$Q$の文字が割り当てられ、命題の中に変数$x$や$y$がある場合は$P(x)$や$Q(x , y)$などと書かれる。
 集合$X$が与えられてその元$x in X$のうち命題$P(x)$が真になるようなものを集めて得られる集合を
 $
-{ x in X mid(|) P(x) }
+Set(x in X; P(x))
 $
 と記述する。
 命題については次の節で詳しく述べる。
@@ -84,12 +85,12 @@ $
 
 四つ目の集合の記法はこの写像$F$を使ったものであり、$X$の各元$x$を集合$Y$の元$F(x)$に対応させ集めた集合を
 $
-{ F(x) mid(|) x in X}
+Set(F(x); x in X)
 $
 と書く。
 三つ目と四つ目の記法を同時に用いて
 $
-{ F(x) mid(|) x in X, P(x) }
+Set(F(x); x in X, P(x))
 $
 と記述することもある。
 
@@ -181,10 +182,10 @@ $A$, $B$を集合とする。
 #definition([集合の演算])[
 $X$を集合として、$A$, $B$をその部分集合とする。
 
-- 集合${ x in X mid(|) x in A and x in B }$を$A$と$B$の_共通部分_といい$A inter B$と表す。
-- 集合${ x in X mid(|) x in A or x in B }$を$A$と$B$の_和集合_といい$A union B$と表す。
-- 集合${ x in X mid(|) x in A and x in.not B }$を$A$と$B$の_差集合_といい$A \\ B$と表す。
-- 特に集合${ x in X mid(|) x in.not A } = X\\A$を$A$の_補集合_といい$A^c$と表す。
+- 集合$Set(x in X; x in A and x in B)$を$A$と$B$の_共通部分_といい$A inter B$と表す。
+- 集合$Set(x in X; x in A or x in B)$を$A$と$B$の_和集合_といい$A union B$と表す。
+- 集合$Set(x in X; x in A and x in.not B)$を$A$と$B$の_差集合_といい$A \\ B$と表す。
+- 特に集合$Set(x in X; x in.not A) = X\\A$を$A$の_補集合_といい$A^c$と表す。
   この時の$X$を_全体集合_と表現することがある。
 ]
 
@@ -203,8 +204,8 @@ $X$を集合として、$A$, $B$をその部分集合とする。
 #definition([写像の像と逆像])[
 $F$を集合$X$から集合$Y$への写像として、$A$を$X$の部分集合、$B$を$Y$の部分集合とする。
 
-- 集合${ F(x) mid(|) x in A }$は$Y$の部分集合であり$A$の$F$による_像_といい$F(A)$と表す。
-- 集合${ x in X mid(|) F(x) in B }$は$X$の部分集合であり$B$の$F$による_逆像_といい$F^(- 1) (A)$と表す。
+- 集合$Set(F(x); x in A)$は$Y$の部分集合であり$A$の$F$による_像_といい$F(A)$と表す。
+- 集合$Set(x in X; F(x) in B)$は$X$の部分集合であり$B$の$F$による_逆像_といい$F^(- 1) (A)$と表す。
 ]
 
 #example[

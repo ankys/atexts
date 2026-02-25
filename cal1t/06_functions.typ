@@ -2,6 +2,7 @@
 = 種々の関数
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": Set
 
 #let arsinh = $op("arsinh")$
 #let arcosh = $op("arcosh")$
@@ -68,8 +69,8 @@ $
 そこで実数$b$に対して_べき_あるいは_実数べき_を正の実数$a$に対して
 $
 a^b = cases(
-  sup { a^x mid(|) x in QQ, x <= b } & quad (a >= 1)",",
-  inf { a^x mid(|) x in QQ, x <= b } & quad (a <= 1),
+  sup Set(a^x; x in QQ, x <= b) & quad (a >= 1)",",
+  inf Set(a^x; x in QQ, x <= b) & quad (a <= 1),
 )
 $
 と定義する。
@@ -257,7 +258,7 @@ $
   lim_(x -> 0) (sin x)/x = 1
   $
   が成り立つ。
-- $tan x = (sin x)/(cos x)$であり、$x in RR \\ { pi/2+n pi mid(|) n in ZZ }$に対して定義される。
+- $tan x = (sin x)/(cos x)$であり、$x in RR \\ Set(pi/2+n pi; n in ZZ)$に対して定義される。
 
 ただし、途中に出てくる定数$pi$を_円周率_という。
 $(sin x)^n$などはしばしば$sin^n x$と記述される。

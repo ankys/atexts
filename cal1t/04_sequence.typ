@@ -2,6 +2,7 @@
 = 数列
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": Set
 
 == 数列の導入
 
@@ -20,7 +21,7 @@ $(2 n)_(n = 0)^oo$, $(5^n)_(n = 0)^oo$, $(3)_(n = 0)^oo$, $(1/(n+1))_(n = 0)^oo$
 
 通常の除法とは別に_剰余付き除法_は実数と整数を結びつける意味で重要である。
 
-まず、自然数$n$と$0$でない自然数$m$を考え、自然数の集合$A = { x in NN mid(|) x m <= n }$を定義する。
+まず、自然数$n$と$0$でない自然数$m$を考え、自然数の集合$A = Set(x in NN; x m <= n)$を定義する。
 $m >= 1$なので、この時任意の$x in A$に対して$x <= x m <= n$より$A$は上に有界で@t_maxdisc から$A$の最大元$q$が存在する。
 ここで$q m <= n$であるため、$q m+r = n$となる自然数$r$が存在することがいえる。
 さらに$r >= m$だとすると、$r = m+x$となる自然数$x$が存在するため$(q+1)m+x = n$つまり$q+1 in A$となり$q$が$A$の最大元であることに矛盾する。
@@ -72,7 +73,7 @@ $y'$が存在する。
 実数$a$に対して@t_int_real から$a$以下の整数の集合に最大元が存在しそれを$a$の_床_といい$floor(a)$と表す。
 つまり、
 $
-floor(a) = max{ n in ZZ mid(|) n <= a }
+floor(a) = max Set(n in ZZ; n <= a)
 $
 である。
 $a$の床$floor(a)$は$a$を$1$で剰余付き除法をした時の商に他ならない。
@@ -81,7 +82,7 @@ $a$の床$floor(a) in ZZ$を$a$の_整数部分_とも言い、残りの部分$a
 同様にして、実数$a$に対して@t_int_real から$a$以上の整数の集合に最小元が存在しそれを$a$の_天井_といい$ceil(a)$と表す。
 つまり、
 $
-ceil(a) = min{ n in ZZ mid(|) n >= a }
+ceil(a) = min Set(n in ZZ; n >= a)
 $
 である。
 

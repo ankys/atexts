@@ -2,7 +2,7 @@
 = 一様分布論
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": dd
+#import "../deps/physics.typ": Set, dd
 
 == 一様分布定理
 
@@ -14,7 +14,7 @@
 #definition([一様分布列])[
 各$n$に対して$x_n in \[0, 1\)$を満たす数列$(x_n)_(n = 1)^oo$が$\[0, 1\)$で_一様分布_するとは任意の$0 <= a <= b <= 1$に対して
 $
-lim_(N -> oo) 1/N \#{ n = 1, dots, N mid(|) a <= x_n < b } = b-a
+lim_(N -> oo) 1/N \#Set(n = 1, dots, N; a <= x_n < b) = b-a
 $ <e_equidist>
 が成り立つことである。
 ただし、有限集合$A$に対して、自然数として定まる元の個数を$\# A$と書く。
@@ -27,14 +27,14 @@ $ <e_equidist>
 $\[0, 1\)$上の数列$(x_n)_(n = 1)^oo$が一様分布することは、
 各$n$に対して$0 <= a_n <= b_n <= 1$である数列$(a_n)$, $(b_n)$であって$n -> oo$で$a_n -> a$, $b_n -> b$となるものについて
 $
-lim_(N -> oo) 1/N \#{ n <= N mid(|) a_n <= x_n < b_n } = b-a
+lim_(N -> oo) 1/N \#Set(n <= N; a_n <= x_n < b_n) = b-a
 $
 が成り立つことと同値である。
 実際、こちらの方が強い条件になっていて、逆については任意の$epsilon > 0$に対して、ある$k = 1, 2, 3, dots$が存在して任意の自然数$n >= k$に対して$abs(a_n-a) < epsilon$, $abs(b_n-b) < epsilon$が成り立つことから、$N = 1, 2, 3, dots$に対して
 $
-&abs(\#{ n <= N mid(|) a_n <= x_n < b_n }-\#{ n <= N mid(|) a <= x_n < b }) \
-&quad <= k+\#{ k < n <= N mid(|) a-epsilon <= x_n < a+epsilon or b-epsilon <= x_n < b+epsilon } \
-&quad <= k+\#{ n <= N mid(|) a-epsilon <= x_n < a+epsilon }+\#{ n <= N mid(|) b-epsilon <= x_n < b+epsilon }.
+&abs(\#Set(n <= N; a_n <= x_n < b_n)-\#Set(n <= N; a <= x_n < b)) \
+&quad <= k+\#Set(k < n <= N; a-epsilon <= x_n < a+epsilon or b-epsilon <= x_n < b+epsilon) \
+&quad <= k+\#Set(n <= N; a-epsilon <= x_n < a+epsilon)+\#Set(n <= N; b-epsilon <= x_n < b+epsilon).
 $
 よって、$N$で割って$N -> oo$とすると右辺は$4 epsilon$に収束する。
 $epsilon$は任意なので、逆がいえた。
@@ -95,14 +95,14 @@ $
 #proof[
 まず一様分布であることの定義より、$({x_n})$が一様分布することは任意の$0 <= b <= 1$に対して
 $
-lim_(N -> oo) 1/N \#{ n <= N mid(|) x_n < b } = b
+lim_(N -> oo) 1/N \#Set(n <= N; x_n < b) = b
 $
 が成り立つことと同値であることに注意する。
 実数$b$に対して、
 $
 1/N sum_(n <= N) {x_n-b}
 &= 1/N sum_({x_n} >= b) ({x_n}-{b})+1/N sum_({x_n} < b) ({x_n}-{b}+1) \
-&= 1/N sum_(n <= N) {x_n}+1/N \#{ n <= N mid(|) x_n < b }-b.
+&= 1/N sum_(n <= N) {x_n}+1/N \#Set(n <= N; x_n < b)-b.
 $
 ここから補題が成立することがわかる。
 ]
@@ -174,7 +174,7 @@ $
 $
 abs(sum_(n <= N) {x_n+a}-sum_(n <= N) {y_n+a})
 &<= sum_(n <= N) c_n+sum_({y_n+a} < c_n or {y_n+a} >= 1-c_n) abs({x_n+a}-{y_n+a}) \
-&<= sum_(n <= N) c_n+\#{ n <= N mid(|) {y_n+a} < c_n }+\#{ n <= N mid(|) {y_n+a} >= 1-c_n }
+&<= sum_(n <= N) c_n+\#Set(n <= N; {y_n+a} < c_n)+\#Set(n <= N; {y_n+a} >= 1-c_n)
 $
 となり、$N$で割って$N -> oo$とすると、$lim_(n -> oo) c_n = 0$より$lim_(N -> oo) 1/N sum_(n <= N) c_n = 0$であること（@t_average_conv）と$(y_n+a)$が一様分布することから右辺は$0$に収束する。
 ここから$(x_n)$は$(y_n)$と同様に一様分布することがわかる。
@@ -276,12 +276,12 @@ $
 ここで$log_10 2$は無理数なので、${n log_10 2}$は$\[0, 1\)$上一様分布する。
 $a_n$のうち$d = 1, dots, 9$の割合を
 $
-lim_(N -> oo) 1/N \#{ n <= N mid(|) a_n = d }
+lim_(N -> oo) 1/N \#Set(n <= N; a_n = d)
 $
 として考えると、この値は一様分布定理より
 $
-lim_(N -> oo) 1/N \#{ n <= N mid(|) a_n = d }
-&= lim_(N -> oo) 1/N \#{ n <= N mid(|) log_10 d <= {n log_10 2} < log_10 (d+1) } \
+lim_(N -> oo) 1/N \#Set(n <= N; a_n = d)
+&= lim_(N -> oo) 1/N \#Set(n <= N; log_10 d <= {n log_10 2} < log_10 (d+1)) \
 &= log_10 (d+1)-log_10 d
 $
 となることがわかる。
