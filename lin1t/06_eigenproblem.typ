@@ -215,7 +215,7 @@ $
 複素数の中でも有理数$QQ$上の$1$次以上の多項式$f(x) in QQ[x]$の零点となる数は_代数的数_と呼ばれる。
 代数的数全体の集合
 $
-macron(QQ) = { a in CC mid(|) a^n+c_(n-1) a^(n-1)+dots+c_0 = 0, n = 1, 2, 3, dots, c_0, dots, c_(n-1) in QQ }
+macron(QQ) = Set(a in CC; a^n+c_(n-1) a^(n-1)+dots+c_0 = 0, n = 1, 2, 3, dots, c_0, dots, c_(n-1) in QQ)
 $
 は複素数体$CC$の部分体であり、代数的閉体になっている。
 ]

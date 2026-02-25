@@ -2,6 +2,7 @@
 = 三角化
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": Set
 
 == フロベニウスの定理とケイリー・ハミルトンの定理
 
@@ -112,7 +113,7 @@ $f(x) = x^n$とおいてフロベニウスの定理を用いると、$A$の固�
 #definition([広義固有空間])[
 $A$を$K$上の正方行列として、$x in K$に対して
 $
-tilde(W)(x) = { bold(v) in K^N mid(|) (x I-A)^n bold(v) = bold(0), n = 0, 1, 2, 3, dots }
+tilde(W)(x) = Set(bold(v) in K^N; (x I-A)^n bold(v) = bold(0), n = 0, 1, 2, 3, dots)
 $
 を定め、固有値$x = c$に対して$tilde(W)(c)$を$A$の固有値$c$に対する_広義固有空間_という。
 ]

@@ -2,7 +2,7 @@
 = 完備距離空間
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": dd
+#import "../deps/physics.typ": Set, dd
 
 == 距離空間
 
@@ -19,11 +19,11 @@ _距離空間_は二点$x, y$に対して_距離_$d(x, y)$が定義された集�
 
 距離空間$(X, d)$の点$x in X$において、半径$r >= 0$の開球を
 $
-B(x; r) = { y in X mid(|) d(x, y) < r }
+B(x; r) = Set(y in X; d(x, y) < r)
 $
 で、閉球を
 $
-macron(B)(x; r) = { y in X mid(|) d(x, y) <= r }
+macron(B)(x; r) = Set(y in X; d(x, y) <= r)
 $
 でそれぞれ定義する。
 ただし、$r = 0$の時は$B(x; 0) = emptyset$であり、$macron(B)(x; 0) = {x}$である。

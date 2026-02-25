@@ -2,7 +2,7 @@
 = 対角化
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": braket
+#import "../deps/physics.typ": Set, braket
 #let Span = $op("Span")$
 #let Re = $op("Re")$
 
@@ -189,7 +189,7 @@ $
 #definition([正規化可能])[
 $K$を非退化な体として、その_正値の部分_を
 $
-K_+ = { overline(c_1) c_1+dots+overline(c_n) c_n mid(|) n = 1, 2, 3, dots, c_1, dots, c_n in K }
+K_+ = Set(overline(c_1) c_1+dots+overline(c_n) c_n; n = 1, 2, 3, dots, c_1, dots, c_n in K)
 $
 とする。
 ここで正値$c in K_+$に対して、
@@ -433,7 +433,7 @@ $
 この定理で出てくるスカラーの範囲を考える。
 非退化な体$K$に対して
 $
-Re(K) = { a in K mid(|) overline(a) = a }
+Re(K) = Set(a in K; overline(a) = a)
 $
 とおき、$K$の_実部_と呼ぶ。
 $Re(K)$は$K$の加法と乗法で閉じていて、$K$のいわゆる部分体になっている。
