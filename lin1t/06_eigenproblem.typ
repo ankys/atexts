@@ -2,6 +2,7 @@
 = 固有値問題
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": Set, mdet, dmat
 #let Ker = $op("Ker")$
 
 == 固有値と固有ベクトル
@@ -9,7 +10,7 @@
 いよいよこの章から体$K$上の$N$次正方行列$A$の$n = 0, 1, 2, 3, dots$乗を計算するのに役に立つ理論を学ぶ。
 例えば$A$が$N$次正則行列$P$を使って次のように変形されたとする。
 $
-A = P mat(c_1, , ; , dots.down, ; , , c_N) P^(-1).
+A = P dmat(c_1, dots.down, c_N) P^(-1).
 $
 一般に$N$次正方行列$A$を$N$次正則行列$P$を使って$B = P^(-1) A P$と変形することを_相似変換_といい、このように相似変換して対角行列にすることを_対角化_という。
 このとき、$P = mat(bold(v)_1, dots.c, bold(v)_N)$とすると
@@ -38,7 +39,7 @@ $
 なお、左辺は$x$についての$K$係数の$N$次の多項式になっていて、$A$の_固有多項式_という。
 固有方程式の解つまり固有多項式の零点が固有値であり、$x in K$に対して$K^N$の線形部分空間
 $
-W(x) = Ker(x I-A) = { bold(v) in K^N mid(|) (x I-A) bold(v) = bold(0) }
+W(x) = Ker(x I-A) = Set(bold(v) in K^N; (x I-A) bold(v) = bold(0))
 $
 を定め、固有値$x = c$に対して$W (c)$を$A$の固有値$c$に対する_固有空間_という。
 このとき$dim W(c) >= 1$に注意する。
@@ -51,7 +52,7 @@ $
 となりこれを対角化することを考える。 $A$の固有多項式は
 $
 det(x I-A)
-&= mat(delim: "|", x-1+p, -q; -p, x-1+q)
+&= mdet(x-1+p, -q; -p, x-1+q)
 = (x-1+p)(x-1+q)-p q \
 &= x^2-(2-p-q)x+1-p-q
 = (x-1)(x-1+p+q).
@@ -61,16 +62,17 @@ $
 $p+q eq.not 0$の場合は$2$つの異なる固有値を持つので$A$は対角化可能である。
 この時、固有値$x = 1$に対しては
 $
-x I_2-A = mat(p, -q; -p, q)
+x I-A = mat(p, -q; -p, q)
 $
 より固有ベクトルとして$(q, p)$が取れて、
 固有値$x = 1-p-q$に対しては
 $
-x I_2-A = mat(-q, -q; -p, -p)
+x I-A = mat(-q, -q; -p, -p)
 $
 より固有ベクトルとして$(1, -1)$が取れる。
-よって、$A$は
-$A
+よって$A$は
+$
+A
 = mat(1-p, q; p, 1-q)
 = mat(q, 1; p, -1) mat(1, 0; 0, 1-p-q) mat(q, 1; p, -1)^(-1)
 $
