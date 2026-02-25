@@ -34,13 +34,13 @@ $A$の固有多項式が@e_eigenfactor と因数分解されるとき、@t_tri �
 $n = 0, 1, 2, 3, dots$に対して、
 $
 A^n
-= P mat(c_1, dots.c, \*; , dots.down, dots.v; , , c_N)^n P^(-1)
-= P mat(c_1^n, dots.c, \*; , dots.down, dots.v; , , c_N^n) P^(-1)
+= P mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N)^n P^(-1)
+= P mat(c_1^n, dots.c, *; , dots.down, dots.v; , , c_N^n) P^(-1)
 $
 であるからスカラー倍して和を取ることで、
 $
 f(A)
-= P mat(f(c_1), dots.c, \*; , dots.down, dots.v; , , f(c_N)) P^(-1)
+= P mat(f(c_1), dots.c, *; , dots.down, dots.v; , , f(c_N)) P^(-1)
 $
 である。
 よって、@t_eigenfactor より、この定理の結論が従う。
@@ -60,7 +60,7 @@ $A$を$K$上の$N$次正方行列として、固有多項式$f_A (x) = det(x I-A
 まず$A$が右上三角行列
 $
 T
-= mat(c_1, dots.c, \*; , dots.down, dots.v; , , c_N)
+= mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N)
 $
 の場合に示す。 このとき固有多項式は
 $
@@ -73,8 +73,8 @@ $
 $N = 1$の時は$T = mat(c_1)$なので$T-c_1 I_1 = O_1$である。
 $N-1$で成立する時、
 $
-(T-c_1 I_N) dots (T-c_(N-1) I_N) = mat(O_(N-1), \*; bold(0)_(N-1), \*),
-quad (T-c_N I_N) = mat(\*, \*; bold(0)_(N-1), 0)
+(T-c_1 I_N) dots (T-c_(N-1) I_N) = mat(O_(N-1), *; bold(0)_(N-1), *),
+quad (T-c_N I_N) = mat(*, *; bold(0)_(N-1), 0)
 $
 なので、積を取ると零行列になる。
 以上より$f_T (T) = O$である。

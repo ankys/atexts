@@ -438,7 +438,7 @@ $
 極座標変換$x = r cos theta, y = r sin theta$のヤコビアンを計算すると、
 $
 det mat(x_r, x_theta; y_r, y_theta)
-= mat(delim: "|", cos theta, -r sin theta; sin theta, r cos theta)
+= mdet(cos theta, -r sin theta; sin theta, r cos theta)
 = r cos^2 theta+r sin^2 theta
 = r
 $
@@ -505,7 +505,7 @@ $
 と表すことができるので、
 係数行列が逆行列を持つつまり行列式が非零なので
 $
-mat(delim: "|", 2 a, b; b, 2 c) = 4 a c-b^2 eq.not 0
+mdet(2 a, b; b, 2 c) = 4 a c-b^2 eq.not 0
 $
 の時、停留点は
 $

@@ -110,7 +110,7 @@ $A$を$K$上の$N$次元正方行列として、$c_1, dots, c_L in K$を相異�
 
 対角化を緩和して、$N$次正方行列$A$を$N$次正則行列$P$を使って
 $
-A = P mat(c_1, dots.c, \*; , dots.down, dots.v; , , c_N) P^(-1)
+A = P mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N) P^(-1)
 $ <e_tri>
 と変形することを_三角化_という。
 本節の見出しは三角化「可能性」となっているが、後で見るように三角化なら（固有方程式が解ければ）常にできることが重要である。
@@ -129,12 +129,12 @@ $ <e_eigenfactor>
 $x I-A$を書き直すと
 $
 x I-A
-= P mat(x-c_1, dots.c, \*; , dots.down, dots.v; , , x-c_N) P^(-1)
+= P mat(x-c_1, dots.c, *; , dots.down, dots.v; , , x-c_N) P^(-1)
 $
 この行列式を取ると、
 $
 det(x I-A)
-= det P mat(delim: "|", x-c_1, dots.c, \*; , dots.down, dots.v; , , x-c_N) det P^(-1)
+= det P mdet(x-c_1, dots.c, *; , dots.down, dots.v; , , x-c_N) det P^(-1)
 = (x-c_1) dots (x-c_N)
 $
 である。
@@ -158,8 +158,8 @@ $
 ここで基底の延長を行い、$K^N$の基底$bold(v)_1, bold(v)_2, dots, bold(v)_N$を構成して正則行列$P_0 = mat(bold(v)_1, bold(v)_2, dots.c, bold(v)_N)$とおくと、
 $
 A P_0
-= P_0 mat(c_1, \*, dots.c, \*; 0, \*, dots.c, \*; dots.v, dots.v, dots.down, dots.v; 0, \*, dots.c, \*)
-= P_0 mat(c_1, bold(\*); bold(0), A_1)
+= P_0 mat(c_1, *, dots.c, *; 0, *, dots.c, *; dots.v, dots.v, dots.down, dots.v; 0, *, dots.c, *)
+= P_0 mat(c_1, bold(*); bold(0), A_1)
 $
 となる。
 前の命題の証明同様に行列式を考えると、
@@ -168,7 +168,7 @@ det(x I_(N-1)-A_1) = (x-c_2) dots (x-c_N)
 $
 となるので、数学的帰納法の仮定より
 $
-A_1 = tilde(P)_1 mat(c_2, dots.c, \*; , dots.down, dots.v; , , c_N) tilde(P)_1^(-1)
+A_1 = tilde(P)_1 mat(c_2, dots.c, *; , dots.down, dots.v; , , c_N) tilde(P)_1^(-1)
 $
 と三角化される。 ここで、
 $
@@ -178,9 +178,9 @@ $
 とおくと、$P$は$N$次正則行列で
 $
 A P
-= P_0 mat(c_1, bold(\*); bold(0), A_1) mat(1, bold(0); bold(0), tilde(P)_1)
-= P_0 mat(c_1, bold(\*); bold(0), A_1 tilde(P)_1)
-= P mat(c_1, dots, \*; , dots.down, dots.v; , , c_N)
+= P_0 mat(c_1, bold(*); bold(0), A_1) mat(1, bold(0); bold(0), tilde(P)_1)
+= P_0 mat(c_1, bold(*); bold(0), A_1 tilde(P)_1)
+= P mat(c_1, dots, *; , dots.down, dots.v; , , c_N)
 $
 となる。
 以上より$A$は三角化される。
@@ -237,11 +237,11 @@ $A$を$K$上の$N$次正方行列として、$c$をその固有値とする。
 線形独立な$M$個のベクトル$bold(v)_1, dots, bold(v)_M in K^N$がとれ、拡張をして$K^N$の基底$bold(v)_1, dots, bold(v)_N$を構成する。
 このとき、$P = mat(bold(v)_1, dots.c, bold(v)_N)$を使って、
 $
-A = P mat(c I_M, \*; O, \*) P^(-1)
+A = P mat(c I_M, *; O, *) P^(-1)
 $
 とでき、
 $
-x I-A = P mat((x-c)I_M, \*; O, \*) P^(-1)
+x I-A = P mat((x-c)I_M, *; O, *) P^(-1)
 $
 より、$det(x I-A)$は$(x-c)^M$で割り切れる。
 ]

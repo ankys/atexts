@@ -175,7 +175,7 @@ $
 #remark[
 $bold(u)_1, dots, bold(u)_N$の構成方法から
 $
-mat(bold(v)_1, dots, bold(v)_N) = mat(bold(u)_1, dots, bold(u)_N) mat(1, dots.c, \*; , dots.down, dots.v; , , 1)
+mat(bold(v)_1, dots, bold(v)_N) = mat(bold(u)_1, dots, bold(u)_N) mat(1, dots.c, *; , dots.down, dots.v; , , 1)
 $
 と表示できる。
 ]
@@ -242,9 +242,9 @@ $
 標準内積の入った数ベクトル空間$K^N$を考える。
 $N$次正方行列$A$に対して、
 $
-braket(A^\* bold(u), bold(v)) = braket(bold(u), A bold(v))
+braket(A^* bold(u), bold(v)) = braket(bold(u), A bold(v))
 $
-が任意の$bold(u), bold(v) in K^N$に対して成り立つような$N$次正方行列$A^\*$のことを$A$の_随伴行列_という。
+が任意の$bold(u), bold(v) in K^N$に対して成り立つような$N$次正方行列$A^*$のことを$A$の_随伴行列_という。
 すぐ後でわかる通り随伴行列は$A$の共役転置行列で実現される。
 $M times N$型の行列$A$の_共役転置行列_は
 $
@@ -254,7 +254,7 @@ $
 として定義される。
 
 #proposition([随伴行列])[
-$N$次正方行列$A$の随伴行列は$A^\* = overline(A)^T$で与えられる。
+$N$次正方行列$A$の随伴行列は$A^* = overline(A)^T$で与えられる。
 ]
 
 #proof[
@@ -265,7 +265,7 @@ braket(bold(u), A bold(v))
 = overline(overline(A)^T bold(u))^T bold(v)
 = braket(overline(A)^T bold(u), bold(v)).
 $
-よって、$A^\* = overline(A)^T$である。
+よって、$A^* = overline(A)^T$である。
 ]
 
 ここからいくつかの行列の種類を導入する。
@@ -273,7 +273,7 @@ $
 #definition([エルミート行列])[
 $N$次正方行列$A$が
 $
-A^\* = A
+A^* = A
 $
 を満たす時、$A$は_エルミート行列_という。
 ]
@@ -281,12 +281,12 @@ $
 #definition([ユニタリ行列])[
 $N$次正方行列$A$が
 $
-A^\* A = A A^\*
+A^* A = A A^*
 $
 であってそれらが正則な対角行列である時、$A$は_直交行列_という。
 さらに
 $
-A^\* A = A A^\* = I_N
+A^* A = A A^* = I_N
 $
 を満たす時、$A$は_正規直交行列_または_ユニタリ行列_という。
 ]
@@ -301,12 +301,12 @@ TODO
 一般的な用語としては直交行列は実数上のユニタリ行列のことを指すが、本テキストでは直交基底という用語との兼ね合いでこのように定義する。
 
 直交行列と正規直交行列の違いは正規化されているかどうかだが、
-正規直交行列$A$の逆行列は計算するまでもなく直ちに随伴$A^\*$であることがわかる。
+正規直交行列$A$の逆行列は計算するまでもなく直ちに随伴$A^*$であることがわかる。
 
 #definition([正規行列])[
 $N$次正方行列$A$が
 $
-A^\* A = A A^\*
+A^* A = A A^*
 $
 を満たす時、$A$は_正規行列_という。
 ]
@@ -331,12 +331,12 @@ $P = mat(bold(v)_1, dots.c, bold(v)_N)$と区分けすると$bold(v)_1, dots, bo
 この基底をシュミットの直交化して直交基底$bold(u)_1, dots, bold(u)_N$を得ると、
 直交行列$macron(P) = mat(bold(u)_1, dots.c, bold(u)_N)$により、
 $
-A = macron(P) mat(1, dots.c, \*; , dots.down, dots.v; , , 1) mat(c_1, dots.c, \*; , dots.down, dots.v; , , c_N) mat(1, dots.c, \*; , dots.down, dots.v; , , 1)^(-1) macron(P)^(-1)
+A = macron(P) mat(1, dots.c, *; , dots.down, dots.v; , , 1) mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N) mat(1, dots.c, *; , dots.down, dots.v; , , 1)^(-1) macron(P)^(-1)
 $
 となる。
 よって、右上三角行列の積は右上三角行列であることに注意して、
 $
-A = macron(P) mat(c_1, dots.c, \*; , dots.down, dots.v; , , c_N) macron(P)^(-1)
+A = macron(P) mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N) macron(P)^(-1)
 $
 とできる。
 さらに正規化して正規直交行列
@@ -348,8 +348,8 @@ $
 を定めると、
 $
 A
-= tilde(P) mat(norm(bold(u)_1), , ; , dots.down, ; , , norm(bold(u)_N)) mat(c_1, dots.c, \*; , dots.down, dots.v; , , c_N) mat(norm(bold(u)_1)^(-1), , ; , dots.down, ; , , norm(bold(u)_N)^(-1)) tilde(P)^(-1)
-= tilde(P) mat(c_1, dots.c, \*; , dots.down, dots.v; , , c_N) tilde(P)^(-1)
+= tilde(P) mat(norm(bold(u)_1), , ; , dots.down, ; , , norm(bold(u)_N)) mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N) mat(norm(bold(u)_1)^(-1), , ; , dots.down, ; , , norm(bold(u)_N)^(-1)) tilde(P)^(-1)
+= tilde(P) mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N) tilde(P)^(-1)
 $
 とできる。
 ]
@@ -370,19 +370,19 @@ $A$が正規直交行列（ユニタリ行列）で三角化していたらこ�
 
 #proof[
 $A$は直交行列$P = mat(bold(v)_1, dots.c, bold(v)_N)$と三角行列$T = (c_(i j))^(i = 1, dots, N)_(j = 1, dots, N)$を使って$A = P T P^(-1)$と表されて、このとき$T$は対角行列であることを示す。
-ここで、$A^\* A = (P^(-1))^\* T^\* P^\* P T P^(-1)$と$A A^\* = P T P^(-1) (P^(-1))^\* T^\* P^\*$で$A$は正規なのでこの二つが等しいので、
+ここで、$A^* A = (P^(-1))^* T^* P^* P T P^(-1)$と$A A^* = P T P^(-1) (P^(-1))^* T^* P^*$で$A$は正規なのでこの二つが等しいので、
 $
-T^\* P^\* P T (P^\* P)^(-1) = P^\* P T (P^\* P)^(-1) T^\*.
+T^* P^* P T (P^* P)^(-1) = P^* P T (P^* P)^(-1) T^*.
 $
-ここで、$P$は直交行列より$P^\* P$は対角行列
+ここで、$P$は直交行列より$P^* P$は対角行列
 $
-D = P^\* P = mat(braket(bold(v)_1, bold(v)_1), , ; , dots.down, ; , , braket(bold(v)_N, bold(v)_N))
+D = P^* P = mat(braket(bold(v)_1, bold(v)_1), , ; , dots.down, ; , , braket(bold(v)_N, bold(v)_N))
 $
 なので対角成分を$d_1, dots, d_N$とおくと、
 $
 D T D^(-1) = (d_i c_(i j) d_j^(-1))
 $ である。
-よって、$T^\* D T D^(-1) = D T D^(-1) T^\*$から、各$i, j = 1, dots, N$に対して
+よって、$T^* D T D^(-1) = D T D^(-1) T^*$から、各$i, j = 1, dots, N$に対して
 $
 sum_(k = 1)^N overline(c_(k i)) d_k c_(k j) d_j^(-1)
 = sum_(k = 1)^N d_i c_(i k) d_k^(-1) overline(c_(j k)).
@@ -420,7 +420,7 @@ braket(bold(v), A bold(v))
 = braket(bold(v), c bold(v))
 = c braket(bold(v), bold(v)).
 $
-また、$A$はエルミート行列より随伴行列$A^\*$は$A$自身なので、
+また、$A$はエルミート行列より随伴行列$A^*$は$A$自身なので、
 $
 braket(bold(v), A bold(v))
 = braket(A bold(v), bold(v))
