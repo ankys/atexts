@@ -107,7 +107,7 @@ $V$の基底$bold(v)_1, dots, bold(v)_N$が各$i eq.not j$, $i, j = 1, dots, N$�
 直交基底がさらに各$i = 1, dots, N$に対して$bold(v)_i$が単位ベクトルである時、_正規直交基底_であるという。
 
 本節の目標は$V$の基底が与えられた時に直交基底あるいは正規直交基底に取り替えることである。
-そのことを表現するために$V$の$N = 1, dots$個の零ベクトルでないベクトル$bold(v)_1, dots, bold(v)_N$が各$i eq.not j$, $i, j = 1, dots, N$に対して$bold(v)_i$と$bold(v)_j$が直交することを満たす時、$V$の_直交系_であるということにする。
+そのことを表現するために$V$の$N = 1, 2, 3, dots$個の零ベクトルでないベクトル$bold(v)_1, dots, bold(v)_N$が各$i eq.not j$, $i, j = 1, dots, N$に対して$bold(v)_i$と$bold(v)_j$が直交することを満たす時、$V$の_直交系_であるということにする。
 また、各$bold(v)_i$が単位ベクトルである時、$V$の_正規直交系_であるという。
 
 #proposition([直交系と線形独立])[
@@ -141,9 +141,9 @@ bold(u)_1 = bold(v)_1,
 quad
 bold(u)_2 = bold(v)_2-braket(bold(u)_1, bold(v)_2)/braket(bold(u)_1, bold(u)_1) bold(u)_1,
 quad
-bold(u)_3 = bold(v)_3-braket(bold(u)_1, bold(v)_3)/braket(bold(u)_1, bold(u)_1) bold(u)_1-braket(bold(u)_2, bold(v)_3)/braket(bold(u)_2, bold(u)_2) bold(u)_2, \
-&quad dots,
-quad
+bold(u)_3 = bold(v)_3-braket(bold(u)_1, bold(v)_3)/braket(bold(u)_1, bold(u)_1) bold(u)_1-braket(bold(u)_2, bold(v)_3)/braket(bold(u)_2, bold(u)_2) bold(u)_2,
+quad dots, \
+&quad
 bold(u)_N = bold(v)_N-braket(bold(u)_1, bold(v)_N)/braket(bold(u)_1, bold(u)_1) bold(u)_1-dots-braket(bold(u)_(N-1), bold(v)_N)/braket(bold(u)_(N-1), bold(u)_(N-1)) bold(u)_(N-1).
 $
 このとき$bold(u)_1, dots, bold(u)_N$は$V$の直交系であり、$Span(bold(u)_1, dots, bold(u)_N) = Span(bold(v)_1, dots, bold(v)_N)$が成り立つ。
@@ -168,8 +168,8 @@ bold(v)_(N+1)
 in Span(bold(u)_1, dots, bold(u)_N)
 = Span(bold(v)_1, dots, bold(v)_N)
 $
-となるが、これは$bold(v)_1, dots, bold(v)_N, bold(v)_{N+1}$が線形独立であるという仮定に反する。
-よって、$bold(u)_1, dots, bold(u)_N, bold(u)_{N+1}$は$V$の直交系である。
+となるが、これは$bold(v)_1, dots, bold(v)_N, bold(v)_(N+1)$が線形独立であるという仮定に反する。
+よって、$bold(u)_1, dots, bold(u)_N, bold(u)_(N+1)$は$V$の直交系である。
 他の部分の証明も容易であり、定理の主張を得る。
 ]
 
@@ -295,8 +295,7 @@ $
 #remark[
 $A = mat(bold(a)_1, dots.c, bold(a)_N)$と区分けすると、
 $A$が直交行列であることと$bold(a)_1, dots, bold(a)_N$が直交基底であることは同値であり、
-$A$が正規直交行列であることと$bold(a)_1, dots, bold(a)_N$が正規直交基底であることは同値であり、
-TODO
+$A$が正規直交行列であることと$bold(a)_1, dots, bold(a)_N$が正規直交基底であることは同値である。
 ]
 
 一般的な用語としては直交行列は実数上のユニタリ行列のことを指すが、本テキストでは直交基底という用語との兼ね合いでこのように定義する。
@@ -344,12 +343,12 @@ $
 $
 tilde(P)
 = mat(norm(bold(u)_1)^(-1) bold(u)_1, dots.c, norm(bold(u)_N)^(-1) bold(u)_N)
-= macron(P) mat(norm(bold(u)_1)^(-1), , ; , dots.down, ; , , norm(bold(u)_N)^(-1))
+= macron(P) dmat(norm(bold(u)_1)^(-1), dots.down, norm(bold(u)_N)^(-1))
 $
 を定めると、
 $
 A
-= tilde(P) mat(norm(bold(u)_1), , ; , dots.down, ; , , norm(bold(u)_N)) mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N) mat(norm(bold(u)_1)^(-1), , ; , dots.down, ; , , norm(bold(u)_N)^(-1)) tilde(P)^(-1)
+= tilde(P) dmat(norm(bold(u)_1), dots.down, norm(bold(u)_N)) mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N) dmat(norm(bold(u)_1)^(-1), dots.down, norm(bold(u)_N)^(-1)) tilde(P)^(-1)
 = tilde(P) mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N) tilde(P)^(-1)
 $
 とできる。
@@ -359,7 +358,7 @@ $
 体$K$を非退化とする。
 $N$次正規行列$A$に対して、固有多項式が@e_eigenfactor と因数分解されたとすると、$A$は直交行列$P$を使って
 $
-A = P mat(c_1, , ; , dots.down, ; , , c_N) P^(-1)
+A = P dmat(c_1, dots.down, c_N) P^(-1)
 $
 と対角化される。
 さらに$K$が正規化可能な場合は$P$は正規直交行列として取れる。
