@@ -3,6 +3,7 @@
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
 #import "../deps/physics.typ": Set
+#let Ker = $op("Ker")$
 
 == フロベニウスの定理とケイリー・ハミルトンの定理
 
@@ -128,14 +129,19 @@ $T$の固有多項式を計算すると$f_T (x) = x^N$であるから、ケイ�
 そのためのアイデアが固有空間を拡張した広義固有空間である。
 
 #definition([広義固有空間])[
-$A$を$K$上の正方行列として、$x in K$に対して
+$A$を$K$上の$N$次正方行列として、$x in K$と$n = 0, 1, 2, 3, dots$に対して
 $
-tilde(W)(x) = Set(bold(v) in K^N; (x I-A)^n bold(v) = bold(0), n = 0, 1, 2, 3, dots)
+W^n (x) = Ker (x I-A)^n = Set(bold(v) in K^N; (x I-A)^n bold(v) = bold(0))
 $
-を定め、固有値$x = c$に対して$tilde(W)(c)$を$A$の固有値$c$に対する_広義固有空間_という。
+と定める。
+固有値$x = c$に対して$W^n (c)$をまとめて$A$の固有値$c$に対する_広義固有空間_という。
 ]
 
-$tilde(W)(x)$は$K^N$の線形部分空間である。
+$W^n (x)$は$n$が大きくなるにつれて大きくなる$K^N$の部分空間であり、
+$
+W^0 (x) = O_(K^N) subset W^1 (x) = W(x) subset W^2 (x) subset W^3 (x) subset dots subset K^N
+$
+が成り立つ。
 
 #lemma([広義固有空間の線形独立性])[
 $T$を$K$上の線形空間$V$上の線形変換として、$c, d in K$を異なる固有値とする。
