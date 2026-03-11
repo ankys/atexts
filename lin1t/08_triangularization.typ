@@ -143,11 +143,40 @@ W^0 (x) = O_(K^N) subset W^1 (x) = W(x) subset W^2 (x) subset W^3 (x) subset dot
 $
 が成り立つ。
 
-#lemma([広義固有空間の線形独立性])[
-$T$を$K$上の線形空間$V$上の線形変換として、$c, d in K$を異なる固有値とする。
-このとき広義固有空間について$tilde(W)(c) inter tilde(W)(d) = O_V$が成り立つ。
+#theorem([広義固有空間分解])[
+$A$を$K$上の$N$次元正方行列として、$c_1, dots, c_L in K$を相異なる固有値とし、$A$の固有多項式が
+$
+det(x I-A) = (x-c_1)^(n_1) dots (x-c_L)^(n_L),
+quad n_1+dots+n_L = N
+$
+と因数分解されるとする。
+このとき各$i = 1, dots, L$に対して$dim W^(n_i) (c_i) = n_i$であり、
+$
+W^(n_1) (c_1) plus.o dots plus.o W^(n_L) (c_L) = K^N
+$
+が成り立つ。
 ]
 
 #proof[
+固有値$c = c_i$に対して代数的重複度を$n = n_i$とおく。
+ここで@t_tri より、必要ならば行の入れ替えを行うことで$A$は対角成分がすべて$c$の$n$次三角行列$S$と対角成分がどれも$c$でない$N-n$次三角行列$T$を使って
+$
+A = P mat(S, *; O, T) P^(-1)
+$
+と三角化される。
+このとき$c I-S$は対角成分がすべて$0$の$n$次三角行列であるから、
+$
+c I-A = P mat(c I-S, *; O, c I-T) P^(-1),
+$
+$
+(c I-A)^n = P mat((c I-S)^n, *; O, (c I-T)^n) P^(-1) = P mat(O, *; O, (c I-T)^n) P^(-1)
+$
+となる。
+一方で$c I-T$は可逆であるから$(c I-T)^n$も可逆であり、
+$
+W^(n) (c) = Ker (c I-A)^n = Set(P mat(bold(v); bold(0)); bold(v) in K^n)
+$
+なので$dim W^(n) (c) = n$がわかる。
 ]
+
 == ジョルダン標準形
