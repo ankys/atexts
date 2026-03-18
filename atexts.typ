@@ -66,4 +66,25 @@
 #include "cal2t/03_series.typ"
 #include "cal2t/04_functions.typ"
 
+#part[線形代数学１]
+#include "lin1t/01_twodimension.typ"
+#include "lin1t/02_matrix.typ"
+#include "lin1t/03_linearsystem.typ"
+#include "lin1t/04_determinant.typ"
+#include "lin1t/05_linearspace.typ"
+#include "lin1t/06_eigenproblem.typ"
+#include "lin1t/07_diagonalization.typ"
+#include "lin1t/08_triangularization.typ"
+#include "lin1t/09_variousclass.typ"
+#include "lin1t/10_quadratic.typ"
+
+#part[微分積分学３]
+#include "cal3t/01_tuple.typ"
+#include "cal3t/02_space.typ"
+#include "cal3t/03_pdiff.typ"
+#include "cal3t/04_iint.typ"
+#include "cal3t/05_fseq.typ"
+#include "cal3t/06_calc.typ"
+#include "cal3t/07_limint.typ"
+
 #bibliography("references.yml")
