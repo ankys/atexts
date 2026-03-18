@@ -1,6 +1,6 @@
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": dd, dv, pdv, evaluated
+#import "../deps/physics.typ": dd, dv, pdv, mdet, evaluated
 
 = 偏微分
 
