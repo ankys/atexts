@@ -14,6 +14,7 @@
 		// seriffont: "New Computer Modern",
 		// seriffont-cjk: "Harano Aji Mincho",
 		// sansfont: "Source Sans Pro",
+		sansfont: "Source Sans 3",
 		// sansfont-cjk: "Harano Aji Gothic",
 	)
 	set ref(supplement: auto)

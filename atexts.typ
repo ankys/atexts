@@ -1,5 +1,5 @@
 
-#let title = [数学テキスト]
+#let title = [数学]
 #let author = "中安淳"
 #import "version.typ": date
 
