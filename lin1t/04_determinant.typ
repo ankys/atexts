@@ -813,7 +813,7 @@ det (A^T B) = sum_(t in macron(S)_(N, M)) det A_t det B_t
 $
 が成り立つ。
 ただし、$M < N$の場合は右辺は零とする。
-]
+] <t_cauchybinet>
 
 #proof[
 まず、積$A B$は成分を使って以下のように書くことができる。

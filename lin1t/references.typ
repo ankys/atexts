@@ -1,3 +1,21 @@
 #let custom_labels = (
-	// 微分積分学３
+	// 線形代数学１
+  h_twodim: @[章 1],
+  h_matrix: @[章 2],
+  t_polyex: @[例 2.3.3],
+  t_blockinv: @[例 2.6.3],
+  h_linsys: @[章 3],
+  t_homlinsys: @[定理 3.4.5],
+  t_proddet: @[命題 4.4.6],
+  t_cofactinv: @[定理 4.5.4],
+  t_cofactvec: @[補題 4.5.5],
+  t_cauchybinet: @[定理 4.8.1],
+  t_complement: @[命題 5.2.8],
+  e_eigen: @[(6.1.1)],
+  e_tri: @[(6.3.1)],
+  t_eigenfactor: @[命題 6.3.1],
+  e_eigenfactor: @[(6.3.2)],
+  t_tri: @[定理 6.3.2],
+  e_diag: @[(7.4.1)],
+  e_diag2: @[(7.4.2)],
 )
