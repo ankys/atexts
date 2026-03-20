@@ -1,6 +1,7 @@
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": grad, div, curl, laplacian
+#import "../deps/physics.typ": super-T-as-transpose, grad, div, curl, laplacian
+#show: super-T-as-transpose
 #let opgrad = $op("grad")$
 #let opdiv = $op("div")$
 #let opcurl = $op("curl")$
@@ -19,7 +20,7 @@ $
 で（極限が存在する時に）定義されるスカラーである。
 極限を取る前の分数を_差分商_と呼び、差分商の極限を取ることで微分係数を得る。
 さらに$a$を$f$の定義域の内部の範囲で動かして得られる関数$f'(x)$を$f$の_微分導関数_と呼ぶ。
-本テキストで微分と言ったらこの微分係数や微分導関数を指し、$f'(x)$や$(f(x))'$と表す。
+本テキストで微分と言ったらこの微分係数や微分導関数を指し、微分導関数を$f'(x)$や$(f(x))'$と表す。
 自明なこととして$x$によらない定数の微分は零である。
 また、微分導関数の微分導関数を二階微分、さらにその微分導関数を三階微分などのようにして高階微分が定義される。
 
@@ -28,15 +29,17 @@ $
 
 == ベクトル族の微分
 
-一変数$N$次元ベクトル族$bold(f)(x) = vec(f_1 (x), dots.v, f_N (x))$の微分も差分商
+一変数$N$次元ベクトル族$bold(f)(x) = vec(f_1 (x), dots.v, f_N (x))$の微分も差分商の極限
 $
-lim_(x -> a) (bold(f)(x)-bold(f)(a))/(x-a)
+bold(f)'(a)
+= lim_(x -> a) (bold(f)(x)-bold(f)(a))/(x-a)
 = lim_(x -> a) vec((f_1 (x)-f_1 (a))/(x-a), dots.v, (f_N (x)-f_N (a))/(x-a))
 = vec(lim_(x -> a) (f_1 (x)-f_1 (a))/(x-a), dots.v, lim_(x -> a) (f_N (x)-f_N (a))/(x-a))
+= vec(f_1 '(a), dots.v, f_N '(a))
 $
 で定義される。
 成分ごとの微分となるため、微分は$N$次元ベクトル値関数である。
-これを$bold(f)'(x)$や$(bold(f)(x))'$と表す。
+微分導関数を$bold(f)'(x)$や$(bold(f)(x))'$と表す。
 まとめると$N$次元ベクトル族$bold(f)(x) = vec(f_1 (x), dots.v, f_N (x))$の_微分_は各成分に関する微分を並べた$N$次元ベクトル値関数であり、
 $
 bold(f)'(x) = vec(f_1 '(x), dots.v, f_N '(x))
@@ -61,8 +64,8 @@ $
 なので微分すると
 $
 (bold(f)(x) dot bold(g)(x))'
-= f_1 '(x) g_1 (x)+f_1 (x) g_1 '(x)+dots+f_N '(x) g_N (x)+f_N (x) g_N '(x)
-= bold(f)'(x) dot bold(g)(x)+bold(f)(x) dot bold(g)'(x)
+&= (f_1 '(x) g_1 (x)+f_1 (x) g_1 '(x))+dots+(f_N '(x) g_N (x)+f_N (x) g_N '(x)) \
+&= bold(f)'(x) dot bold(g)(x)+bold(f)(x) dot bold(g)'(x)
 $
 となる。
 ]
@@ -104,7 +107,7 @@ $
 以降では多変数や変数の中にスカラーとはみなせない点やベクトルあるいは行列が含まれる関数の微分を考える。
 この場合には一つのスカラー変数あるいは成分に注目してなら一変数とみなして微分することができる。
 このような微分を_偏微分_と呼ぶ。
-例えば多変数関数$f(x_1, dots, x_N)$の$x_i$成分に関する偏微分は$f_(x_i) (x_1, dots, x_N)$や$(f(x_1, dots, x_N))_(x_i)$と表す。
+例えば多変数関数$f(x_1, dots, x_N)$の$x_i$成分に関する偏微分は$f_(x_i) (x_1, dots, x_N)$や$(f(x_1, dots, x_N))_(x_i)$あるいは$partial_(x_i) (f(x_1, dots, x_N))$と表す。
 
 #proposition([合成関数の微分])[
 多変数関数$f(x_1, dots, x_N)$と$N$個の関数$x_1 (t), dots, x_N (t)$の合成関数$f(x_1 (t), dots, x_N (t))$の微分は
@@ -129,10 +132,10 @@ $
 各成分$x_i$は全て独立であることに注意する。
 
 #proposition([ベクトル変数の合成関数の微分])[
-$N$次元ベクトル変数関数$f(X)$と$N$次元ベクトル族$bold(x)(t)$の合成関数$f(bold(x)(t))$の微分は
+$N$次元ベクトル変数関数$f(x)$と$N$次元ベクトル族$bold(x)(t)$の合成関数$f(bold(x)(t))$の微分は
 $
 (f(bold(x)(t)))'
-= gradient f(bold(x)(t)) dot bold(x)' (t)
+= gradient f(bold(x)(t)) dot bold(x)'(t)
 = sum_(i=1)^N f_(x_i) (bold(x)(t)) x_i '(t)
 $
 となる。
@@ -193,7 +196,7 @@ $
 から求める。
 ここで、$tilde(X)_(i 1), dots, tilde(X)_(i N)$は余因子でありいずれも$x_(i j)$が登場しないので、
 $
-partial_(x_(i j)) det(X) = tilde(X)_(i j)
+(det(X))_(x_(i j)) = tilde(X)_(i j)
 $
 となり、行列式の勾配は余因子行列の転置行列である（余因子行列の定義が転置を取ったようになっていることに注意する）。
 さらに余因子行列は逆行列と結びつくので、
