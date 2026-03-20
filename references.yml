@@ -11,6 +11,18 @@ r_cal2t:
   title: 微分積分学２
   url: https://github.com/ankys/cal2t/releases/download/20260117/cal2t-20260117.pdf
   date: 2026-1-17
+r_lin1t:
+  type: Web
+  author: 中安淳
+  title: 線形代数学１
+  # url: https://github.com/ankys/cal2t/releases/download/20260117/cal2t-20260117.pdf
+  # date: 2026-1-17
+r_cal3t:
+  type: Web
+  author: 中安淳
+  title: 微分積分学３
+  # url: https://github.com/ankys/cal2t/releases/download/20260117/cal2t-20260117.pdf
+  # date: 2026-1-17
 r_o08:
   type: Web
   author: 小澤徹
