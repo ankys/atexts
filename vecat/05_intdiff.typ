@@ -70,8 +70,8 @@ $
 ガウス・グリーンの定理を用いることで$bold(f) = vec(f^1, dots.v, f^N)$として
 $
 integral_X div bold(f)
-= sum_i integral_X f^i_(x_i)
-= sum_i integral_(partial X) f^i n_i
+= sum_(i=1)^N integral_X f^i_(x_i)
+= sum_(i=1)^N integral_(partial X) f^i n_i
 = integral_(partial X) bold(f) dot bold(n)
 $
 である。
