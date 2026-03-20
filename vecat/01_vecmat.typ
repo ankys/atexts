@@ -1,5 +1,7 @@
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/physics.typ": super-T-as-transpose
+#show: super-T-as-transpose
 
 = ベクトルと行列
 
@@ -21,14 +23,16 @@
 つまり、ベクトルは$N$個のスカラーの組$(a_1, a_2, a_3, dots, a_N)$である。
 ベクトルは太字の小文字アルファベットを使って$bold(a), bold(b), bold(c), bold(f), bold(x), bold(y), bold(z)$などと表す。
 零ベクトルは$bold(0)$とする。
-また、$i = 1, dots, N$に対して、第$i$成分だけ$1$で他の成分が全て$0$であるベクトルを$bold(e)_i$と表し、$bold(e)_1, dots, bold(e)_N$をまとめて$N$次元標準基底ベクトルという。
+また、$i = 1, dots, N$に対して、第$i$成分だけ$1$で他の成分が全て$0$であるベクトルを$bold(e)_i$と表し、$bold(e)_1, dots, bold(e)_N$をまとめて$N$次元_標準基底ベクトル_という。
 
 ベクトルは加法とスカラー倍が定義され線形空間をなすことに注意する。
 ベクトルには三つの重要な積があり、内積（スカラー積）と外積（ベクトル積、クロス積）それとテンソル積であり、それぞれスカラー、ベクトル、行列となる。
 この節では内積について導入する。
 次数の等しいベクトル$bold(a) = (a_1, a_2, dots, a_N)$と$bold(b) = (b_1, b_2, dots, b_N)$の_内積_は対応する成分をかけて足し合わせたものであり、
 $
-bold(a) dot bold(b) = a_1 b_1+dots+a_N b_N = sum_(i=1)^N a_i b_i
+bold(a) dot bold(b)
+= sum_(i=1)^N a_i b_i
+= a_1 b_1+dots+a_N b_N
 $
 として定義される。
 実数体上の内積なので、スカラー積と同じものである。
@@ -64,7 +68,9 @@ $
 $M = N$の場合の$N$次正方行列$A$に対して対角成分の和を$A$の_トレース_または_跡_といい$tr A$と表す。
 トレースは
 $
-tr A = a_(1 1)+dots+a_(N N) = sum_(i=1)^N a_(i i)
+tr A
+= sum_(i=1)^N a_(i i)
+= a_(1 1)+dots+a_(N N)
 $
 なるスカラーである。
 また、$N$次正方行列$A$に対して
@@ -92,7 +98,9 @@ $
 そしてこれは転置とトレースを使っても表すことができることに注意する。
 つまり、
 $
-A colon B = sum_(i=1)^M sum_(j=1)^N a_(i j) b_(i j) = tr(A^T B)
+A colon B
+= tr(A^T B)
+= sum_(i=1)^M sum_(j=1)^N a_(i j) b_(i j)
 $
 である。
 
@@ -110,11 +118,12 @@ bold(a) times bold(b)
 $
 である。
 
-三次元ベクトル$bold(a) = vec(a_1, a_2, a_3)$と$bold(b) = vec(b_1, b_2, b_3)$の_外積_は
+三次元ベクトル$bold(a) = vec(a_1, a_2, a_3)$と$bold(b) = vec(b_1, b_2, b_3)$の_外積_は三次元ベクトル
 $
 bold(a) times bold(b)
 = vec(a_2 b_3-a_3 b_2, a_3 b_1-a_1 b_3, a_1 b_2-a_2 b_1)
 $
+と定義される。
 標準基底ベクトル$bold(e)_1, bold(e)_2, bold(e)_3$を使うと形式的には
 $
 bold(a) times bold(b)
@@ -197,9 +206,9 @@ $
 #proof[
 ベクトル三重積の公式より
 $
-bold(a) times (bold(b) times bold(c))+bold(b) times (bold(c) times bold(a))+bold(c) times (bold(a) times bold(b))
-= ((bold(a) dot bold(c))bold(b)-(bold(a) dot bold(b))bold(c))+((bold(b) dot bold(a))bold(c)-(bold(b) dot bold(c))bold(a))+((bold(c) dot bold(b))bold(a)-(bold(c) dot bold(a))bold(b))
-= bold(0)
+&bold(a) times (bold(b) times bold(c))+bold(b) times (bold(c) times bold(a))+bold(c) times (bold(a) times bold(b)) \
+&quad = ((bold(a) dot bold(c))bold(b)-(bold(a) dot bold(b))bold(c))+((bold(b) dot bold(a))bold(c)-(bold(b) dot bold(c))bold(a))+((bold(c) dot bold(b))bold(a)-(bold(c) dot bold(a))bold(b)) \
+&quad = bold(0)
 $
 である。
 ]
@@ -289,7 +298,7 @@ $
 
 本テキストの_点_とは$N = 1, 2, 3, dots$として実数体上の$N$次元点のことであり$RR^N$の元のことである。
 ベクトルと同じく$RR^N$が全体集合であるが、点とベクトルは異なる幾何学的な意味を持つ。
-例えば点に対しては和やスカラー倍が一般には定義されない。
+例えば点に対しては和やスカラー倍が本来は定義されない。
 あるのは二点を与えた時の距離や有向線分などである。
 点とベクトルについて詳しくは@r_cal3t を参照のこと。
-また、ベクトルは太字を使って表現されていたが、点は太字を使わずに$P, Q, R$あるいは$a, b, c, x, y, z$などと表す。
+また、ベクトルは太字を使って表現されていたが、点として扱う場合は太字を使わずに$P, Q, R$あるいは$a, b, c, x, y, z$などと表す。
