@@ -52,8 +52,8 @@ $
 $phi$での積分を実行すると$y, z$成分は消えて、
 $
 bold(I)
-= integral_0^R integral_0^pi (r^2 sin theta)/sqrt((r cos theta-a)^2+r^2 sin^2 theta)^3 vec(2 pi r cos theta-a, 0, 0) dd(theta)dd(r)
-= integral_0^R integral_0^pi (2 pi r^2 (r cos theta-a)sin theta)/sqrt((r cos theta-a)^2+r^2 sin^2 theta)^3 dd(theta)dd(r) vec(1, 0, 0)
+&= integral_0^R integral_0^pi (r^2 sin theta)/sqrt((r cos theta-a)^2+r^2 sin^2 theta)^3 vec(2 pi r cos theta-a, 0, 0) dd(theta)dd(r) \
+&= integral_0^R integral_0^pi (2 pi r^2 (r cos theta-a)sin theta)/sqrt((r cos theta-a)^2+r^2 sin^2 theta)^3 dd(theta)dd(r) vec(1, 0, 0)
 $
 となる。
 このスカラーな積分を$I$とおく、つまり
@@ -124,8 +124,8 @@ $
 $bold(x) = (R cos theta, R sin theta cos phi, R sin theta sin phi)$とパラメータ付けると面積要素は$dd(S(bold(x))) = R^2 sin theta$なので、
 $
 bold(I)
-= -integral_(partial B_R) 1/abs(bold(x)-bold(a)) bold(x)/abs(bold(x)) dd(S(bold(x)))
-= -integral_0^pi integral_0^(2 pi) (R^2 sin theta)/sqrt((R cos theta-a)^2+R^2 sin^2 theta) vec(cos theta, sin theta cos phi, sin theta sin phi) dd(phi)dd(theta)
+&= -integral_(partial B_R) 1/abs(bold(x)-bold(a)) bold(x)/abs(bold(x)) dd(S(bold(x))) \
+&= -integral_0^pi integral_0^(2 pi) (R^2 sin theta)/sqrt((R cos theta-a)^2+R^2 sin^2 theta) vec(cos theta, sin theta cos phi, sin theta sin phi) dd(phi)dd(theta)
 $
 である。
 $phi$での積分を実行すると、
@@ -224,8 +224,8 @@ $bold(x) eq.not bold(a)$で被積分関数が$0$より$rho(bold(x))$を$rho(bold
 $integral_(RR^3) laplace_(bold(a)) (rho(bold(x))/abs(bold(x)-bold(a))) dd(bold(x))$は次の値で代用できる。
 $
 -integral_(B_r (bold(a))) rho(bold(a)) div_(bold(x)) (bold(x)-bold(a))/abs(bold(x)-bold(a))^3 dd(bold(x))
-= -rho(bold(a)) integral_(partial B_r (bold(a))) (bold(x)-bold(a))/abs(bold(x)-bold(a))^3 dot (bold(x)-bold(a))/abs(bold(x)-bold(a)) dd(S(bold(x)))
-= -rho(bold(a)) integral_(partial B_r (bold(a))) 1/r^2 dd(S(bold(x)))
+&= -rho(bold(a)) integral_(partial B_r (bold(a))) (bold(x)-bold(a))/abs(bold(x)-bold(a))^3 dot (bold(x)-bold(a))/abs(bold(x)-bold(a)) dd(S(bold(x))) \
+&= -rho(bold(a)) integral_(partial B_r (bold(a))) 1/r^2 dd(S(bold(x)))
 = -4 pi rho(bold(a)).
 $
 つまり以上の置き換えのもとで
