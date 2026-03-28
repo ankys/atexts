@@ -1,6 +1,6 @@
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": grad, div, curl, laplacian, dd, dv
+#import "../deps/physics.typ": grad, div, curl, laplacian, dd
 #let opgrad = $op("grad")$
 #let opdiv = $op("div")$
 #let opcurl = $op("curl")$
@@ -72,7 +72,7 @@ $N$次元空間上の曲線を$c(t)$ ($t in [a, b]$)とする。
 $N$次元スカラー場$f$に対する線積分は次のように定義される。
 $
 integral_c f
-= integral_a^b f(c(t)) abs(dot(c)(t)) dd(t).
+= integral_a^b f(c(t)) abs(c'(t)) dd(t).
 $
 
 この積分は曲線のパラメータの取り方によらない。
@@ -84,11 +84,11 @@ $
 が成り立つ。
 ]
 #proof[
-計算すると合成関数の微分法$dv(, tau)(c compose phi)(tau) = dot(c)(phi(tau))dot(phi)(tau)$と置換積分$t = phi(tau)$より
+計算すると合成関数の微分法$(c compose phi)'(tau) = c'(phi(tau))phi'(tau)$と置換積分$t = phi(tau)$より
 $
 integral_(c compose phi) f
-= integral_alpha^beta f(c(phi(tau))) abs(dot(c)(phi(tau))) dot(phi)(tau) dd(tau)
-= integral_a^b f(c(t)) abs(dot(c)(t)) dd(t)
+= integral_alpha^beta f(c(phi(tau))) abs(c'(phi(tau))phi'(tau)) dd(tau)
+= integral_a^b f(c(t)) abs(c'(t)) dd(t)
 = integral_c f
 $
 である。
@@ -104,7 +104,7 @@ $
 $N$次元ベクトル場$bold(f)$に対する線積分は次のように定義される。
 $
 integral_c bold(f)
-= integral_a^b bold(f)(c(t)) dot dot(c)(t) dd(t).
+= integral_a^b bold(f)(c(t)) dot c'(t) dd(t).
 $
 
 この積分も曲線のパラメータの取り方によらない。
@@ -116,11 +116,11 @@ $
 が成り立つ。
 ]
 #proof[
-計算すると合成関数の微分法$dv(, tau)(c compose phi)(tau) = dot(c)(phi(tau))dot(phi)(tau)$と置換積分$t = phi(tau)$より
+計算すると合成関数の微分法$(c compose phi)'(tau) = c'(phi(tau))phi'(tau)$と置換積分$t = phi(tau)$より
 $
 integral_(c compose phi) bold(f)
-= integral_alpha^beta bold(f)(c(phi(tau))) dot dot(c)(phi(tau)) dot(phi)(tau) dd(tau)
-= integral_a^b bold(f)(c(t)) dot dot(c)(t) dd(t)
+= integral_alpha^beta bold(f)(c(phi(tau))) dot c'(phi(tau))phi'(tau) dd(tau)
+= integral_a^b bold(f)(c(t)) dot c'(t) dd(t)
 = integral_c bold(f)
 $
 である。

@@ -1,6 +1,6 @@
 
 #import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": grad, div, curl, laplacian, dd, dv
+#import "../deps/physics.typ": grad, div, curl, laplacian, dd
 #let opgrad = $op("grad")$
 #let opdiv = $op("div")$
 #let opcurl = $op("curl")$
@@ -23,11 +23,11 @@ $
 ]
 
 #proof[
-$C$のパラメータ表示を$c(t)$ ($c(a) = P$, $c(b) = Q$)とすると、合成関数の微分法$dv(, t)(f compose c)(t) = grad f(c(t)) dot dot(c)(t)$と一変数関数に対する微分積分学の基本定理より
+$C$のパラメータ表示を$c(t)$ ($c(a) = P$, $c(b) = Q$)とすると、合成関数の微分法$(f compose c)'(t) = grad f(c(t)) dot c'(t)$と一変数関数に対する微分積分学の基本定理より
 $
 integral_C grad f
-= integral_a^b grad f(c(t)) dot dot(c)(t) dd(t)
-= integral_a^b dv(, t)(f compose c)(t) dd(t)
+= integral_a^b grad f(c(t)) dot c'(t) dd(t)
+= integral_a^b (f compose c)'(t) dd(t)
 = (f compose c)(b)-(f compose c)(a)
 = f(Q)-f(P)
 $
