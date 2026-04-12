@@ -150,6 +150,17 @@ $
 と定義する。
 各成分$x_i$は全て独立であることに注意する。
 
+#example([恒等変換の勾配])[
+$N$次元ベクトル変数$bold(x) = vec(x_1, dots.v, x_N)$のそれ自身についての勾配は
+$
+gradient_(bold(x)) (bold(x))
+= mat(partial_(x_1) (x_1), dots.c, partial_(x_N) (x_1); dots.v, dots.down, dots.v; partial_(x_1) (x_N), dots.c, partial_(x_N) (x_N))
+= mat(1, dots.c, 0; dots.v, dots.down, dots.v; 0, dots.c, 1)
+= I
+$
+と計算され、恒等変換の勾配は単位行列であることがわかる。
+]
+
 #proposition([ベクトル変数ベクトル値の合成関数の微分])[
 $N$次元ベクトル変数$M$次元ベクトル値関数$bold(f)(bold(x))$と$N$次元ベクトル族$bold(x)(t)$の合成関数$bold(f)(bold(x)(t))$の微分は
 $
