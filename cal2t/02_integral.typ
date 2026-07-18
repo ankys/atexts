@@ -803,6 +803,46 @@ $
 である。
 ]
 
+また、次のような積分の公式もある。
+
+#theorem([キング則])[
+$f$を有界閉区間$[a, b]$上の連続関数とするとき、
+$
+integral_a^b f(x) dd(x) = integral_a^b f(a+b-x) dd(x)
+$
+が成り立つ。
+]
+
+#proof[
+右辺において$y = a+b-x$と置換すると、
+$
+integral_a^b f(a+b-x) dd(x)
+= integral_b^a (-f(y)) dd(y)
+= integral_a^b f(y) dd(y).
+$
+したがって、$y$を$x$に書き直せばほしかった式が得られる。
+]
+
+#remark[
+このキング則は面積としての積分の対称性を表すもので、
+$y-(a+b)/2 = -(x-(a+b)/2)$のように中点で左右反転させても同じ面積を与えることを意味する。
+]
+
+#example[
+$f$を有界閉区間$[0, 1]$上の連続関数とするとき、
+$
+integral_0^(pi/2) f(sin x) dd(x) = integral_0^(pi/2) f(sin x) dd(x)
+$ <e_int_sin_cos>
+が成り立つ。
+実際、キング則より
+$
+integral_0^(pi/2) f(sin x) dd(x)
+= integral_0^(pi/2) f(sin(pi/2-x)) dd(x)
+= integral_0^(pi/2) f(cos x) dd(x)
+$
+である。
+]
+
 == 種々の積分の計算
 
 この章では積分を計算する系統だった技法をいくつか紹介することで様々な関数の積分が計算できるようにする。
@@ -925,7 +965,7 @@ $
 I_n = integral_0^(pi/2) sin^n x dd(x) = integral_0^(pi/2) cos^n x dd(x)
 $ <e_wallis_int>
 を考えよう。
-なお、$sin$の定積分と$cos$の定積分が等しいことは$x$を$pi/2-x$と置換すればわかる。
+なお、$sin$の定積分と$cos$の定積分が等しいことはキング則@e_int_sin_cos からわかる。
 この積分$I_n$を_ウォリス積分_という。
 不定積分が得られているので定積分に対する漸化式は
 $
