@@ -18,7 +18,12 @@
 		// sansfont-cjk: "Harano Aji Gothic",
 	)
 	set ref(supplement: auto)
-	set par(first-line-indent: 1em) // why
+	// indent
+	set par(first-line-indent: (all: false, amount: 1em))
+	show heading: it => {
+		it
+		h(1em)
+	}
 	show math.equation.where(block: true): block.with(width: 100%)
 	// part heading
 	counter("jsbook-part").update(0)
