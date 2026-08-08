@@ -1,7 +1,7 @@
 
 = 級数
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
 #import "../deps/physics.typ": dd
 
 == 級数の収束

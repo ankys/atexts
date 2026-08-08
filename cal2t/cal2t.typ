@@ -9,8 +9,8 @@
 	lang: "ja",
 )
 
-#import "../deps/theorem.typ": thmrules
-#show: thmrules.with()
+#import "../deps/theorem.typ": show-theorem
+#show: show-theorem.with()
 
 #import "../deps/autoeqnum.typ": autoeqnum
 #show heading.where(level: 2): it => {

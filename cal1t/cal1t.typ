@@ -10,7 +10,7 @@
 )
 
 #import "../deps/theorem.typ": *
-#show: show-theorem
+#show: show-theorem.with()
 
 #import "../deps/autoeqnum.typ": autoeqnum
 #show heading.where(level: 2): it => {
