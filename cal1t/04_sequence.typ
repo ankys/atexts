@@ -1,7 +1,7 @@
 
 = 数列
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "../deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
 #import "../deps/physics.typ": Set
 
 == 数列の導入
