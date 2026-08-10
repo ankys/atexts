@@ -1,6 +1,9 @@
 {
 	"name": "Dev",
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features": {
+		"ghcr.io/devcontainers/features/node:2": {}
+	},
 	"postCreateCommand": "sudo bash .scripts/setup_fonts.sh",
 	"customizations": {
 		"vscode": {
