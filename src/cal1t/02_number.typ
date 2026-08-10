@@ -2,8 +2,8 @@
 = 数
 <h_number>
 
-#import "../deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
-#import "../deps/physics.typ": Set
+#import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
+#import "/deps/physics.typ": Set
 
 == 自然数
 

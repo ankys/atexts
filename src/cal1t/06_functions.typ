@@ -1,8 +1,8 @@
 
 = 種々の関数
 
-#import "../deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
-#import "../deps/physics.typ": Set
+#import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
+#import "/deps/physics.typ": Set
 
 #let arsinh = $op("arsinh")$
 #let arcosh = $op("arcosh")$

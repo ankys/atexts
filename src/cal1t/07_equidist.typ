@@ -1,8 +1,8 @@
 
 = 一様分布論
 
-#import "../deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
-#import "../deps/physics.typ": Set, dd
+#import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
+#import "/deps/physics.typ": Set, dd
 
 == 一様分布定理
 
