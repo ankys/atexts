@@ -1,6 +1,7 @@
 
-= 集合
-<h_set>
+// = 集合
+// <h_set>
+#let title = [集合]
 
 #import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
 #import "/deps/physics.typ": Set

@@ -1,6 +1,7 @@
 
-= 数
-<h_number>
+// = 数
+// <h_number>
+#let title = [数]
 
 #import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
 #import "/deps/physics.typ": Set
