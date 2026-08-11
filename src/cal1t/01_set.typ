@@ -1,7 +1,9 @@
 
 // = 集合
 // <h_set>
-#let title = [集合]
+#metadata((
+  title: "集合",
+)) <frontmatter>
 
 #import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
 #import "/deps/physics.typ": Set

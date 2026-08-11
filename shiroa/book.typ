@@ -10,9 +10,9 @@
   summary: [
 - #prefix-chapter("src/00_preface.typ")[序文]
 = 微分積分学１
-- #chapter("src/cal1t/00_preface.typ")[序文]
-- #chapter("src/cal1t/01_set.typ")[集合]
-- #chapter("src/cal1t/02_number.typ")[数]
+// - #chapter("src/cal1t/00_preface.typ")[序文]
+// - #chapter("src/cal1t/01_set.typ")[集合]
+// - #chapter("src/cal1t/02_number.typ")[数]
 // - #chapter("src/cal1t/03_infsup.typ")[極値]
 // - #chapter("src/cal1t/04_sequence.typ")[数列]
 // - #chapter("src/cal1t/05_limit.typ")[極限]

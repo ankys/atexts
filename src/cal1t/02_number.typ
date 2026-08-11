@@ -1,7 +1,9 @@
 
 // = 数
 // <h_number>
-#let title = [数]
+#metadata((
+  title: "数",
+)) <frontmatter>
 
 #import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
 #import "/deps/physics.typ": Set
