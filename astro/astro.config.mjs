@@ -5,9 +5,11 @@ import { typst } from "astro-typst";
 
 // https://astro.build/config
 export default defineConfig({
-	// root: "../",
-	// srcDir: "../src",
-	// base: "",
+	vite: {
+		resolve: {
+			preserveSymlinks: true
+		}
+	},
 	integrations: [
 		starlight({
 			title: "数学テキスト",
