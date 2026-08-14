@@ -6,9 +6,8 @@
 #import "/deps/jtemplate.typ": jtemplate
 #show: jtemplate
 
-#import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof, show-theorem
+#import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
 #import "/deps/physics.typ": Set
-#show: show-theorem
 
 == 集合と命題と写像
 <h_set_prop_map>
