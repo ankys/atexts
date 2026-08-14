@@ -21,15 +21,15 @@
   ]
 )
 
-#import "/deps/theorem.typ": show-theorem
+// #import "/deps/theorem.typ": show-theorem
 
-#let book-page(title: none, body) = {
-  import "@preview/shiroa-starlight:0.4.0": starlight
-  show: starlight.with(
-    include "./book.typ",
-    title: title,
-  )
-  show: show-theorem
-  set text(lang: "ja")
-  body
-}
+// #let book-page(title: none, body) = {
+//   import "@preview/shiroa-starlight:0.4.0": starlight
+//   show: starlight.with(
+//     include "./book.typ",
+//     title: title,
+//   )
+//   show: show-theorem
+//   set text(lang: "ja")
+//   body
+// }
