@@ -1,8 +1,13 @@
 
-= 微分
+#metadata((
+  title: "微分",
+)) <frontmatter>
 
-#import "../deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
-#import "../deps/physics.typ": dv, evaluated
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
+#import "/deps/physics.typ": dv, evaluated
 #let arsinh = $op("arsinh")$
 #let arcosh = $op("arcosh")$
 #let artanh = $op("artanh")$

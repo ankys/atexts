@@ -1,8 +1,13 @@
 
-= 種々の関数２
+#metadata((
+  title: "種々の関数２",
+)) <frontmatter>
 
-#import "../deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
-#import "../deps/physics.typ": dd, evaluated
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
+#import "/deps/physics.typ": dd, evaluated
 
 == 複素指数関数
 
