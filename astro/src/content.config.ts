@@ -7,8 +7,8 @@ export const collections = {
 	docs: defineCollection({
 		loader: glob({
 			pattern: "**/*.typ",
-			// base: "/src/content/docs"
-			base: "/src/content/src"
+			base: "./src/content/docs"
+			// base: "./src/content/src"
 		}),
 		schema: docsSchema()
 	}),
