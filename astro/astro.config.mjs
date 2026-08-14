@@ -14,16 +14,12 @@ export default defineConfig({
 		starlight({
 			title: "数学テキスト",
 			social: [{ icon: "github", label: "GitHub", href: "https://github.com/ankys/atexts" }],
-			sidebar: [
-			],
-			// disable404Route: true,
+			customCss: ["./src/custom.css"],
 		}),
 		typst({
 			target: (id) => {
 				console.debug(`Detecting ${id}`);
-				if (id.endsWith(".typ") || id.includes('/html/'))
-					return "html";
-				return "svg";
+				return "html";
 			},
 			htmlMode: "text",
 		}),
