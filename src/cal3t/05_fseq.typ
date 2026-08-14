@@ -1,9 +1,14 @@
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": dd, dv, evaluated
-#let area = $op("area")$
+#metadata((
+  title: "関数列",
+)) <frontmatter>
 
-= 関数列
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": dd, dv, evaluated
+#let area = $op("area")$
 
 == 各点収束と一様収束
 

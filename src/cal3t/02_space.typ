@@ -1,8 +1,13 @@
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#let proj = $op("proj")$
+#metadata((
+  title: "空間",
+)) <frontmatter>
 
-= 空間
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#let proj = $op("proj")$
 
 == 点と空間
 

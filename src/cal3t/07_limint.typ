@@ -1,8 +1,13 @@
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": dd
+#metadata((
+  title: "積分の極限",
+)) <frontmatter>
 
-= 積分の極限
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": dd
 
 == ディニの定理
 

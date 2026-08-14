@@ -1,8 +1,13 @@
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": dd, dv, pdv, mdet, evaluated
+#metadata((
+  title: "偏微分",
+)) <frontmatter>
 
-= 偏微分
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": dd, dv, pdv, mdet, evaluated
 
 == 偏微分
 

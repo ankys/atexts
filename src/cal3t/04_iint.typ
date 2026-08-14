@@ -1,11 +1,16 @@
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": dd
+#metadata((
+  title: "重積分",
+)) <frontmatter>
+
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": dd
 #let area = $op("area")$
 #let vol = $op("vol")$
 #let diag = $op("diag")$
-
-= 重積分
 
 == 重積分
 

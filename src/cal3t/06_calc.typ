@@ -1,10 +1,15 @@
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": dd
+#metadata((
+  title: "種々の計算",
+)) <frontmatter>
+
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": dd
 #let area = $op("area")$
 #let vol = $op("vol")$
-
-= 種々の計算
 
 == 正測体と正軸体の体積
 
