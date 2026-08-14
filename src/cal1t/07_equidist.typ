@@ -1,5 +1,10 @@
 
-= 一様分布論
+#metadata((
+  title: "一様分布論",
+)) <frontmatter>
+
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
 
 #import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
 #import "/deps/physics.typ": Set, dd

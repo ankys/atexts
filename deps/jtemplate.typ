@@ -1,4 +1,5 @@
 
+#import "autoeqnum.typ": autoeqnum
 #import "theorem.typ": show-theorem
 
 #let jtemplate(body) = {
@@ -10,6 +11,10 @@
 			it
 		}
 	}
+	show: autoeqnum.with(mode: "ref", numbering: it => {
+		let count = counter(heading).get()
+		numbering("(1.1)", ..count, it)
+	})
 	show: show-theorem
 	body
 }
