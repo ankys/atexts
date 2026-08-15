@@ -9,19 +9,6 @@
 	lang: "ja",
 )
 
-#import "/deps/theorem.typ": *
-#show: show-theorem.with()
-
-#import "/deps/autoeqnum.typ": autoeqnum
-#show heading.where(level: 2): it => {
-	counter(math.equation).update(0)
-	it
-}
-#show: autoeqnum.with(mode: "ref", numbering: it => {
-	let count = counter(heading).get()
-	numbering("(1.1)", ..count, it)
-})
-
 // #import "/deps/outputtools.typ": *
 // #output_outline()
 // #output_outline(fmt: (level, number, body) => [#("  " * (level - 1))- #number #body\\n])
@@ -36,30 +23,30 @@
 	date: date,
 )
 
-#import "/src/references.typ": get_all_labels
-#let all_labels = get_all_labels()
-#import "/src/cal1t/references.typ": custom_labels
-#show ref: it => {
-	let key = str(it.target)
-	if key in custom_labels {
-		it
-	} else if key in all_labels {
-		all_labels.at(key)
-	} else {
-		it
-	}
-}
+// #import "/src/references.typ": get_all_labels
+// #let all_labels = get_all_labels()
+// #import "/src/cal1t/references.typ": custom_labels
+// #show ref: it => {
+// 	let key = str(it.target)
+// 	if key in custom_labels {
+// 		it
+// 	} else if key in all_labels {
+// 		all_labels.at(key)
+// 	} else {
+// 		it
+// 	}
+// }
 
-#include "/src/cal1t/00_preface.typ"
+#include-chapter("/src/cal1t/00_preface.typ", <h_cal1t_preface>)
 
 #outline()
 
-#include "/src/cal1t/01_set.typ"
-#include "/src/cal1t/02_number.typ"
-#include "/src/cal1t/03_supinf.typ"
-#include "/src/cal1t/04_sequence.typ"
-#include "/src/cal1t/05_limit.typ"
-#include "/src/cal1t/06_functions.typ"
-#include "/src/cal1t/07_equidist.typ"
+#include-chapter("/src/cal1t/01_set.typ", <h_cal1t_set>)
+#include-chapter("/src/cal1t/02_number.typ", <h_cal1t_number>)
+#include-chapter("/src/cal1t/03_supinf.typ", <h_cal1t_supinf>)
+#include-chapter("/src/cal1t/04_sequence.typ", <h_cal1t_sequence>)
+#include-chapter("/src/cal1t/05_limit.typ", <h_cal1t_limit>)
+#include-chapter("/src/cal1t/06_functions.typ", <h_cal1t_functions>)
+#include-chapter("/src/cal1t/07_equidist.typ", <h_cal1t_equidist>)
 
 #bibliography("/src/references.yml")

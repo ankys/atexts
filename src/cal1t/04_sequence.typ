@@ -1,6 +1,7 @@
 
 #metadata((
   title: "数列",
+  label: <h_cal1t_sequence>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

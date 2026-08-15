@@ -1,6 +1,7 @@
 
 #metadata((
   title: "極値",
+  label: <h_cal1t_supinf>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

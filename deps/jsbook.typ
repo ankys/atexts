@@ -79,3 +79,15 @@
 	let target = heading.where().or(figure.where(kind: "jsbook-part"))
 	return outline(target: target)
 }
+#let include-chapter(path, label) = context {
+	let frontmatter = query(<frontmatter>).find(it => ("label" in it.value) and (it.value.label == label))
+	let chapter-title = if frontmatter == none { label } else { frontmatter.value.title }
+	[
+		#if frontmatter != none and "numbering" in frontmatter.value [
+			#heading(level: 1, numbering: frontmatter.value.numbering)[#chapter-title]
+		] else [
+			= #chapter-title
+		]
+		#include path
+	]
+}

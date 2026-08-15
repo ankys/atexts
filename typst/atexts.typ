@@ -34,19 +34,6 @@
 // 	}
 // }
 
-#let include-chapter(path, label) = context {
-	let frontmatter = query(<frontmatter>).find(it => ("label" in it.value) and (it.value.label == label))
-	let chapter-title = if frontmatter == none { label } else { frontmatter.value.title }
-	[
-		#if frontmatter != none and "numbering" in frontmatter.value [
-			#heading(level: 1, numbering: frontmatter.value.numbering)[#chapter-title]
-		] else [
-			= #chapter-title
-		]
-		#include path
-	]
-}
-
 #include-chapter("/src/preface.typ", <h_preface>)
 
 #outline-part()
@@ -54,11 +41,11 @@
 #part[微分積分学１]
 #include-chapter("/src/cal1t/01_set.typ", <h_cal1t_set>)
 #include-chapter("/src/cal1t/02_number.typ", <h_cal1t_number>)
-#include "/src/cal1t/03_supinf.typ"
-#include "/src/cal1t/04_sequence.typ"
-#include "/src/cal1t/05_limit.typ"
-#include "/src/cal1t/06_functions.typ"
-#include "/src/cal1t/07_equidist.typ"
+#include-chapter("/src/cal1t/03_supinf.typ", <h_cal1t_supinf>)
+#include-chapter("/src/cal1t/04_sequence.typ", <h_cal1t_sequence>)
+#include-chapter("/src/cal1t/05_limit.typ", <h_cal1t_limit>)
+#include-chapter("/src/cal1t/06_functions.typ", <h_cal1t_functions>)
+#include-chapter("/src/cal1t/07_equidist.typ", <h_cal1t_equidist>)
 
 #part[微分積分学２]
 #include "/src/cal2t/01_differential.typ"

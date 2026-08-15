@@ -1,6 +1,7 @@
 
 #metadata((
   title: "一様分布論",
+  label: <h_cal1t_equidist>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

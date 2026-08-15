@@ -1,6 +1,7 @@
 
 #metadata((
   title: "極限",
+  label: <h_cal1t_limit>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate
