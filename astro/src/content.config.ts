@@ -8,7 +8,7 @@ export const collections = {
 		loader: glob({
 			base: "./src/content/docs",
 			// pattern: "(index.typ|(cal1t)/*.typ)",
-			pattern: "**/*.typ",
+			pattern: "**/*.(mdx|typ)",
 		}),
 		schema: docsSchema()
 	}),

@@ -1,0 +1,24 @@
+---
+title: 数学テキスト
+template: splash
+hero:
+  title: 数学テキスト
+  tagline: 中安淳
+  actions:
+    - text: 最初から読む
+      icon: right-arrow
+      link: /preface/
+    - text: GitHubで見る
+      icon: external
+      variant: minimal
+      link: https://github.com/ankys/atexts
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+<CardGrid stagger>
+  <LinkCard href="/cal1t/00_preface/" title="微分積分学１" description="実数と極限のテキスト" />
+  <LinkCard href="/cal2t/00_preface/" title="微分積分学２" description="実一変数の微分積分学のテキスト" />
+  <LinkCard href="/cal3t/00_preface/" title="微分積分学３" description="実多変数の微分積分学のテキスト" />
+  <LinkCard href="/lin1t/00_preface/" title="線形代数学１" description="四則演算のみの行列と線形代数学のテキスト" />
+</CardGrid>
