@@ -34,12 +34,12 @@
 // 	}
 // }
 
-#let include-chapter(path, label, numbering: true) = context {
+#let include-chapter(path, label) = context {
 	let frontmatter = query(<frontmatter>).find(it => ("label" in it.value) and (it.value.label == label))
 	let chapter-title = if frontmatter == none { label } else { frontmatter.value.title }
 	[
-		#if numbering == none [
-			#heading(level: 1, numbering: none)[#chapter-title]
+		#if frontmatter != none and "numbering" in frontmatter.value [
+			#heading(level: 1, numbering: frontmatter.value.numbering)[#chapter-title]
 		] else [
 			= #chapter-title
 		]
@@ -47,7 +47,7 @@
 	]
 }
 
-#include-chapter("/src/preface.typ", <h_preface>, numbering: none)
+#include-chapter("/src/preface.typ", <h_preface>)
 
 #outline-part()
 
