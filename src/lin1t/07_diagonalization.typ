@@ -1,8 +1,13 @@
 
-= 対角化
+#metadata((
+  title: "対角化",
+)) <frontmatter>
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": super-T-as-transpose, super-plus-as-dagger, Set, braket, Re, dmat
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": super-T-as-transpose, super-plus-as-dagger, Set, braket, Re, dmat
 #show: super-T-as-transpose
 #show: super-plus-as-dagger
 #let Span = $op("Span")$

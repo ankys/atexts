@@ -1,8 +1,12 @@
 
-= 二次の理論
-<h_twodim>
+#metadata((
+  title: "二次の理論",
+)) <frontmatter>
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
 
 == 連立一次方程式と逆行列
 

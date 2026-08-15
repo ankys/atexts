@@ -1,8 +1,13 @@
 
-= 行列式
+#metadata((
+  title: "行列式",
+)) <frontmatter>
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": super-T-as-transpose, sgn, mdet
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": super-T-as-transpose, sgn, mdet
 #show: super-T-as-transpose
 
 == 行列式の導入

@@ -1,8 +1,13 @@
 
-= 三角化
+#metadata((
+  title: "三角化",
+)) <frontmatter>
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": Set
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": Set
 #let Ker = $op("Ker")$
 
 == フロベニウスの定理とケイリー・ハミルトンの定理

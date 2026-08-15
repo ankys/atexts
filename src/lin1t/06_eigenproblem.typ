@@ -1,8 +1,13 @@
 
-= 固有値問題
+#metadata((
+  title: "固有値問題",
+)) <frontmatter>
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": Set, mdet, dmat
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": Set, mdet, dmat
 #let Ker = $op("Ker")$
 
 == 固有値と固有ベクトル

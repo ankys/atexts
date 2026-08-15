@@ -1,8 +1,13 @@
 
-= 二次式
+#metadata((
+  title: "二次式",
+)) <frontmatter>
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": super-T-as-transpose
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": super-T-as-transpose
 #show: super-T-as-transpose
 
 == 二次式と二次形式

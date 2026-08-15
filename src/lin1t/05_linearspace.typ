@@ -1,8 +1,13 @@
 
-= 線形空間
+#metadata((
+  title: "線形空間",
+)) <frontmatter>
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": Set, rank
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": Set, rank
 #let Span = $op("Span")$
 #let Img = $op("Img")$
 #let Ker = $op("Ker")$

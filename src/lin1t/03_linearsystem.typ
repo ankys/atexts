@@ -1,9 +1,13 @@
 
-= 連立一次方程式
-<h_linsys>
+#metadata((
+  title: "連立一次方程式",
+)) <frontmatter>
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": super-T-as-transpose, rank
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": super-T-as-transpose, rank
 #show: super-T-as-transpose
 
 == 拡大係数行列
