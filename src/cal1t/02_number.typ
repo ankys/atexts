@@ -1,6 +1,7 @@
 
 #metadata((
   title: "数",
+  label: <h_cal1t_number>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

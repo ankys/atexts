@@ -1,6 +1,7 @@
 
 #metadata((
   title: "集合",
+  label: <h_cal1t_set>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

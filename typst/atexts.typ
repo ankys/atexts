@@ -34,23 +34,26 @@
 // 	}
 // }
 
-#let include-chapter(path) = context{
-	// let chapter-title = query(<frontmatter>).first().title
+#let include-chapter(path, label, numbering: true) = context {
+	let frontmatter = query(<frontmatter>).find(it => ("label" in it.value) and (it.value.label == label))
+	let chapter-title = if frontmatter == none { label } else { frontmatter.value.title }
 	[
-		= aaa
-		// = #chapter-title
-		#query(<frontmatter>)
+		#if numbering == none [
+			#heading(level: 1, numbering: none)[#chapter-title]
+		] else [
+			= #chapter-title
+		]
 		#include path
 	]
 }
 
-#include "/src/preface.typ"
+#include-chapter("/src/preface.typ", <h_preface>, numbering: none)
 
 #outline-part()
 
 #part[微分積分学１]
-#include-chapter("/src/cal1t/01_set.typ")
-#include "/src/cal1t/02_number.typ"
+#include-chapter("/src/cal1t/01_set.typ", <h_cal1t_set>)
+#include-chapter("/src/cal1t/02_number.typ", <h_cal1t_number>)
 #include "/src/cal1t/03_supinf.typ"
 #include "/src/cal1t/04_sequence.typ"
 #include "/src/cal1t/05_limit.typ"
