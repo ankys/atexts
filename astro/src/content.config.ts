@@ -6,9 +6,9 @@ import { glob } from 'astro/loaders';
 export const collections = {
 	docs: defineCollection({
 		loader: glob({
+			base: "./src/content/docs",
+			// pattern: "(index.typ|(cal1t)/*.typ)",
 			pattern: "**/*.typ",
-			base: "./src/content/docs"
-			// base: "./src/content/src"
 		}),
 		schema: docsSchema()
 	}),

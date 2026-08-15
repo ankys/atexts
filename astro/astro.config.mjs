@@ -20,7 +20,7 @@ export default defineConfig({
 			social: [{ icon: "github", label: "GitHub", href: "https://github.com/ankys/atexts" }],
 			customCss: ["./src/custom.css"],
 			sidebar: [
-				{ label: "序文", slug: "00_preface", },
+				{ label: "序文", slug: "", },
 				{ label: "微分積分学１", items: [{ autogenerate: { directory: "cal1t" } }], },
 				{ label: "微分積分学２", items: [{ autogenerate: { directory: "cal2t" } }], },
 				{ label: "微分積分学３", items: [{ autogenerate: { directory: "cal3t" } }], },
