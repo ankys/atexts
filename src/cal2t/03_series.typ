@@ -1,6 +1,7 @@
 
 #metadata((
   title: "級数",
+  label: <h_cal2t_series>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

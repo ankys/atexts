@@ -1,6 +1,7 @@
 
 #metadata((
   title: "積分",
+  label: <h_cal2t_integral>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

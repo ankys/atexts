@@ -1,6 +1,7 @@
 
 #metadata((
   title: "微分",
+  label: <h_cal2t_differential>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

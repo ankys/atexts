@@ -3,7 +3,7 @@
 #let author = "中安淳"
 #import "/version.typ": date
 
-#metadata(true) <debug_mode>
+// #metadata(true) <debug_mode>
 
 #import "/deps/jsbook.typ": *
 #show: jsbook.with(
