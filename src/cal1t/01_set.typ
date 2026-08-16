@@ -159,6 +159,7 @@ $X$が空集合のとき、命題「任意の$x in X$に対して$P(x)$」は真
 
 命題の演算の性質として以下が挙げられる。
 
+#proposition([命題の演算])[
 + （結合法則）任意の命題$P$, $Q$, $R$に対して、$(P and Q) and R = P and (Q and R)$と$(P or Q) or R = P or (Q or R)$が成り立つ。
 + （交換法則）任意の命題$P$, $Q$に対して、$P and Q = Q and P$と$P or Q = Q or P$が成り立つ。
 + （分配法則）任意の命題$P$, $Q$, $R$に対して、$P and (Q or R) = (P and Q) or (P and R)$と$P or (Q and R) = (P or Q) and (P or R)$が成り立つ。
@@ -168,6 +169,7 @@ $X$が空集合のとき、命題「任意の$x in X$に対して$P(x)$」は真
 + （対偶）任意の命題$P$, $Q$に対して、$P ==> Q = not Q ==> not P$が成り立つ。
 + 任意の命題$P(x)$に対して、$not (forall x in X , P(x)) = exists x in X , not P(x)$が成り立つ。
 + 任意の命題$P(x)$に対して、$not (exists x in X , P(x)) = forall x in X , not P(x)$が成り立つ。
+]
 
 背理法の原理にもとづいて命題$P ==> Q$が真であることを示すために$P and not Q$が偽であることつまり$P$と$not Q$を仮定して矛盾を導くことを示す証明法を_背理法_という。
 また、命題$P ==> Q$が真であることを示すために_対偶_$not Q ==> not P$が真であることを示す証明法を_対偶論法_という。
@@ -197,11 +199,13 @@ $X$を集合として、$A$, $B$をその部分集合とする。
 
 命題の演算の性質に対応して集合の演算には次の性質がある。
 
+#proposition([集合の演算])[
 + （結合法則）任意の集合$A$, $B$, $C$に対して、$(A inter B) inter C = A inter (B inter C)$と$(A union B) union C = A union (B union C)$が成り立つ。
 + （交換法則）任意の集合$A$, $B$に対して、$A inter B = B inter A$と$A union B = B union A$が成り立つ。
 + （分配法則）任意の集合$A$, $B$, $C$に対して、$A inter (B union C) = (A inter B) union (A inter C)$と$A union (B inter C) = (A union B) inter (A union C)$が成り立つ。
 + 任意の集合$A$に対して、$(A^c)^c = A$が成り立つ。
 + （ド・モルガンの法則）任意の集合$A$, $B$に対して、$(A inter B)^c = A^c union B^c$と$(A union B)^c = A^c inter B^c$が成り立つ。
+]
 
 == 写像の像と逆像
 
@@ -232,6 +236,7 @@ $
 写像の像と逆像については以下の性質がある。
 ただし、$F$は集合$X$から集合$Y$への写像である。
 
+#proposition([写像の像と逆像])[
 + 任意の$X$の部分集合$A_1 , A_2$に対して、$A_1 subset A_2$ならば$F(A_1) subset F(A_2)$が成り立つ。
 + 任意の$Y$の部分集合$B_1 , B_2$に対して、$B_1 subset B_2$ならば$F^(-1) (B_1) subset F^(-1) (B_2)$が成り立つ。
 + 任意の$X$の部分集合$A_1 , A_2$に対して、$F(A_1 inter A_2) subset F(A_1) inter F(A_2)$が成り立つ。
@@ -240,6 +245,7 @@ $
 + 任意の$Y$の部分集合$B_1 , B_2$に対して、$F^(-1) (B_1 union B_2) = F(B_1) union F(B_2)$が成り立つ。
 + 任意の$X$の部分集合$A$に対して、$F^(-1) (F (A)) supset A$が成り立つ。
 + 任意の$Y$の部分集合$B$に対して、$F (F^(-1) (B)) subset B$が成り立つ。
+]
 
 このうち、三番目の性質については等号が成り立たない可能性があるので注意する。
 
