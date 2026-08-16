@@ -1,6 +1,7 @@
 
 #metadata((
   title: "対角化",
+  label: <h_lin1t_diagonalization>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

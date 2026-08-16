@@ -1,6 +1,7 @@
 
 #metadata((
   title: "連立一次方程式",
+  label: <h_lin1t_linearsystem>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

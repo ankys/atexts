@@ -1,6 +1,7 @@
 
 #metadata((
   title: "固有値問題",
+  label: <h_lin1t_eigenproblem>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

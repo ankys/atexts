@@ -1,6 +1,7 @@
 
 #metadata((
   title: "行列式",
+  label: <h_lin1t_determinant>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

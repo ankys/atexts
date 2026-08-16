@@ -1,6 +1,7 @@
 
 #metadata((
   title: "三角化",
+  label: <h_lin1t_triangularization>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

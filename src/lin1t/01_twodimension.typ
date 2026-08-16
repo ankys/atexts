@@ -1,6 +1,7 @@
 
 #metadata((
   title: "二次の理論",
+  label: <h_lin1t_twodimension>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

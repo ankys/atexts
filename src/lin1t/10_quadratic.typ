@@ -1,6 +1,7 @@
 
 #metadata((
   title: "二次式",
+  label: <h_lin1t_quadratic>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

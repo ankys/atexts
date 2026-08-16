@@ -1,6 +1,8 @@
 
 #metadata((
   title: "序文",
+  label: <h_lin1t_preface>,
+  numbering: none,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

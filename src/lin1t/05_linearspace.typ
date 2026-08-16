@@ -1,6 +1,7 @@
 
 #metadata((
   title: "線形空間",
+  label: <h_lin1t_linearspace>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

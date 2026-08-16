@@ -1,6 +1,7 @@
 
 #metadata((
   title: "種々の行列",
+  label: <h_lin1t_variousclass>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate
