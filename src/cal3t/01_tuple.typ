@@ -1,6 +1,7 @@
 
 #metadata((
   title: "組",
+  label: <h_cal3t_tuple>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

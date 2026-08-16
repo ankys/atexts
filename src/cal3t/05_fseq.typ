@@ -1,6 +1,7 @@
 
 #metadata((
   title: "関数列",
+  label: <h_cal3t_fseq>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

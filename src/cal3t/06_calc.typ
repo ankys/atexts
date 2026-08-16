@@ -1,6 +1,7 @@
 
 #metadata((
   title: "種々の計算",
+  label: <h_cal3t_calc>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

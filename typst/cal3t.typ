@@ -1,33 +1,20 @@
 
 #let title = [微分積分学３]
 #let author = "中安淳"
-#import "../version.typ": date
+#import "/version.typ": date
 
-#import "../deps/jsbook.typ": *
+#import "/deps/jsbook.typ": *
 #show: jsbook.with(
 	paper: "a4",
 	lang: "ja",
 )
 
-#import "../deps/theorem.typ": thmrules
-#show: thmrules.with()
-
-#import "../deps/autoeqnum.typ": autoeqnum
-#show heading.where(level: 2): it => {
-	counter(math.equation).update(0)
-	it
-}
-#show: autoeqnum.with(mode: "ref", numbering: it => {
-	let count = counter(heading).get()
-	numbering("(1.1)", ..count, it)
-})
-
-// #import "deps/outputtools.typ": *
+// #import "/deps/outputtools.typ": *
 // #output_outline()
 // #output_outline(fmt: (level, number, body) => [#("  " * (level - 1))- #number #body\\n])
 // #pagebreak()
 // #output_labels()
-// #output_labels(fmt: (key, value) => [  #key: \@\[#value\],\\n])
+// #output_labels(fmt: (key, value) => [  #key: \[#value\],\\n])
 // #pagebreak()
 
 #maketitle(
@@ -36,30 +23,30 @@
 	date: date,
 )
 
-#import "../references.typ": get_all_labels
-#let all_labels = get_all_labels()
-#import "references.typ": custom_labels
-#show ref: it => {
-	let key = str(it.target)
-	if key in custom_labels {
-		it
-	} else if key in all_labels {
-		all_labels.at(key)
-	} else {
-		it
-	}
-}
+// #import "/src/references.typ": get_all_labels
+// #let all_labels = get_all_labels()
+// #import "/src/cal1t/references.typ": custom_labels
+// #show ref: it => {
+// 	let key = str(it.target)
+// 	if key in custom_labels {
+// 		it
+// 	} else if key in all_labels {
+// 		all_labels.at(key)
+// 	} else {
+// 		it
+// 	}
+// }
 
-#include "00_preface.typ"
+#include-chapter("/src/cal3t/00_preface.typ", <h_cal3t_preface>)
 
 #outline()
 
-#include "01_tuple.typ"
-#include "02_space.typ"
-#include "03_pdiff.typ"
-#include "04_iint.typ"
-#include "05_fseq.typ"
-#include "06_calc.typ"
-#include "07_limint.typ"
+#include-chapter("/src/cal3t/01_tuple.typ", <h_cal3t_tuple>)
+#include-chapter("/src/cal3t/02_space.typ", <h_cal3t_space>)
+#include-chapter("/src/cal3t/03_pdiff.typ", <h_cal3t_pdiff>)
+#include-chapter("/src/cal3t/04_iint.typ", <h_cal3t_iint>)
+#include-chapter("/src/cal3t/05_fseq.typ", <h_cal3t_fseq>)
+#include-chapter("/src/cal3t/06_calc.typ", <h_cal3t_calc>)
+#include-chapter("/src/cal3t/07_limint.typ", <h_cal3t_limint>)
 
-#bibliography("../references.yml")
+#bibliography("/src/references.yml")

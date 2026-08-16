@@ -1,6 +1,7 @@
 
 #metadata((
   title: "重積分",
+  label: <h_cal3t_iint>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

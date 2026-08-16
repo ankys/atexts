@@ -1,6 +1,7 @@
 
 #metadata((
   title: "偏微分",
+  label: <h_cal3t_pdiff>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

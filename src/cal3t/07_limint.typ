@@ -1,6 +1,7 @@
 
 #metadata((
   title: "積分の極限",
+  label: <h_cal3t_limint>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate

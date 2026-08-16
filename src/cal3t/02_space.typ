@@ -1,6 +1,7 @@
 
 #metadata((
   title: "空間",
+  label: <h_cal3t_space>,
 )) <frontmatter>
 
 #import "/deps/jtemplate.typ": jtemplate
