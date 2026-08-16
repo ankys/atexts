@@ -23,8 +23,8 @@ export default defineConfig({
 				{ label: "序文", slug: "preface", },
 				{ label: "微分積分学１", items: [{ autogenerate: { directory: "cal1t" } }], },
 				{ label: "微分積分学２", items: [{ autogenerate: { directory: "cal2t" } }], },
-				{ label: "微分積分学３", items: [{ autogenerate: { directory: "cal3t" } }], },
 				{ label: "線形代数学１", items: [{ autogenerate: { directory: "lin1t" } }], },
+				{ label: "微分積分学３", items: [{ autogenerate: { directory: "cal3t" } }], },
 			],
 		}),
 		typst({

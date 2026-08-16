@@ -24,7 +24,7 @@
 	// theorem
 	show: show-theorem
 	// ref
-	if query(<debug_mode>).any(it => it.value) {
+	if target() == "html" or query(<debug_mode>).any(it => it.value) {
 		show ref: it => {
 			if query(it.target).len() == 0 {
 				it.target
