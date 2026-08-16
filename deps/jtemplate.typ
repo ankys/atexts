@@ -2,7 +2,7 @@
 #import "autoeqnum.typ": autoeqnum
 #import "theorem.typ": show-theorem
 
-#let jtemplate(body) = {
+#let jtemplate(body) = context {
 	// lang
 	set text(lang: "ja")
 	// emph
@@ -16,14 +16,6 @@
 		h(1em)
 	}
 	show math.equation.where(block: true): block.with(width: 100%)
-	// ref
-	show ref: it => {
-		if query(it.target).len() == 0 {
-			it.target
-		} else {
-			it
-		}
-	}
 	// equation
 	show: autoeqnum.with(mode: "ref", numbering: it => {
 		let count = counter(heading).get()
@@ -31,5 +23,17 @@
 	})
 	// theorem
 	show: show-theorem
-	body
+	// ref
+	if query(<debug_mode>).any(it => it.value) {
+		show ref: it => {
+			if query(it.target).len() == 0 {
+				it.target
+			} else {
+				it
+			}
+		}
+		body
+	} else {
+		body
+	}
 }
