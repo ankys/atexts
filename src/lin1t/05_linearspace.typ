@@ -259,7 +259,7 @@ $
 c_1 bold(v)_1+dots+c_N bold(v)_N = bold(0)
 $
 となるものが存在する。
-ここで$c_i eq.not 0$となる$i = 1, dots, N$が存在するが、$bold(v)_1, dots, bold(v)_N$を並べ替えて、$i = N$の場合のみ考えればよい。
+ここで$c_i != 0$となる$i = 1, dots, N$が存在するが、$bold(v)_1, dots, bold(v)_N$を並べ替えて、$i = N$の場合のみ考えればよい。
 この時、
 $
 bold(v)_N = -c_N^(-1) (c_1 bold(v)_1+dots+c_(N-1) bold(v)_(N-1))
@@ -340,7 +340,7 @@ $K$上の線形空間$V$のいくつかのベクトル$bold(v)_1, dots, bold(v)_
 
 #proof[
 スカラー$c_1, dots, c_N, d in K$を使って$c_1 bold(v)_1+dots+c_N bold(v)_N+d bold(w) = bold(0)_V$となったとする。
-ここで$d eq.not 0$とすると
+ここで$d != 0$とすると
 $
 bold(w) = -d^(-1) (c_1 bold(v)_1+dots+c_N bold(v)_N)
 $

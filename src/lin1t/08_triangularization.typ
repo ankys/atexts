@@ -25,7 +25,7 @@ $
 ]
 
 #proof[
-$c$を$A$の固有値とするとき、$A bold(v) = c bold(v)$となるベクトル$bold(v) eq.not bold(0)$が取れる。
+$c$を$A$の固有値とするとき、$A bold(v) = c bold(v)$となるベクトル$bold(v) != bold(0)$が取れる。
 $n = 0, 1, 2, 3, dots$に対して、
 $
 A^n bold(v) = c^n bold(v)

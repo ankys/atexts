@@ -206,7 +206,7 @@ $
 したがってこのスカラーポテンシャル$Phi(bold(a))$を求めることができれば、万有引力の合計$bold(F)$も求めることができる。
 このスカラーポテンシャル$Phi$のことを重力ポテンシャルあるいはニュートンポテンシャルという。
 ここでもう一階$bold(a)$で微分して、ラプラシアン$laplace Phi(bold(a)) = -div bold(I)(bold(a))$を考える。
-先に被積分関数の微分を計算すると$bold(a) eq.not bold(x)$において
+先に被積分関数の微分を計算すると$bold(a) != bold(x)$において
 $
 laplace_(bold(a)) (rho(bold(x))/abs(bold(x)-bold(a)))
 &= rho(bold(x)) div_(bold(a)) (bold(x)-bold(a))/abs(bold(x)-bold(a))^3
@@ -220,7 +220,7 @@ $bold(a) = bold(x)$においては発散してしまうので、
 この微分は通常の関数としては捉えられず特に微分と積分の交換が保証されない。
 しかしながら交換できるとして$bold(x)$についての積分を、
 $(bold(x)-bold(a))/abs(bold(x)-bold(a))^3$の形から$bold(a)$での発散を$bold(x)$での発散にマイナスしたもので置き換え、
-$bold(x) eq.not bold(a)$で被積分関数が$0$より$rho(bold(x))$を$rho(bold(a))$で置き換えると、
+$bold(x) != bold(a)$で被積分関数が$0$より$rho(bold(x))$を$rho(bold(a))$で置き換えると、
 $integral_(RR^3) laplace_(bold(a)) (rho(bold(x))/abs(bold(x)-bold(a))) dd(bold(x))$は次の値で代用できる。
 $
 -integral_(B_r (bold(a))) rho(bold(a)) div_(bold(x)) (bold(x)-bold(a))/abs(bold(x)-bold(a))^3 dd(bold(x))

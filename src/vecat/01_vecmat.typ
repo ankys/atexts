@@ -282,7 +282,7 @@ $
 = [bold(d), bold(b), bold(c)]bold(a)+[bold(a), bold(d), bold(c)]bold(b)+[bold(a), bold(b), bold(d)]bold(c)
 $
 という公式を得る。
-この公式は、（$[bold(a), bold(b), bold(c)] eq.not 0$のとき）三次元ベクトルの分解に使える。
+この公式は、（$[bold(a), bold(b), bold(c)] != 0$のとき）三次元ベクトルの分解に使える。
 また、クラメルの公式に他ならない。
 ]
 

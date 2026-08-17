@@ -64,7 +64,7 @@ $
 逆写像$s^(-1)$も置換であり置換$s$の_逆置換_という。
 $s s^(-1) = s^(-1) s = id$に注意する。
 
-$i eq.not j$を満たす$i, j = 1, dots, N$に対して、$i$と$j$を入れ替えてそれ以外はそのままにする置換を$i$と$j$の_互換_といい$mat(i, j)$と表す。
+$i != j$を満たす$i, j = 1, dots, N$に対して、$i$と$j$を入れ替えてそれ以外はそのままにする置換を$i$と$j$の_互換_といい$mat(i, j)$と表す。
 つまり、
 $
 mat(i, j) = mat(dots, i, dots, j dots; dots, j, dots, i dots;)
@@ -84,7 +84,7 @@ $N$に関する数学的帰納法で証明する。
 $N = 1$の時は$S_1 = { id }$なので成立する。
 $N$で成立する時、$N+1$次の置換$s$について考える。
 $s(N+1) = N+1$の時は$s$を$1, dots, N$に制限すると$N$次の置換になっているので$N-1$個以下の互換の合成として表される。
-$s(N+1) eq.not N+1$の時は$i = s(N+1)$とすると$i = 1, dots, N$であり、$s$に$i$と$N+1$の互換をすると$N+1$を$N+1$に移すようになるので$N-1$個以下の互換の合成として表され、従って$s$は$N$個以下の互換の合成として表される。
+$s(N+1) != N+1$の時は$i = s(N+1)$とすると$i = 1, dots, N$であり、$s$に$i$と$N+1$の互換をすると$N+1$を$N+1$に移すようになるので$N-1$個以下の互換の合成として表され、従って$s$は$N$個以下の互換の合成として表される。
 以上より証明された。
 ]
 
@@ -144,13 +144,13 @@ $
 sgn(s)^2
 &= product_(i < j) (s(j)-s(i))/(j-i) product_(i < j) (s(j)-s(i))/(j-i)
 = product_(i < j) (s(j)-s(i))/(j-i) product_(i < j) (s(i)-s(j))/(i-j) \
-&= product_(i eq.not j) (s(i)-s(j))/(i-j)
-= (product_(i eq.not j) (s(i)-s(j)))/(product_(i eq.not j) (i-j)).
+&= product_(i != j) (s(i)-s(j))/(i-j)
+= (product_(i != j) (s(i)-s(j)))/(product_(i != j) (i-j)).
 $
-ここで$s$は置換より、$i, j$が$i eq.not j$を満たしながら動く時$s(i), s(j)$が$s(i) eq.not s(j)$を満たしながら動くので、
+ここで$s$は置換より、$i, j$が$i != j$を満たしながら動く時$s(i), s(j)$が$s(i) != s(j)$を満たしながら動くので、
 $
 sgn(s)^2
-= (product_(i eq.not j) (i-j))/(product_(i eq.not j) (i-j))
+= (product_(i != j) (i-j))/(product_(i != j) (i-j))
 = 1.
 $
 よって$sgn(s) = plus.minus 1$である。
@@ -305,7 +305,7 @@ $
 
 #proof[
 左辺の行列について示せば、中辺の行列はその転置なので前命題より行列式の値は等しい。
-その左辺の行列の行列式について、置換$s in S_N$に対して$s(1) eq.not 1$だと$a_(1 s(1)) = 0$である。
+その左辺の行列の行列式について、置換$s in S_N$に対して$s(1) != 1$だと$a_(1 s(1)) = 0$である。
 よって、$s(1) = 1$であり行列式で$a_(1 s(1)) = a_(1 1)$がくくり出せて命題が従う。
 ]
 
@@ -348,7 +348,7 @@ $
 ]
 
 #proposition([交代性])[
-$N$次の横ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)$と$i eq.not j$を満たす$i, j = 1, dots, N$に対して
+$N$次の横ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)$と$i != j$を満たす$i, j = 1, dots, N$に対して
 $
 mdet(dots.v; bold(a)_j; dots.v; bold(a)_i; dots.v)
 = -mdet(dots.v; bold(a)_i; dots.v; bold(a)_j; dots.v),
@@ -356,7 +356,7 @@ quad
 mdet(dots.v; bold(a); dots.v; bold(a); dots.v) = 0
 $
 が成り立つ。
-また、$N$次の縦ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)$と$i eq.not j$を満たす$i, j = 1, dots, N$に対して
+また、$N$次の縦ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)$と$i != j$を満たす$i, j = 1, dots, N$に対して
 $
 mdet(dots.c, bold(a)_j, dots.c, bold(a)_i, dots.c)
 = -mdet(dots.c, bold(a)_i, dots.c, bold(a)_j, dots.c),
@@ -490,7 +490,7 @@ $
 A tilde(A) = tilde(A) A = det(A) I_N
 $
 が成り立つ。
-特に$A$が可逆であることと$det A eq.not 0$であることは同値であり、$A$の逆行列は
+特に$A$が可逆であることと$det A != 0$であることは同値であり、$A$の逆行列は
 $
 A^(-1) = 1/(det A) tilde(A)
 $
@@ -529,7 +529,7 @@ $
 #proof([@t_cofactinv の証明])[
 $tilde(A) A = det (A) I_N$を示せば十分である。
 $tilde(A) A$の第$(i, j)$成分は、$A$の第$j$列を$bold(a)_j$とすると、$tilde(A)bold(a)_j$の第$i$成分なので、@t_cofactvec より、$det A_(i, bold(a)_j)$に等しい。
-これは$j eq.not i$の時は同じ列が二つあるので$0$であり、$j = i$の時は$det A$に他ならない。
+これは$j != i$の時は同じ列が二つあるので$0$であり、$j = i$の時は$det A$に他ならない。
 以上より証明される。
 ]
 
@@ -791,7 +791,7 @@ $
 この行列式は$M = N$の時には$det A det B$に一致し、$M < N$の時には零となるので、問題になるのは$M > N$の場合である。
 
 $N$次の置換が${ 1, dots, N }$から${ 1, dots, N }$への可逆写像だったことを拡張して、
-$k$を${ 1, dots, N }$から${ 1, dots, M }$への単射、つまり任意の$i eq.not j$に対して$k(i) eq.not k(j)$を満たす写像としてそれら全体の集合を$S_(N, M)$と表すことにする。
+$k$を${ 1, dots, N }$から${ 1, dots, M }$への単射、つまり任意の$i != j$に対して$k(i) != k(j)$を満たす写像としてそれら全体の集合を$S_(N, M)$と表すことにする。
 さらに$k in S_(N, M)$の中で単調増加になっているもの全体を$macron(S)_(N, M)$と書く。
 すなわち$t in macron(S)_(N, M)$は
 $

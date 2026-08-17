@@ -109,11 +109,11 @@ braket(bold(v), bold(v)) = 1
 $
 が成り立つことをいう。
 
-$V$の基底$bold(v)_1, dots, bold(v)_N$が各$i eq.not j$, $i, j = 1, dots, N$に対して$bold(v)_i$と$bold(v)_j$が直交することを満たす時、_直交基底_であるという。
+$V$の基底$bold(v)_1, dots, bold(v)_N$が各$i != j$, $i, j = 1, dots, N$に対して$bold(v)_i$と$bold(v)_j$が直交することを満たす時、_直交基底_であるという。
 直交基底がさらに各$i = 1, dots, N$に対して$bold(v)_i$が単位ベクトルである時、_正規直交基底_であるという。
 
 本節の目標は$V$の基底が与えられた時に直交基底あるいは正規直交基底に取り替えることである。
-そのことを表現するために$V$の$N = 1, 2, 3, dots$個の零ベクトルでないベクトル$bold(v)_1, dots, bold(v)_N$が各$i eq.not j$, $i, j = 1, dots, N$に対して$bold(v)_i$と$bold(v)_j$が直交することを満たす時、$V$の_直交系_であるということにする。
+そのことを表現するために$V$の$N = 1, 2, 3, dots$個の零ベクトルでないベクトル$bold(v)_1, dots, bold(v)_N$が各$i != j$, $i, j = 1, dots, N$に対して$bold(v)_i$と$bold(v)_j$が直交することを満たす時、$V$の_直交系_であるということにする。
 また、各$bold(v)_i$が単位ベクトルである時、$V$の_正規直交系_であるという。
 
 #proposition([直交系と線形独立])[
@@ -157,7 +157,7 @@ $
 
 #proof[
 $N$についての数学的帰納法による。
-$N = 1$の時、$bold(u)_1 = bold(v)_1 eq.not bold(0)$より成立する。
+$N = 1$の時、$bold(u)_1 = bold(v)_1 != bold(0)$より成立する。
 $N$個で成立した時、$N+1$個目のベクトルを
 $
 bold(u)_(N+1) = bold(v)_(N+1)-braket(bold(u)_1, bold(v)_(N+1))/braket(bold(u)_1, bold(u)_1) bold(u)_1-dots-braket(bold(u)_N, bold(v)_(N+1))/braket(bold(u)_N, bold(u)_N) bold(u)_N
@@ -233,7 +233,7 @@ $
 #proposition([正規化])[
 正規化可能な体_K_上の数ベクトル$bold(v)$に対して、$braket(bold(v), bold(v))$は$K_+$の元である。
 さらにその正の平方根を$norm(bold(v)) = sqrt(braket(bold(v), bold(v))) in K_+$とおく。
-ここで、$bold(v) eq.not bold(0)$に対して
+ここで、$bold(v) != bold(0)$に対して
 $
 tilde(bold(v)) = norm(bold(v))^(-1) bold(v)
 $
@@ -423,7 +423,7 @@ $
 ]
 
 #proof[
-固有ベクトルの一つを$bold(v) eq.not bold(0)$とおくと$A bold(v) = c bold(v)$なので、
+固有ベクトルの一つを$bold(v) != bold(0)$とおくと$A bold(v) = c bold(v)$なので、
 標準内積について
 $
 braket(bold(v), A bold(v))
@@ -437,7 +437,7 @@ braket(bold(v), A bold(v))
 = braket(c bold(v), bold(v))
 = overline(c) braket(bold(v), bold(v)).
 $
-以上のことと$bold(v) eq.not bold(0)$より$overline(c) = c$である。
+以上のことと$bold(v) != bold(0)$より$overline(c) = c$である。
 ]
 
 この定理で出てくるスカラーの範囲を考える。
