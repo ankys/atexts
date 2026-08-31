@@ -8,7 +8,7 @@
 #show: jtemplate
 
 #import "/deps/theorem.typ": definition, theorem, lemma, proposition, corollary, example, remark, proof
-#import "/deps/physics.typ": dv, evaluated
+#import "/deps/physics.typ": Set, dv, evaluated
 #let arsinh = $op("arsinh")$
 #let arcosh = $op("arcosh")$
 #let artanh = $op("artanh")$
@@ -76,7 +76,7 @@ $
 == 微分係数と微分導関数
 
 この節では実数の集合$X$上で定義された実数値関数$f: X -> RR$と$X$の点$a$を考える。
-特に点$a$に対して正の数$delta > 0$が存在して$B_delta (a) = { x in RR mid(|) abs(x-a) < delta }$は$X$の部分集合になっている状態を考える。
+特に点$a$に対して正の数$delta > 0$が存在して$B_delta (a) = Set(x in RR; abs(x-a) < delta)$は$X$の部分集合になっている状態を考える。
 このような点$a$を$X$の_内点_という。
 
 #definition([微分係数])[
