@@ -198,7 +198,8 @@ $
 overline(S)(f) = inf_P overline(S)(f, P),
 quad underline(S)(f) = sup_P underline(S)(f, P)
 $
-を導入すると以上の議論から
+を導入すると、
+以上の議論から
 $
 underline(S)(f) <= overline(S)(f)
 $
@@ -549,7 +550,7 @@ $f$を開区間$I$上の連続関数とする。
   G(x) = integral_a^x f(t) dd(t)
   $
   とすると(1)より$G$は$f$の原始関数である。
-  したがって$G(x)-F(x)$は、微分導関数が$f(x)-f(x) = 0$より、定数関数なので、
+  したがって$G(x)-F(x)$は、微分導関数が$f(x)-f(x) = 0$より定数関数なので、
   $
   F(b)-F(a) = G(b)-G(a)
   = integral_a^b f(x) dd(x)-integral_a^a f(x) dd(x)
@@ -590,13 +591,13 @@ integral f(x) dd(x) = { F(x)+C mid(|) C in RR }
 $
 とでき、この時の$C$を積分定数という。 上の記述はしばしば
 $
-integral f(x) dd(x) = f(x)+C
+integral f(x) dd(x) = F(x)+C
 $
 と略記される。
 積分定数もしばしば省略されるが、微分方程式の理論では積分定数は省略されないので、このテキストでは省略せずに書くことにする。
 
 以下では微分の公式から直ちに得られる積分の公式を列挙する。
-一部被積分関数が連続である範囲が実数全体でない場合もあるので注意する。
+一部に被積分関数が連続である範囲が実数全体でない場合もあるので注意する。
 
 #proposition([種々の関数の積分１])[
 $
@@ -636,9 +637,10 @@ $
 #remark[
 上記では細かく書いたが、いくつかは簡単に
 $
-integral x^a dd(x) = cases(
-  1/(a+1) x^(a+1)+C & (a != -1)",",
-  log abs(x)+C & (a = -1)
+integral x^a dd(x)
+= cases(
+  1/(a+1) x^(a+1)+C &quad (a != -1)",",
+  log abs(x)+C &quad (a = -1)
 )
 $
 と覚えておけばよい。
@@ -691,7 +693,7 @@ F'(x) = f'(x)g(x)+f(x)g'(x).
 $
 つまり$f(x)g(x)$は$f'(x)g(x)+f(x)g'(x)$の原始関数より
 $
-integral f'(x)g(x)+f(x)g'(x) dd(x) = f(x)g(x)+C.
+integral [f'(x)g(x)+f(x)g'(x)] dd(x) = f(x)g(x)+C.
 $
 よって整理して示すべき式を得る。
 ]
@@ -756,7 +758,7 @@ integral x e^(x^2) dd(x)
 $
 ]
 
-部分積分と置換積分を定積分に適用するとき、部分積分はそのままだが置換積分は積分範囲に注意が必要である。
+部分積分と置換積分を定積分に適用するとき、部分積分ではそのままだが置換積分では積分区間が変更になることに注意が必要である。
 
 #theorem([定積分の部分積分])[
 $f(x)$, $g(x)$を有界閉区間$[a, b]$を含む開区間で$C^1$級関数とするとき、
@@ -837,7 +839,7 @@ $y-(a+b)/2 = -(x-(a+b)/2)$のように中点で左右反転させても同じ面
 #example[
 $f$を有界閉区間$[0, 1]$上の連続関数とするとき、
 $
-integral_0^(pi/2) f(sin x) dd(x) = integral_0^(pi/2) f(sin x) dd(x)
+integral_0^(pi/2) f(sin x) dd(x) = integral_0^(pi/2) f(cos x) dd(x)
 $ <e_int_sin_cos>
 が成り立つ。
 実際、キング則より
