@@ -1587,7 +1587,7 @@ $
 sum_(n = M)^N f(n)
 = integral_M^N f(x) dd(x)
   +(f(M)+f(N))/2
-  -1/2 integral_M^N (x-floor(x))(x-floor(x)-1) f''(x) dd(x)
+  -1/2 integral_M^N f''(x) (x-floor(x))(x-floor(x)-1) dd(x)
 $
 が成り立つ。
 特に
@@ -1608,7 +1608,7 @@ $
 $
 integral_n^(n+1) f(x) dd(x)
 = (f(n)+f(n+1))/2
-  +1/2 integral_n^(n+1) (x-n)(x-n-1) f''(x) dd(x).
+  +1/2 integral_n^(n+1) f''(x) (x-n)(x-n-1) dd(x).
 $
 ここで
 $
