@@ -1284,7 +1284,7 @@ $
 実は剰余項の表現の一つとして高階微分の積分がある。
 
 #theorem([テイラーの定理（ベルヌーイの剰余項）])[
-$N = 0, 1, 2, 3, ...$として$I$を開区間とし、$f$を$I$上の$C^(N+1)$級関数とする。
+$N = 0, 1, 2, 3, ...$として、$f$を開区間$I$上の$C^(N+1)$級関数とする。
 このとき、任意の点$a, x in I$に対して
 $
 f(x) = sum_(n = 0)^N frac(f^((n)) (a), n!) (x-a)^n+integral_a^x frac(f^((N+1)) (t), N!) (x-t)^N dd(t)
@@ -1302,54 +1302,54 @@ $
 $N = 0, 1, 2, 3, ...$として$f, g$を有界閉区間$[a, b]$を含む開区間上の$C^(N+1)$級関数とする。
 このとき、
 $
-integral_a^b p(x) f^((N+1)) (x) dd(x)
-= evaluated(sum_(n = 0)^N (-1)^n p^((n)) (x) f^((N-n)) (x))_(x = a)^b+(-1)^(N+1) integral_a^b p^((N+1)) (x) f(x) dd(x)
+integral_a^b f^((N+1)) (x) g(x) dd(x)
+= evaluated(sum_(n = 0)^N (-1)^n f^((N-n)) (x) g^((n)) (x))_(x = a)^b+(-1)^(N+1) integral_a^b f(x) g^((N+1)) (x) dd(x)
 $
 ]
 
 #proof[
 部分積分を繰り返すことで、
 $
-integral_a^b p(x) f^((N+1)) (x) dd(x)
-&= evaluated([p(x) f^((N)) (x)])_a^b-integral_a^b p'(x) f^((N)) (x) dd(x) \
-&= evaluated([p(x) f^((N)) (x)-p'(x) f^((N-1)) (x)])_a^b+integral_a^b p''(x) f^((N-1)) (x) dd(x) \
+integral_a^b f^((N+1)) (x) g(x) dd(x)
+&= evaluated([f^((N)) (x) g(x)])_a^b-integral_a^b f^((N)) (x) g'(x) dd(x) \
+&= evaluated([f^((N)) (x) g(x)-f^((N-1)) (x) g'(x)])_a^b+integral_a^b f^((N-1)) (x) g''(x) dd(x) \
 &= ...\
-&= evaluated(sum_(n = 0)^N (-1)^n p^((n)) (x) f^((N-n)) (x))_(x = a)^b+(-1)^(N+1) integral_a^b p^((N+1)) (x) f(x) dd(x)
+&= evaluated(sum_(n = 0)^N (-1)^n f^((N-n)) (x) g^((n)) (x))_(x = a)^b+(-1)^(N+1) integral_a^b f(x) g^((N+1)) (x) dd(x)
 $
 が得られる。
 ]
 
-この補題で$p(x) = 1/(N!) (b-x)^N$としてとることでテイラーの定理（ベルヌーイの剰余項）が得られる（ただし$b$を$x$に$x$を$t$に変更している）わけだが、
+この補題で$g(x) = 1/(N!) (b-x)^N$としてとることでテイラーの定理（ベルヌーイの剰余項）が得られる（ただし$b$を$x$に$x$を$t$に変更している）わけだが、
 この$p$は次のようにして発見される。
 つまり、ダルブーの公式とテイラーの定理（ベルヌーイの剰余項）の目標の式
 $
-f(b) = sum_(n = 0)^N frac(f^((n)) (a), n!) (b-a)^n+integral_a^b p(x) f^((N+1)) (x) dd(x)
+f(b) = sum_(n = 0)^N frac(f^((n)) (a), n!) (b-a)^n+integral_a^b frac(f^((N+1)) (x), N!) (b-x)^N dd(x)
 $
 を比較することを考える。
-するとまず$f(x)$の積分の項がないので、$p^((N+1)) (x) = 0$が必要である。
-また、$f^((N-n)) (x)$の係数が$n = N$の時だけ$1$でそれ以外の時は$0$なので、
+するとまず$f(x)$の積分の項がないので、すべての$x$に対して$g^((N+1)) (x) = 0$が必要である。
+また、$f^((N-n)) (b)$の係数が$n = N$の時だけ$1$でそれ以外の時は$0$なので、
 $
-p(b) = ...= p^((N-1)) (b) = 0, quad (-1)^N p^((N)) (b) = 1
+g(b) = ...= g^((N-1)) (b) = 0, quad (-1)^N g^((N)) (b) = 1
 $
 がわかる。
-これらを満たす$p$は$N$次の多項式であり、
+これらを満たす$g$は$N$次の多項式であり、
 $
-p(x) = (-1)^N 1/(N!) (x-b)^N = 1/(N!) (b-x)^N
+g(x) = (-1)^N 1/(N!) (x-b)^N = 1/(N!) (b-x)^N
 $
 であることがわかる。
 
 #proof([テイラーの定理（ベルヌーイの剰余項）の証明])[
-ダルブーの定理で$p(x) = (-1)^N 1/(N!) (x-b)^N$とおくと、
+ダルブーの定理で$g(x) = (-1)^N 1/(N!) (x-b)^N$とおくと、
 $
-p^((n)) (a) = (-1)^N 1/((N-n)!) (a-b)^(N-n),
-quad p^((n)) (b) = cases(0 &quad (n = 0, ... N-1), (-1)^N &quad (n = N)),
-quad p^((N+1)) (x) = 0
+g^((n)) (a) = (-1)^N 1/((N-n)!) (a-b)^(N-n),
+quad g^((n)) (b) = cases(0 &quad (n = 0, ... N-1), (-1)^N &quad (n = N)),
+quad g^((N+1)) (x) = 0
 $
 なので、
 $
-integral_a^b p(x) f^((N+1)) (x) dd(x)
+integral_a^b f^((N+1)) (x) g(x) dd(x)
 // = integral_a^b frac(f^((N+1)) (x), N!) (b-x)^N dd(x)
-&= evaluated(sum_(n = 0)^N (-1)^n p^((n)) (x) f^((N-n)) (x))_(x = a)^b \
+&= evaluated(sum_(n = 0)^N (-1)^n f^((N-n)) (x) g^((n)) (x))_(x = a)^b \
 &= f(b)-sum_(n = 0)^N (-1)^(N+n) 1/((N-n)!) (a-b)^(N-n) f^((N-n)) (a) \
 &= f(b)-sum_(n = 0)^N 1/(n!) (b-a)^n f^((n)) (a)
 $
@@ -1362,18 +1362,18 @@ $
 
 テイラーの定理は関数の値$f(x)$を表現する方法だったが、
 積分$integral_a^b f(x) dd(x)$を高階微分を使って表現することもできる。
-そのためには$p^((N+1)) (x) = 1$つまり$p$は$N+1$次の多項式とすればよい。
+そのためには$g^((N+1)) (x) = 1$つまり$g$は$N+1$次の多項式とすればよい。
 ここではさらに条件
 $
 N = 1,
-quad p(a) = p(b) = 0,
-quad p'(a)+p'(b) = 0
+quad g(a) = g(b) = 0,
+quad g'(a)+g'(b) = 0
 $
 を満たすものとする。
 この条件は
 $
 integral_a^b f(x) dd(x)
-= c_0 [f(a)+f(b)]+integral_a^b p(x) f''(x) dd(x)
+= c_0 [f(a)+f(b)]+integral_a^b g(x) f''(x) dd(x)
 $
 を導く。
 この形は、$[a, b] = [n, n+1]$として整数$n$についての和を取った時に、
@@ -1385,13 +1385,13 @@ $I$を開区間として、$a, b in I$, $a < b$とする。
 1. $f$を$I$上の$C^1$級関数とすると、
   $
   integral_a^b f(x) dd(x)
-  = (f(a)+f(b))/2 (b-a)-integral_a^b (x-(a+b)/2) f'(x) dd(x)
+  = (f(a)+f(b))/2 (b-a)-integral_a^b f'(x) (x-(a+b)/2) dd(x)
   $
   が成り立つ。
 2. $f$を$I$上の$C^2$級関数とすると、
   $
   integral_a^b f(x) dd(x)
-  = (f(a)+f(b))/2 (b-a)+1/2 integral_a^b (x-a)(x-b) f''(x) dd(x)
+  = (f(a)+f(b))/2 (b-a)+1/2 integral_a^b f''(x) (x-a)(x-b) dd(x)
   $
   が成り立つ。
 ]
@@ -1408,16 +1408,16 @@ $
 右辺の積分を部分積分する。
 一つ目の主張は
 $
-integral_a^b (x-(a+b)/2) f'(x) dd(x)
-= evaluated([(x-(a+b)/2) f(x)])_a^b-integral_a^b f(x) dd(x)
+integral_a^b f'(x) (x-(a+b)/2) dd(x)
+= evaluated([f(x) (x-(a+b)/2)])_a^b-integral_a^b f(x) dd(x)
 = (f(a)+f(b))/2 (b-a)-integral_a^b f(x) dd(x)
 $
 より示される。
 二つ目の主張は
 $
-integral_a^b (x-a)(x-b) f'' (x) dd(x)
-&= evaluated([(x-a)(x-b) f' (x)])_a^b-integral_a^b [(x-a)(x-b)]' f'(x) dd(x) \
-&= -integral_a^b [2 x-(a+b)] f'(x) dd(x)
+integral_a^b f'' (x) (x-a)(x-b) dd(x)
+&= evaluated([f' (x) (x-a)(x-b)])_a^b-integral_a^b f'(x) [(x-a)(x-b)]' dd(x) \
+&= -integral_a^b f'(x) [2 x-(a+b)] dd(x)
 $
 より一つ目に帰着される。
 ]
