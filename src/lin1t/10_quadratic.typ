@@ -21,7 +21,7 @@ $
 A bold(x) dot bold(x)+2 bold(b) dot bold(x)+c
 $
 の形で表される式である。
-ここで$i, j = 1, dots, N$に対して$x_i x_j = x_j x_i$であることから
+ここで$i, j = 1, ..., N$に対して$x_i x_j = x_j x_i$であることから
 $
 A bold(x) dot bold(x)+2 bold(b) dot bold(x)+c
 = (A+A^T)/2 bold(x) dot bold(x)+2 bold(b) dot bold(x)+c

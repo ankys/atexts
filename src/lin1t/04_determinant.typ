@@ -45,29 +45,29 @@ $
 
 == 置換と符号
 
-$N = 1, 2, 3, dots$として、$1, dots, N$の並べ替えを$N$次の_置換_という。
-より詳しくは$N$次の置換$s$は$N$個の元の集合${ 1, dots, N }$から${ 1, dots, N }$への写像であって逆写像$s^(-1)$を持つもの、
-つまり各$i = 1, dots, N$に対して$s(i) = 1, dots, N$がただ一つ対応し$j = 1, dots, N$に対して$s(i) = j$となる$i$がただ一つ対応するので$i = s^(-1) (j)$とする。
-$N$次の置換は$1, dots, N$の並べ替えなので$N!$個あることに注意して、
+$N = 1, 2, 3, ...$として、$1, ..., N$の並べ替えを$N$次の_置換_という。
+より詳しくは$N$次の置換$s$は$N$個の元の集合${ 1, ..., N }$から${ 1, ..., N }$への写像であって逆写像$s^(-1)$を持つもの、
+つまり各$i = 1, ..., N$に対して$s(i) = 1, ..., N$がただ一つ対応し$j = 1, ..., N$に対して$s(i) = j$となる$i$がただ一つ対応するので$i = s^(-1) (j)$とする。
+$N$次の置換は$1, ..., N$の並べ替えなので$N!$個あることに注意して、
 $N$次の置換全体の集合を$S_N$とおく。
-置換$s$を表現するのにしばしば上に$1, dots, N$を並べて下に$s(1), dots, s(N)$を並べてそれらを丸括弧で括るという記法が採用され、上半分は$1, dots, N$で固定されるのでしばしば省略される。
+置換$s$を表現するのにしばしば上に$1, ..., N$を並べて下に$s(1), ..., s(N)$を並べてそれらを丸括弧で括るという記法が採用され、上半分は$1, ..., N$で固定されるのでしばしば省略される。
 つまり、
-$ s = mat(1, dots, N; s(1), dots, s(N);) = mat(s(1), dots, s(N)) $
+$ s = mat(1, ..., N; s(1), ..., s(N);) = mat(s(1), ..., s(N)) $
 である。 行列の記法と紛らわしいが文脈で判断する。
 二つの置換$s$と$t$に対して置換$s$をしてから置換$t$をするという_合成置換_を$t s$と書く。
 $(t s)(i) = t(s(i))$である。
-また、$1, dots, N$をそのままの並びにする置換を_恒等置換_といい$id_N$や$id$で表す。
+また、$1, ..., N$をそのままの並びにする置換を_恒等置換_といい$id_N$や$id$で表す。
 $
-id_N = mat(1, dots, N; 1, dots, N;)
+id_N = mat(1, ..., N; 1, ..., N;)
 $
 である。
 逆写像$s^(-1)$も置換であり置換$s$の_逆置換_という。
 $s s^(-1) = s^(-1) s = id$に注意する。
 
-$i != j$を満たす$i, j = 1, dots, N$に対して、$i$と$j$を入れ替えてそれ以外はそのままにする置換を$i$と$j$の_互換_といい$mat(i, j)$と表す。
+$i != j$を満たす$i, j = 1, ..., N$に対して、$i$と$j$を入れ替えてそれ以外はそのままにする置換を$i$と$j$の_互換_といい$mat(i, j)$と表す。
 つまり、
 $
-mat(i, j) = mat(dots, i, dots, j dots; dots, j, dots, i dots;)
+mat(i, j) = mat(..., i, ..., j ...; ..., j, ..., i ...;)
 $
 である。
 この互換は今までの内容で言うと、二つの行を入れ替えるという行基本変形に対応する。
@@ -83,15 +83,15 @@ $s$を$N$次の置換とする時、$s$は$N-1$個以下の互換の合成とし
 $N$に関する数学的帰納法で証明する。
 $N = 1$の時は$S_1 = { id }$なので成立する。
 $N$で成立する時、$N+1$次の置換$s$について考える。
-$s(N+1) = N+1$の時は$s$を$1, dots, N$に制限すると$N$次の置換になっているので$N-1$個以下の互換の合成として表される。
-$s(N+1) != N+1$の時は$i = s(N+1)$とすると$i = 1, dots, N$であり、$s$に$i$と$N+1$の互換をすると$N+1$を$N+1$に移すようになるので$N-1$個以下の互換の合成として表され、従って$s$は$N$個以下の互換の合成として表される。
+$s(N+1) = N+1$の時は$s$を$1, ..., N$に制限すると$N$次の置換になっているので$N-1$個以下の互換の合成として表される。
+$s(N+1) != N+1$の時は$i = s(N+1)$とすると$i = 1, ..., N$であり、$s$に$i$と$N+1$の互換をすると$N+1$を$N+1$に移すようになるので$N-1$個以下の互換の合成として表され、従って$s$は$N$個以下の互換の合成として表される。
 以上より証明された。
 ]
 
 この命題において$N-1$個以下の部分はあまり重要でなく、
 重要なのは$s in S_N$に対して$s$を互換の合成として表した時の互換の個数の最小値$n(s)$が定まることである。
 さらに$n(s)$が偶数の時$s$は_偶置換_といい、奇数の時_奇置換_と呼ぶことにする。
-個数$n = 0, dots, N-1$に対して$n(s) = n$となる$s in S_N$全体を$S_N (n)$と表し、
+個数$n = 0, ..., N-1$に対して$n(s) = n$となる$s in S_N$全体を$S_N (n)$と表し、
 偶置換全体を$S_N^(+)$で奇置換全体を$S_N^(-)$でそれぞれ表す。
 自明なこととして$S_N^(+) inter S_N^(-) = nothing$と$S_N^(+) union S_N^(-) = S_N$が成り立つことがある。
 
@@ -128,7 +128,7 @@ $N >= 2$に対して$N$次の置換$s$の符号$sgn(s)$を以下で定義する�
 $
 sgn(s) = product_(i < j) (s(j)-s(i))/(j-i).
 $
-ここで$product_(i < j) (s(j)-s(i))/(j-i)$は$i, j = 1, dots, N$が$i < j$を満たしながら動く時の実数$(s(j)-s(i))/(j-i)$すべての積である。
+ここで$product_(i < j) (s(j)-s(i))/(j-i)$は$i, j = 1, ..., N$が$i < j$を満たしながら動く時の実数$(s(j)-s(i))/(j-i)$すべての積である。
 そのため、$sgn(s)$は実数値であるが、のちにすぐわかる通り$sgn(s) = plus.minus 1$しか取り得ない。
 $N = 1$の時は$sgn(id) = +1$と定義する。
 ]
@@ -231,7 +231,7 @@ $K$上の$N$次正方行列$A = (a_(i j))$の_行列式_を以下で定義する
 $
 det A = abs(A)
 = mdet(a_(1 1), dots.c, a_(1 N); dots.v, dots.down, dots.v; a_(N 1), dots.c, a_(N N);)
-= sum_(s in S_N) sgn(s) a_(1 s(1)) dots a_(N s(N)).
+= sum_(s in S_N) sgn(s) a_(1 s(1)) ... a_(N s(N)).
 $
 正確には$sgn(s)$は実数の$plus.minus 1$として定義されたがこれを$K$の$plus.minus 1$と同一視して、
 行列式は$K$の元つまりスカラーとして定義する。
@@ -274,10 +274,10 @@ $
 変形すると
 $
 det A^T
-&= sum_(s in S_N) sgn(s) a_(s(1) 1) dots a_(s(N) N)
-= sum_(s in S_N) sgn(s) a_(1 s^(-1) (1)) dots a_(N s^(-1) (N)) \
-&= sum_(s in S_N) sgn(s^(-1)) a_(1 s(1)) dots a_(N s(N))
-= sum_(s in S_N) sgn(s) a_(1 s(1)) dots a_(N s(N))
+&= sum_(s in S_N) sgn(s) a_(s(1) 1) ... a_(s(N) N)
+= sum_(s in S_N) sgn(s) a_(1 s^(-1) (1)) ... a_(N s^(-1) (N)) \
+&= sum_(s in S_N) sgn(s^(-1)) a_(1 s(1)) ... a_(N s(N))
+= sum_(s in S_N) sgn(s) a_(1 s(1)) ... a_(N s(N))
 = det A
 $
 である。
@@ -316,7 +316,7 @@ $
 $
 mdet(a_(1 1), dots.c, a_(1 N); , dots.down, dots.v; , , a_(N N);)
 = mdet(a_(1 1), , ; dots.v, dots.down, ; a_(N 1), dots.c, a_(N N);)
-= a_(1 1) dots a_(N N)
+= a_(1 1) ... a_(N N)
 $
 が成り立つ。
 特に単位行列について
@@ -329,13 +329,13 @@ $
 次の二つの命題は行列式の計算をする上で重要である。
 
 #proposition([多重線形性])[
-$N$次の横ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)'_1, dots, bold(a)'_N$とスカラー$c_1, dots, c_N, c'_1, dots, c'_N$に対して、
+$N$次の横ベクトル$bold(a)_1, ..., bold(a)_N, bold(a)'_1, ..., bold(a)'_N$とスカラー$c_1, ..., c_N, c'_1, ..., c'_N$に対して、
 $
 mdet(dots.v; c_i bold(a)_i+c'_i bold(a)'_i; dots.v)
 = c_i mdet(dots.v; bold(a)_i; dots.v)+c'_i mdet(dots.v; bold(a)'_i; dots.v)
 $
 が成り立つ。
-また、$N$次の縦ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)'_1, dots, bold(a)'_N$とスカラー$c_1, dots, c_N, c'_1, dots, c'_N$に対して、
+また、$N$次の縦ベクトル$bold(a)_1, ..., bold(a)_N, bold(a)'_1, ..., bold(a)'_N$とスカラー$c_1, ..., c_N, c'_1, ..., c'_N$に対して、
 $
 mdet(dots.c, c_i bold(a)_i+c'_i bold(a)'_i, dots.c)
 = c_i mdet(dots.c, bold(a)_i, dots.c)+c'_i mdet(dots.c, bold(a)'_i, dots.c)
@@ -348,7 +348,7 @@ $
 ]
 
 #proposition([交代性])[
-$N$次の横ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)$と$i != j$を満たす$i, j = 1, dots, N$に対して
+$N$次の横ベクトル$bold(a)_1, ..., bold(a)_N, bold(a)$と$i != j$を満たす$i, j = 1, ..., N$に対して
 $
 mdet(dots.v; bold(a)_j; dots.v; bold(a)_i; dots.v)
 = -mdet(dots.v; bold(a)_i; dots.v; bold(a)_j; dots.v),
@@ -356,7 +356,7 @@ quad
 mdet(dots.v; bold(a); dots.v; bold(a); dots.v) = 0
 $
 が成り立つ。
-また、$N$次の縦ベクトル$bold(a)_1, dots, bold(a)_N, bold(a)$と$i != j$を満たす$i, j = 1, dots, N$に対して
+また、$N$次の縦ベクトル$bold(a)_1, ..., bold(a)_N, bold(a)$と$i != j$を満たす$i, j = 1, ..., N$に対して
 $
 mdet(dots.c, bold(a)_j, dots.c, bold(a)_i, dots.c)
 = -mdet(dots.c, bold(a)_i, dots.c, bold(a)_j, dots.c),
@@ -371,18 +371,18 @@ $
 
 #proof[
 転置すればよいので、前半部分だけ示す。
-一つ目の等式を示すために$A = (a_(i, j))_(j = 1, dots, N)^(i = 1, dots, N)$は第$i$行と第$j$行が等しい、つまり$a_(i k) = a_(j k)$がすべての$k = 1, dots, N$に対して成り立つとすると、
+一つ目の等式を示すために$A = (a_(i, j))_(j = 1, ..., N)^(i = 1, ..., N)$は第$i$行と第$j$行が等しい、つまり$a_(i k) = a_(j k)$がすべての$k = 1, ..., N$に対して成り立つとすると、
 $
 det A
 = det A^T
-= sum_(s in S_N) sgn(s) a_(s(1) 1) dots a_(s(N) N)
-= sum_(s in S_N^+) a_(s(1) 1) dots a_(s(N) N)-sum_(s in S_N^-) a_(s(1) 1) dots a_(s(N) N).
+= sum_(s in S_N) sgn(s) a_(s(1) 1) ... a_(s(N) N)
+= sum_(s in S_N^+) a_(s(1) 1) ... a_(s(N) N)-sum_(s in S_N^-) a_(s(1) 1) ... a_(s(N) N).
 $
 ここで奇置換の方にだけ互換$t = mat(i, j)$の操作をすると、$A$の仮定から
 $
-sum_(s in S_N^(-)) a_(s(1) 1) dots a_(s(N) N)
-= sum_(s in S_N^(-)) a_(t(s(1)) 1) dots a_(t(s(N)) N)
-= sum_(s in S_N^(+)) a_(s(1) 1) dots a_(s(N) N).
+sum_(s in S_N^(-)) a_(s(1) 1) ... a_(s(N) N)
+= sum_(s in S_N^(-)) a_(t(s(1)) 1) ... a_(t(s(N)) N)
+= sum_(s in S_N^(+)) a_(s(1) 1) ... a_(s(N) N).
 $
 よって$det A = 0$である。
 
@@ -413,29 +413,29 @@ $
 A B =
 mat(a_(1 1), dots.c, a_(1 N); dots.v, dots.down, dots.v; a_(N 1), dots.c, a_(N N))
 mat(bold(b)_1; dots.v; bold(b)_N)
-= mat(a_(1 1) bold(b)_1+dots+a_(1 N) bold(b)_N; dots.v; a_(N 1) bold(b)_1+dots+a_(N N) bold(b)_N)
+= mat(a_(1 1) bold(b)_1+...+a_(1 N) bold(b)_N; dots.v; a_(N 1) bold(b)_1+...+a_(N N) bold(b)_N)
 $
 よって多重線形性より、
 $
 det(A B) =
-sum_(j_1 = 1)^N dots sum_(j_N = 1)^N a_(1 j_1) dots a_(N j_N) mdet(bold(b)_(j_1); dots.v; bold(b)_(j_N))
+sum_(j_1 = 1)^N ... sum_(j_N = 1)^N a_(1 j_1) ... a_(N j_N) mdet(bold(b)_(j_1); dots.v; bold(b)_(j_N))
 $
 交代性より同じ行がある場合の行列式は$0$なので、
 $
 det(A B) =
-sum_(s in S_N) a_(1 s(1)) dots a_(N s(N)) mdet(bold(b)_(s(1)); dots.v; bold(b)_(s(N)))
+sum_(s in S_N) a_(1 s(1)) ... a_(N s(N)) mdet(bold(b)_(s(1)); dots.v; bold(b)_(s(N)))
 $
 行を並べ替えて、
 $
 det(A B) =
-sum_(s in S_N) sgn(s) a_(1 s(1)) dots a_(N s(N)) mdet(bold(b)_1; dots.v; bold(b)_N)
+sum_(s in S_N) sgn(s) a_(1 s(1)) ... a_(N s(N)) mdet(bold(b)_1; dots.v; bold(b)_N)
 $
 よって$det (A B) = det A det B$である。
 ]
 
 == 余因子展開
 
-$N$次正方行列$A$と$i, j = 1, dots, N$に対して、$A$の第$i$行と第$j$列を取り除いて得られる$N-1$次正方行列の行列式を$(-1)^(i+j)$倍した数を$A$の$(i, j)$_余因子_という。
+$N$次正方行列$A$と$i, j = 1, ..., N$に対して、$A$の第$i$行と第$j$列を取り除いて得られる$N-1$次正方行列の行列式を$(-1)^(i+j)$倍した数を$A$の$(i, j)$_余因子_という。
 つまり、$A$を
 $
 A = mat(A_(U L), *, A_(U R); *, a_(i j), *; A_(L L), *, A_(L R);)
@@ -449,11 +449,11 @@ $
 元の行列$A$の行列式は余因子を使って次のように表現される。
 
 #theorem([余因子展開])[
-$N$次正方行列$A$と$i, j = 1, dots, N$に対して
+$N$次正方行列$A$と$i, j = 1, ..., N$に対して
 $
 det A
-= a_(i 1) tilde(A)_(i 1)+dots+a_(i N) tilde(A)_(i N)
-= a_(1 j) tilde(A)_(1 j)+dots+a_(N j) tilde(A)_(N j)
+= a_(i 1) tilde(A)_(i 1)+...+a_(i N) tilde(A)_(i N)
+= a_(1 j) tilde(A)_(1 j)+...+a_(N j) tilde(A)_(N j)
 $
 が成り立つ。
 ]
@@ -463,8 +463,8 @@ $
 #proof[
 第$i$行についての余因子展開を示す。 第$i$行を
 $
-mat(a_(i 1), a_(i 2), dots, a_(i N))
-= a_(i 1) mat(1, 0, dots, 0)+a_(i 2) mat(0, 1, dots, 0)+a_(i N) mat(0, 0, dots, 1)
+mat(a_(i 1), a_(i 2), ..., a_(i N))
+= a_(i 1) mat(1, 0, ..., 0)+a_(i 2) mat(0, 1, ..., 0)+a_(i N) mat(0, 0, ..., 1)
 $
 と分解すると、多重線形性より示される。
 列についての余因子展開は転置を取ればよい。
@@ -510,10 +510,10 @@ tilde(A)bold(b)
 = mat(det A_(1, bold(b)); dots.v; det A_(N, bold(b)))
 $
 が成り立つ。
-ただし、$A_(k, bold(b))$は行列$A = mat(bold(a)_1, dots.c, bold(a)_N)$の第$k = 1, dots, N$列をベクトル$bold(b)$で置き換えて得られる行列
+ただし、$A_(k, bold(b))$は行列$A = mat(bold(a)_1, dots.c, bold(a)_N)$の第$k = 1, ..., N$列をベクトル$bold(b)$で置き換えて得られる行列
 $
 A_(k, bold(b))
-= mat(bold(a)_1, dots, bold(a)_(k-1), bold(b), bold(a)_(k+1), dots, bold(a)_N)
+= mat(bold(a)_1, ..., bold(a)_(k-1), bold(b), bold(a)_(k+1), ..., bold(a)_N)
 $
 である。
 ] <t_cofactvec>
@@ -521,7 +521,7 @@ $
 #proof[
 ベクトル$tilde(A)bold(b)$の第$k$成分は
 $
-tilde(A)_(1 k) b_1+dots+tilde(A)_(N k) b_N
+tilde(A)_(1 k) b_1+...+tilde(A)_(N k) b_N
 $
 であり、これは$det A_(k, bold(b))$の第$k$列についての余因子展開に一致する。
 ]
@@ -587,7 +587,7 @@ $
 重要な行列式の公式として以下がある。
 
 #theorem([ヴァンデルモンドの行列式])[
-$a_1, dots, a_N in K$に対して、
+$a_1, ..., a_N in K$に対して、
 $
 mdet(
 	1, a_1, a_1^2, dots.c, a_1^(N-1);
@@ -622,10 +622,10 @@ mdet(
 	dots.v, dots.v, dots.down, dots.v;
 	a_N-a_1, a_N^2-a_1^2, dots.c, a_N^(N-1)-a_1^(N-1);
 ) \
-&= (a_2-a_1)dots(a_N-a_1) mdet(
-	1, a_2+a_1, dots.c, a_2^(N-2)+a_2^(N-3)a_1+dots+a_1^(N-2);
+&= (a_2-a_1)...(a_N-a_1) mdet(
+	1, a_2+a_1, dots.c, a_2^(N-2)+a_2^(N-3)a_1+...+a_1^(N-2);
 	dots.v, dots.v, dots.down, dots.v;
-	1, a_N+a_1, dots.c, a_N^(N-2)+a_N^(N-3)a_1+dots+a_1^(N-2);
+	1, a_N+a_1, dots.c, a_N^(N-2)+a_N^(N-3)a_1+...+a_1^(N-2);
 )
 $
 ここで最右辺の行列式は$N-1$次で、第$N-1$列から第$N-2$列の$a_1$倍を引き、第$N-2$列から第$N-3$列の$a_1$倍を引き、ということを続けると、
@@ -636,7 +636,7 @@ mdet(
 	dots.v, dots.v, dots.v, dots.down, dots.v;
 	1, a_N, a_N^2, dots.c, a_N^(N-1);
 )
-= (a_2-a_1)dots(a_N-a_1) mdet(
+= (a_2-a_1)...(a_N-a_1) mdet(
 	1, a_2, dots.c, a_2^(N-2);
 	dots.v, dots.v, dots.down, dots.v;
 	1, a_N, dots.c, a_N^(N-2);
@@ -650,7 +650,7 @@ mdet(
 	dots.v, dots.v, dots.v, dots.down, dots.v;
 	1, a_N, a_N^2, dots.c, a_N^(N-1);
 )
-= (a_2-a_1)dots(a_N-a_1) product_(2 <= i < j) (a_j-a_i)
+= (a_2-a_1)...(a_N-a_1) product_(2 <= i < j) (a_j-a_i)
 = product_(i < j) (a_j-a_i)
 $
 を得る。
@@ -735,7 +735,7 @@ $
 ]
 
 #proposition[
-$x, a_1, dots, a_N in K$に対して、
+$x, a_1, ..., a_N in K$に対して、
 $
 mdet(
 	x, -1, 0, dots.c, 0, 0;
@@ -745,7 +745,7 @@ mdet(
 	0, 0, 0, dots.c, x, -1;
 	a_1, a_2, a_3, dots.c, a_(N-1), x+a_N;
 )
-= x^N+a_N x^(N-1)+dots+a_1
+= x^N+a_N x^(N-1)+...+a_1
 $
 が成り立つ。
 ]
@@ -776,8 +776,8 @@ mdet(
 	dots.v, dots.v, dots.down, dots.v, dots.v;
 	0, 0, dots.c, x, -1;
 ) \
-&= x(x^(N-1)+a_N x^(N-2)+dots+a_2)-(-1)^(N+1) a_1 (-1)^(N-2) \
-&= x^N+a_N x^(N-1)+dots+a_1.
+&= x(x^(N-1)+a_N x^(N-2)+...+a_2)-(-1)^(N+1) a_1 (-1)^(N-2) \
+&= x^N+a_N x^(N-1)+...+a_1.
 $
 よって、主張が示された。
 ]
@@ -790,12 +790,12 @@ $
 そこでスカラー積の要領で積の行列式$det A^T B$を考える。
 この行列式は$M = N$の時には$det A det B$に一致し、$M < N$の時には零となるので、問題になるのは$M > N$の場合である。
 
-$N$次の置換が${ 1, dots, N }$から${ 1, dots, N }$への可逆写像だったことを拡張して、
-$k$を${ 1, dots, N }$から${ 1, dots, M }$への単射、つまり任意の$i != j$に対して$k(i) != k(j)$を満たす写像としてそれら全体の集合を$S_(N, M)$と表すことにする。
+$N$次の置換が${ 1, ..., N }$から${ 1, ..., N }$への可逆写像だったことを拡張して、
+$k$を${ 1, ..., N }$から${ 1, ..., M }$への単射、つまり任意の$i != j$に対して$k(i) != k(j)$を満たす写像としてそれら全体の集合を$S_(N, M)$と表すことにする。
 さらに$k in S_(N, M)$の中で単調増加になっているもの全体を$macron(S)_(N, M)$と書く。
 すなわち$t in macron(S)_(N, M)$は
 $
-1 <= t(1) < dots < t(N) <= M
+1 <= t(1) < ... < t(N) <= M
 $
 を満たす。
 この時、$k in S_(N, M)$に対して、並べ替えを行うことで、$k = t s$と$t in macron(S)_(N, M)$, $s in S_N$と一意に表すことができることに注意する。
@@ -807,7 +807,7 @@ A_t = mat(bold(a)_(t(1)); dots.v; bold(a)_(t(N)))
 $
 であり、
 $
-det A_t = sum_(s in S_N) sgn(s) a_(t(1) s(1)) dots a_(t(N) s(N))
+det A_t = sum_(s in S_N) sgn(s) a_(t(1) s(1)) ... a_(t(N) s(N))
 $
 であることに注意する。
 
@@ -827,29 +827,29 @@ $
 A^T B =
 mat(a_(1 1), dots.c, a_(M 1); dots.v, dots.down, dots.v; a_(1 N), dots.c, a_(M N))
 mat(bold(b)_1; dots.v; bold(b)_M)
-= mat(a_(1 1) bold(b)_1+dots+a_(M 1) bold(b)_1; dots.v; a_(1 N) bold(b)_1+dots+a_(M N) bold(b)_M)
+= mat(a_(1 1) bold(b)_1+...+a_(M 1) bold(b)_1; dots.v; a_(1 N) bold(b)_1+...+a_(M N) bold(b)_M)
 $
 よって多重線形性と交代性より、
 $
 det(A^T B)
-&= sum_(i_1 = 1)^M dots sum_(i_N = 1)^M a_(i_1 1) dots a_(i_N N) mdet(bold(b)_(i_1); dots.v; bold(b)_(i_N))
-= sum_(k in S_(N, M)) a_(k(1) 1) dots a_(k(N) N) mdet(bold(b)_(k(1)); dots.v; bold(b)_(k(N))) \
-&= sum_(t in macron(S)_(N, M)) sum_(s in S_N) a_(t(s(1)) 1) dots a_(t(s(N)) N) mdet(bold(b)_(t(s(1))); dots.v; bold(b)_(t(s(N)))).
+&= sum_(i_1 = 1)^M ... sum_(i_N = 1)^M a_(i_1 1) ... a_(i_N N) mdet(bold(b)_(i_1); dots.v; bold(b)_(i_N))
+= sum_(k in S_(N, M)) a_(k(1) 1) ... a_(k(N) N) mdet(bold(b)_(k(1)); dots.v; bold(b)_(k(N))) \
+&= sum_(t in macron(S)_(N, M)) sum_(s in S_N) a_(t(s(1)) 1) ... a_(t(s(N)) N) mdet(bold(b)_(t(s(1))); dots.v; bold(b)_(t(s(N)))).
 $
 行を並べ替えて、
 $
 det(A^T B) =
-sum_(t in macron(S)_(N, M)) sum_(s in S_N) a_(t(s(1)) 1) dots a_(t(s(N)) N) sgn(s) mdet(bold(b)_(t(1)); dots.v; bold(b)_(t(N))).
+sum_(t in macron(S)_(N, M)) sum_(s in S_N) a_(t(s(1)) 1) ... a_(t(s(N)) N) sgn(s) mdet(bold(b)_(t(1)); dots.v; bold(b)_(t(N))).
 $
 一番後ろの行列式は$det B_t$である。
 ここでスカラーの積を並べ替えて
 $
-a_(t(s(1)) 1) dots a_(t(s(N)) N) = a_(t(1) s^(-1) (1)) dots a_(t(N) s^(-1) (N))
+a_(t(s(1)) 1) ... a_(t(s(N)) N) = a_(t(1) s^(-1) (1)) ... a_(t(N) s^(-1) (N))
 $
 なので、
 $
 det(A^T B) =
-sum_(t in macron(S)_(N, M)) sum_(s in S_N) sgn(s) a_(t(1) s(1)) dots a_(t(N) s(N)) det B_t
+sum_(t in macron(S)_(N, M)) sum_(s in S_N) sgn(s) a_(t(1) s(1)) ... a_(t(N) s(N)) det B_t
 = sum_(t in macron(S)_(N, M)) det A_t det B_t
 $
 である。

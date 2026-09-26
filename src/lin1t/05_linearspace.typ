@@ -48,11 +48,11 @@ $V$を$K$として設定し加法を$K$での加法、スカラー乗法を$K$�
 ]
 
 #example([数ベクトル空間])[
-$N = 1, 2, 3, dots$とする。
-$V$として直積$K^N$として設定するつまり$N$個の$K$の元$a_1, dots, a_N$を並べたもの$bold(v) = (a_1, dots, a_N)$の集合として、加法とスカラー乗法を
+$N = 1, 2, 3, ...$とする。
+$V$として直積$K^N$として設定するつまり$N$個の$K$の元$a_1, ..., a_N$を並べたもの$bold(v) = (a_1, ..., a_N)$の集合として、加法とスカラー乗法を
 $
-(a_1, dots, a_N)+(b_1, dots, b_N) = (a_1+b_1, dots, a_N+b_N),
-quad c (a_1, dots, a_N) = (c a_1, dots, c a_N) $
+(a_1, ..., a_N)+(b_1, ..., b_N) = (a_1+b_1, ..., a_N+b_N),
+quad c (a_1, ..., a_N) = (c a_1, ..., c a_N) $
 によって定義すると$V$は$K$上の線形空間である。
 この$K^N$を$K$上の$N$次元_数ベクトル空間_といい、その元を$N$次元_数ベクトル_という。
 数ベクトルは縦ベクトルや横ベクトルと同一視されうる。
@@ -61,7 +61,7 @@ $N = 1$の時の$K^1$は先述の線形空間としての$K$と同一視され�
 ]
 
 #example([行列空間])[
-同様にして$M, N = 1, 2, 3, dots$とする。
+同様にして$M, N = 1, 2, 3, ...$とする。
 $V$として$M times N$型の$K$上の行列の集合$op("M")_(M times N) (K) = K^(M times N)$とすると$V$は$K$上の線形空間である。
 ]
 
@@ -118,7 +118,7 @@ $K$上の線形空間$V$に対して、その部分集合$W$であって$V$の�
 線形空間$V$に対して、$V$自身と零ベクトルのみからなる集合$O = O_V = Set(bold(0)_V)$はいずれも$V$の線形部分空間であり、自明な線形部分空間と呼ばれる。
 
 #example([連立一次方程式の解空間])[
-$N, M = 1, 2, 3, dots$として$A$を$M times N$型の$K$上の行列とする。
+$N, M = 1, 2, 3, ...$として$A$を$M times N$型の$K$上の行列とする。
 この時、斉次連立一次方程式
 $
 A bold(x) = bold(0)
@@ -127,14 +127,14 @@ $
 ]
 
 #example([行列空間の部分空間])[
-$N = 1, 2, 3, dots$次の対角行列、右上三角行列、左下三角行列、対称行列の集合はいずれも$op("M")_N (K)$の線形部分空間である。
+$N = 1, 2, 3, ...$次の対角行列、右上三角行列、左下三角行列、対称行列の集合はいずれも$op("M")_N (K)$の線形部分空間である。
 ]
 
 #example([有限次多項式空間])[
-$K$の元を係数とする$N = 0, 1, 2, 3, dots$次以下の多項式
+$K$の元を係数とする$N = 0, 1, 2, 3, ...$次以下の多項式
 $
-f(x) = a_0+a_1 x+a_2 x^2+a_3 x^3+dots+a_N x^N,
-quad a_0, a_1, a_2, a_3, dots, a_N in K
+f(x) = a_0+a_1 x+a_2 x^2+a_3 x^3+...+a_N x^N,
+quad a_0, a_1, a_2, a_3, ..., a_N in K
 $
 の集合$K^N [x]$は$K[x]$の線形部分空間である。
 ]
@@ -150,17 +150,17 @@ $
 一般論で重要な線形部分空間として次がある。
 
 #definition([線形結合])[
-$V$を$K$上の線形空間として、いくつかの元（ベクトル）$bold(v)_1, dots, bold(v)_N$を考える。
-ここでスカラー$c_1, dots, c_N in K$を使って
+$V$を$K$上の線形空間として、いくつかの元（ベクトル）$bold(v)_1, ..., bold(v)_N$を考える。
+ここでスカラー$c_1, ..., c_N in K$を使って
 $
-c_1 bold(v)_1+dots+c_N bold(v)_N
+c_1 bold(v)_1+...+c_N bold(v)_N
 $
-と表される$V$の元（ベクトル）を$bold(v)_1, dots, bold(v)_N$の_線形結合_という。
-また、$bold(v)_1, dots, bold(v)_N$の線形結合全体からなる集合
+と表される$V$の元（ベクトル）を$bold(v)_1, ..., bold(v)_N$の_線形結合_という。
+また、$bold(v)_1, ..., bold(v)_N$の線形結合全体からなる集合
 $
-Span(bold(v)_1, dots, bold(v)_N) = Set(c_1 bold(v)_1+dots+c_N bold(v)_N; c_1, dots, c_N in K)
+Span(bold(v)_1, ..., bold(v)_N) = Set(c_1 bold(v)_1+...+c_N bold(v)_N; c_1, ..., c_N in K)
 $
-は$V$の線形部分空間であり、$bold(v)_1, dots, bold(v)_N$が_張る_または_線形生成する_線形部分空間と呼ばれる。
+は$V$の線形部分空間であり、$bold(v)_1, ..., bold(v)_N$が_張る_または_線形生成する_線形部分空間と呼ばれる。
 また、$N = 0$の時は線形結合は零ベクトルとして、張る線形部分空間は自明な$O$と考える。
 ]
 
@@ -192,11 +192,11 @@ $V$を$K$上の線形空間として、$W$を$V$の線形部分空間とする�
 
 #definition([次元])[
 $V$を線形空間とする。
-いくつかのベクトル$bold(v)_1, dots, bold(v)_N$ ($N = 0, 1, 2, 3, dots$)が存在して
+いくつかのベクトル$bold(v)_1, ..., bold(v)_N$ ($N = 0, 1, 2, 3, ...$)が存在して
 $
-Span(bold(v)_1, dots, bold(v)_N) = V,
+Span(bold(v)_1, ..., bold(v)_N) = V,
 $
-つまり$bold(v)_1, dots, bold(v)_N$が$V$を線形生成するとする時、$V$は_有限次元_であるという。
+つまり$bold(v)_1, ..., bold(v)_N$が$V$を線形生成するとする時、$V$は_有限次元_であるという。
 有限次元でない線形空間は_無限次元_であるという。
 
 線形空間の_次元_を以下で定めて$dim V$と表す。
@@ -216,13 +216,13 @@ quad dim K^N [x] = N+1
 $
 である。
 ただし$\# X$は集合$X$の元の個数（有限集合でない場合は$\# X = oo$）である。
-$N$個のベクトル$bold(v)_1, dots, bold(v)_N in V$が$V$を線形生成する時、$N >= dim V$であることに注意する。
+$N$個のベクトル$bold(v)_1, ..., bold(v)_N in V$が$V$を線形生成する時、$N >= dim V$であることに注意する。
 
 #definition([基底])[
 $V$を有限次元線形空間として$N$をその次元とする。
-ここで$N$個のベクトル$bold(v)_1, dots, bold(v)_N in V$であって
+ここで$N$個のベクトル$bold(v)_1, ..., bold(v)_N in V$であって
 $
-Span(bold(v)_1, dots, bold(v)_N) = V
+Span(bold(v)_1, ..., bold(v)_N) = V
 $
 を満たすものを$V$の_基底_という。
 ]
@@ -231,19 +231,19 @@ $
 また、有限次元線形空間の次元は一意的であるが、基底は一意ではない（例としては$K^2$に対して$(1, 0), (0, 1)$と$(1, 1), (1, -1)$はそれぞれ基底である）。
 
 #definition([線形独立])[
-$V$を$K$上の線形空間として、いくつかのベクトル$bold(v)_1, dots, bold(v)_N in V$ ($N = 1, 2, 3, dots$)を考える。
-ここでスカラー$c_1, dots, c_N in K$であって
+$V$を$K$上の線形空間として、いくつかのベクトル$bold(v)_1, ..., bold(v)_N in V$ ($N = 1, 2, 3, ...$)を考える。
+ここでスカラー$c_1, ..., c_N in K$であって
 $
-c_1 bold(v)_1+dots+c_N bold(v)_N = bold(0)
+c_1 bold(v)_1+...+c_N bold(v)_N = bold(0)
 $
-となるのは$c_1 = dots = c_N = 0$の場合のみとする時、
-$bold(v)_1, dots, bold(v)_N$は_線形独立_であるという。
+となるのは$c_1 = ... = c_N = 0$の場合のみとする時、
+$bold(v)_1, ..., bold(v)_N$は_線形独立_であるという。
 $N = 0$の時は$0$個のベクトルは常に線形独立していると理解する。
 線形独立でない時、_線形従属_しているという。
 ]
 
 #example[
-$N = 0, 1, 2, 3, dots$として$1, x, x^2, x^3, dots, x^N in K[x]$は線形独立である。
+$N = 0, 1, 2, 3, ...$として$1, x, x^2, x^3, ..., x^N in K[x]$は線形独立である。
 ]
 
 基底と線形独立性には関係がある。
@@ -253,56 +253,56 @@ $K$上の線形空間$V$の基底は線形独立である。
 ]
 
 #proof[
-$V$の次元を$N >= 1$、基底を$bold(v)_1, dots, bold(v)_N in V$とする。
-もし$bold(v)_1, dots, bold(v)_N$が線形独立でないつまり線形従属している時は、$c_1 = dots = c_N = 0$でないスカラー$c_1, dots, c_N in K$であって
+$V$の次元を$N >= 1$、基底を$bold(v)_1, ..., bold(v)_N in V$とする。
+もし$bold(v)_1, ..., bold(v)_N$が線形独立でないつまり線形従属している時は、$c_1 = ... = c_N = 0$でないスカラー$c_1, ..., c_N in K$であって
 $
-c_1 bold(v)_1+dots+c_N bold(v)_N = bold(0)
+c_1 bold(v)_1+...+c_N bold(v)_N = bold(0)
 $
 となるものが存在する。
-ここで$c_i != 0$となる$i = 1, dots, N$が存在するが、$bold(v)_1, dots, bold(v)_N$を並べ替えて、$i = N$の場合のみ考えればよい。
+ここで$c_i != 0$となる$i = 1, ..., N$が存在するが、$bold(v)_1, ..., bold(v)_N$を並べ替えて、$i = N$の場合のみ考えればよい。
 この時、
 $
-bold(v)_N = -c_N^(-1) (c_1 bold(v)_1+dots+c_(N-1) bold(v)_(N-1))
+bold(v)_N = -c_N^(-1) (c_1 bold(v)_1+...+c_(N-1) bold(v)_(N-1))
 $
-となるため、$bold(v)_N$は$bold(v)_1, dots, bold(v)_(N-1)$の線形結合として書け、$bold(v)_1, dots, bold(v)_(N-1)$は$V$を線形生成する。
-実際、$bold(v)_1, dots, bold(v)_N$が$V$を線形生成するため任意の$w in V$は$bold(v)_1, dots, bold(v)_N$の線形結合として書けるので、$d_1, dots, d_N in K$を使って
+となるため、$bold(v)_N$は$bold(v)_1, ..., bold(v)_(N-1)$の線形結合として書け、$bold(v)_1, ..., bold(v)_(N-1)$は$V$を線形生成する。
+実際、$bold(v)_1, ..., bold(v)_N$が$V$を線形生成するため任意の$w in V$は$bold(v)_1, ..., bold(v)_N$の線形結合として書けるので、$d_1, ..., d_N in K$を使って
 $
 w
-= d_1 bold(v)_1+dots+d_N bold(v)_N
-= d_1 bold(v)_1+dots+d_(N-1) bold(v)_(N-1)-d_N c_N^(-1) (c_1 bold(v)_1+dots+c_(N-1) bold(v)_(N-1))
+= d_1 bold(v)_1+...+d_N bold(v)_N
+= d_1 bold(v)_1+...+d_(N-1) bold(v)_(N-1)-d_N c_N^(-1) (c_1 bold(v)_1+...+c_(N-1) bold(v)_(N-1))
 $
-より$bold(v)_1, dots, bold(v)_(N-1)$は$V$を線形生成する。
+より$bold(v)_1, ..., bold(v)_(N-1)$は$V$を線形生成する。
 ここで次元の定義より$N$は$V$を線形生成するベクトルの個数の最小だったが、$N-1$個でも線形生成されてしまったので矛盾である。
-従って、基底$bold(v)_1, dots, bold(v)_N$は線形独立している。
+従って、基底$bold(v)_1, ..., bold(v)_N$は線形独立している。
 ]
 
 逆に線形独立で$V$を線形生成するならばそれは$V$の基底である。
 まず次を示す。
 
 #lemma([線形独立と次元])[
-$V$を$K$上の線形空間として、$N = 0, 1, 2, 3, dots$個のベクトル$bold(v)_1, dots, bold(v)_N in V$が線形独立ならば$N <= dim V$である。
+$V$を$K$上の線形空間として、$N = 0, 1, 2, 3, ...$個のベクトル$bold(v)_1, ..., bold(v)_N in V$が線形独立ならば$N <= dim V$である。
 ]
 
 この補題の証明のために@h_linsys で学んだ連立一次方程式の理論を用いる。
 
 #proof[
-$M = dim V$として$M, N = 1, 2, 3, dots$の場合を考えればよい。
+$M = dim V$として$M, N = 1, 2, 3, ...$の場合を考えればよい。
 つまり、$V$は次元が$M$の有限次元である。
-そこで$V$の基底$bold(w)_1, dots, bold(w)_M$を取ってくる。
-各$j = 1, dots, N$に対して$bold(v)_i in V$は$bold(w)_1, dots, bold(w)_M$の線形結合として表されるので、
+そこで$V$の基底$bold(w)_1, ..., bold(w)_M$を取ってくる。
+各$j = 1, ..., N$に対して$bold(v)_i in V$は$bold(w)_1, ..., bold(w)_M$の線形結合として表されるので、
 $
-bold(v)_j = c_(j 1) bold(w)_1+dots+c_(j M) bold(w)_M
+bold(v)_j = c_(j 1) bold(w)_1+...+c_(j M) bold(w)_M
 $
-となる$c_(j 1), dots, c_(j M) in K$が存在する。
-ここで$bold(v)_1, dots, bold(v)_N$は線形独立なので、$d_1, dots, d_N in K$が$d_1 bold(v)_1+dots+d_N bold(v)_N = bold(0)$を満たすならば$d_1 = dots = d_N = 0$である。
+となる$c_(j 1), ..., c_(j M) in K$が存在する。
+ここで$bold(v)_1, ..., bold(v)_N$は線形独立なので、$d_1, ..., d_N in K$が$d_1 bold(v)_1+...+d_N bold(v)_N = bold(0)$を満たすならば$d_1 = ... = d_N = 0$である。
 $
-d_1 bold(v)_1+dots+d_N bold(v)_N
-&= d_1 (c_(1 1) bold(w)_1+dots+c_(1 M) bold(w)_M)+dots+d_N (c_(N 1) bold(w)_1+dots+c_(N M) bold(w)_M) \
-&= (d_1 c_(1 1)+ d_N c_(N 1))bold(w)_1+dots+(d_1 c_(1 M)+ d_N c_(N M))bold(w)_M
+d_1 bold(v)_1+...+d_N bold(v)_N
+&= d_1 (c_(1 1) bold(w)_1+...+c_(1 M) bold(w)_M)+...+d_N (c_(N 1) bold(w)_1+...+c_(N M) bold(w)_M) \
+&= (d_1 c_(1 1)+ d_N c_(N 1))bold(w)_1+...+(d_1 c_(1 M)+ d_N c_(N M))bold(w)_M
 $
-なので、$bold(w)_1, dots, bold(w)_M$が線形独立であることから
+なので、$bold(w)_1, ..., bold(w)_M$が線形独立であることから
 $
-d_1 c_(1 1)+d_N c_(N 1) = dots = d_1 c_(1 M)+d_N c_(N M) = 0
+d_1 c_(1 1)+d_N c_(N 1) = ... = d_1 c_(1 M)+d_N c_(N M) = 0
 $
 で、これを変形して斉次連立一次方程式
 $
@@ -311,18 +311,18 @@ vec(d_1, dots.v, d_N)
 = vec(0, dots.v, 0)
 $
 を得る。
-ここで@t_homlinsys より係数行列の階数を$R$とすると、この方程式の解が$d_1 = dots = d_N = 0$に限られる条件は$R = N$であることである。
+ここで@t_homlinsys より係数行列の階数を$R$とすると、この方程式の解が$d_1 = ... = d_N = 0$に限られる条件は$R = N$であることである。
 よって、係数行列の列数は$M$であることから$N = R <= M = dim V$を得る。
 ]
 
 #proposition[
-$V$を線形空間として、いくつかのベクトル$bold(v)_1, dots, bold(v)_N in V$が線形独立かつ$V$を線形生成するならば、$N = dim V$であり$bold(v)_1, dots, bold(v)_N$は$V$の基底である。
+$V$を線形空間として、いくつかのベクトル$bold(v)_1, ..., bold(v)_N in V$が線形独立かつ$V$を線形生成するならば、$N = dim V$であり$bold(v)_1, ..., bold(v)_N$は$V$の基底である。
 ]
 
 #proof[
-$bold(v)_1, dots, bold(v)_N$は線形独立なので$N <= dim V$で、
+$bold(v)_1, ..., bold(v)_N$は線形独立なので$N <= dim V$で、
 $V$を線形生成するので$N >= dim V$である。
-したがって$N = dim V$であり、基底の定義から$bold(v)_1, dots, bold(v)_N$は$V$の基底である。
+したがって$N = dim V$であり、基底の定義から$bold(v)_1, ..., bold(v)_N$は$V$の基底である。
 ]
 
 #proposition[
@@ -334,37 +334,37 @@ $V$を$K$上の有限次元線形空間とする。
 そのために次の補題を用意する。
 
 #lemma[
-$K$上の線形空間$V$のいくつかのベクトル$bold(v)_1, dots, bold(v)_N in V$が線形独立で$V$を生成しないとき、
-任意の$bold(w) in V\\Span(bold(v)_1, dots, bold(v)_N)$に対して$bold(v)_1, dots, bold(v)_N, bold(w)$は線形独立である。
+$K$上の線形空間$V$のいくつかのベクトル$bold(v)_1, ..., bold(v)_N in V$が線形独立で$V$を生成しないとき、
+任意の$bold(w) in V\\Span(bold(v)_1, ..., bold(v)_N)$に対して$bold(v)_1, ..., bold(v)_N, bold(w)$は線形独立である。
 ]
 
 #proof[
-スカラー$c_1, dots, c_N, d in K$を使って$c_1 bold(v)_1+dots+c_N bold(v)_N+d bold(w) = bold(0)_V$となったとする。
+スカラー$c_1, ..., c_N, d in K$を使って$c_1 bold(v)_1+...+c_N bold(v)_N+d bold(w) = bold(0)_V$となったとする。
 ここで$d != 0$とすると
 $
-bold(w) = -d^(-1) (c_1 bold(v)_1+dots+c_N bold(v)_N)
+bold(w) = -d^(-1) (c_1 bold(v)_1+...+c_N bold(v)_N)
 $
 となり仮定に反する。
-よって$d = 0$であり、$bold(v)_1, dots, bold(v)_N$が線形独立なので$c_1 = dots = c_N = 0$である。
-以上より$bold(v)_1, dots, bold(v)_N, bold(w)$は線形独立である。
+よって$d = 0$であり、$bold(v)_1, ..., bold(v)_N$が線形独立なので$c_1 = ... = c_N = 0$である。
+以上より$bold(v)_1, ..., bold(v)_N, bold(w)$は線形独立である。
 ]
 
 この補題の応用として次が示される。
 
 #proposition[
 $V$を$K$上の有限次元線形空間として、$N = dim V$とおく。
-ここで$N$個のベクトル$bold(v)_1, dots, bold(v)_N in V$が線形独立なとき、それは$V$の基底である。
+ここで$N$個のベクトル$bold(v)_1, ..., bold(v)_N in V$が線形独立なとき、それは$V$の基底である。
 ]
 
 #proof[
 $V$を生成しないとすると、補題より$N+1$個の線形独立なベクトルを得るが、これは補題に反する。
-よって、$bold(v)_1, dots, bold(v)_N$は$V$を生成するので基底である。
+よって、$bold(v)_1, ..., bold(v)_N$は$V$を生成するので基底である。
 ]
 
 #proof([命題の証明])[
-有限次元なので$V$の次元を$N$、$W$の次元を$M$として、$W$の基底$bold(w)_1, dots, bold(w)_M$を取る。
-ここで補題を$N-M$回繰り返すことで線形独立な$bold(w)_1, dots, bold(w)_M, bold(u)_(M+1), dots, bold(u)_N in V$を作ることができ（次元の関係で補題の仮定を満たし続ける）、次元の関係でこれは$V$の基底になる。
-あとは$U = Span(bold(u)_(M+1), dots, bold(u)_N)$とすればよい。
+有限次元なので$V$の次元を$N$、$W$の次元を$M$として、$W$の基底$bold(w)_1, ..., bold(w)_M$を取る。
+ここで補題を$N-M$回繰り返すことで線形独立な$bold(w)_1, ..., bold(w)_M, bold(u)_(M+1), ..., bold(u)_N in V$を作ることができ（次元の関係で補題の仮定を満たし続ける）、次元の関係でこれは$V$の基底になる。
+あとは$U = Span(bold(u)_(M+1), ..., bold(u)_N)$とすればよい。
 ]
 
 和空間の次元について次が成り立つ。
@@ -394,17 +394,17 @@ $
 $N = dim V$, $M = dim W$とおく。
 
 定理の後半部分の内容を先に示しておく。
-つまり$V inter W = O_U$の時、$V$の基底$bold(v)_1, dots, bold(v)_N$と$W$の基底$bold(w)_1, dots, bold(w)_M$を取ってくると$bold(v)_1, dots, bold(v)_N, bold(w)_1, dots, bold(w)_M$が線形独立を示せばよい。
-スカラー$c_1, dots, c_N, d_1, dots, d_M$について
+つまり$V inter W = O_U$の時、$V$の基底$bold(v)_1, ..., bold(v)_N$と$W$の基底$bold(w)_1, ..., bold(w)_M$を取ってくると$bold(v)_1, ..., bold(v)_N, bold(w)_1, ..., bold(w)_M$が線形独立を示せばよい。
+スカラー$c_1, ..., c_N, d_1, ..., d_M$について
 $
-c_1 bold(v)_1+dots+c_N bold(v)_N+d_1 bold(w)_1+dots+d_M bold(w)_M = bold(0)_U
+c_1 bold(v)_1+...+c_N bold(v)_N+d_1 bold(w)_1+...+d_M bold(w)_M = bold(0)_U
 $
 の時、
 $
-c_1 bold(v)_1+dots+c_N bold(v)_N = -d_1 bold(w)_1-dots-d_M bold(w)_M
+c_1 bold(v)_1+...+c_N bold(v)_N = -d_1 bold(w)_1-...-d_M bold(w)_M
 $
 であり、仮定からこれは$V inter W = O_U$の元より$bold(0)_U$に等しく、
-$bold(v)_1, dots, bold(v)_N$と$bold(w)_1, dots, bold(w)_M$の線形独立性から$bold(v)_1, dots, bold(v)_N, bold(w)_1, dots, bold(w)_M$が線形独立がわかる。
+$bold(v)_1, ..., bold(v)_N$と$bold(w)_1, ..., bold(w)_M$の線形独立性から$bold(v)_1, ..., bold(v)_N, bold(w)_1, ..., bold(w)_M$が線形独立がわかる。
 よって、この場合$dim (V+W) = dim V+dim W$である。
 
 一般の場合を示す。
@@ -532,50 +532,50 @@ $
 $dim Img F$はしばしば$rank F$と表される。
 
 #proof[
-$Img F$が無限次元の時は任意の$N = 0, 1, 2, 3, dots$に対して線形独立なベクトル$bold(w)_1, dots, bold(w)_N in Img F$が存在する。
+$Img F$が無限次元の時は任意の$N = 0, 1, 2, 3, ...$に対して線形独立なベクトル$bold(w)_1, ..., bold(w)_N in Img F$が存在する。
 ここで各$bold(w)_i$に対して$F bold(u)_i = bold(w)_i$となる$bold(u)_i in V$が存在するので取ってくる。
-この時$bold(u)_1, dots, bold(u)_N$は線形独立を示す。
-スカラー$c_1, dots, c_N in K$に対して
+この時$bold(u)_1, ..., bold(u)_N$は線形独立を示す。
+スカラー$c_1, ..., c_N in K$に対して
 $
-c_1 bold(u)_1+dots+c_N bold(u)_N = bold(0)_V
+c_1 bold(u)_1+...+c_N bold(u)_N = bold(0)_V
 $
 となったとすると$F$で移して
 $
-F(c_1 bold(u)_1+dots+c_N bold(u)_N)
-= c_1 F bold(u)_1+dots+c_N F bold(u)_N
-= c_1 bold(w)_1+dots+c_N bold(w)_N
+F(c_1 bold(u)_1+...+c_N bold(u)_N)
+= c_1 F bold(u)_1+...+c_N F bold(u)_N
+= c_1 bold(w)_1+...+c_N bold(w)_N
 = F(bold(0)_V)
 = bold(0)_W.
 $
-よって、$bold(w)_1, dots, bold(w)_N$が線形独立なので、$c_1 = dots = c_N = 0$であり、$bold(u)_1, dots, bold(u)_N$も線形独立である。
+よって、$bold(w)_1, ..., bold(w)_N$が線形独立なので、$c_1 = ... = c_N = 0$であり、$bold(u)_1, ..., bold(u)_N$も線形独立である。
 従って$dim V >= N$なので、$dim V = oo$となり定理の式を満たす。
 
-$Img F$が有限次元の時、$N = dim Img F$として$Img F$の基底$bold(w)_1, dots, bold(w)_N$を取ってくる。
-さらに先ほどと同様にして$F bold(u)_i = bold(w)_i$となる$bold(u)_1, dots, bold(u)_N in V$を取ってくるとこれは線形独立している。
-よってこれらは$V$の線形部分空間$U = Span(bold(u)_1, dots, bold(u)_N)$の基底になっている。
+$Img F$が有限次元の時、$N = dim Img F$として$Img F$の基底$bold(w)_1, ..., bold(w)_N$を取ってくる。
+さらに先ほどと同様にして$F bold(u)_i = bold(w)_i$となる$bold(u)_1, ..., bold(u)_N in V$を取ってくるとこれは線形独立している。
+よってこれらは$V$の線形部分空間$U = Span(bold(u)_1, ..., bold(u)_N)$の基底になっている。
 この時、$F$は$U$から$Img F$の線形同型写像になっているので、$U tilde.equiv Img F$である。
 あとは$U inter Ker F = O_V$と$U+Ker F = V$を示せばよい。
 まず$bold(v) in U inter Ker F$とすると、
 $
-bold(v) = c_1 bold(u)_1+dots+c_N bold(u)_N
+bold(v) = c_1 bold(u)_1+...+c_N bold(u)_N
 $
 とでき$F$で移すと
 $
-F(c_1 bold(u)_1+dots+c_N bold(u)_N)
-= c_1 F bold(u)_1+dots+c_N F bold(u)_N
-= c_1 bold(w)_1+dots+c_N bold(w)_N
+F(c_1 bold(u)_1+...+c_N bold(u)_N)
+= c_1 F bold(u)_1+...+c_N F bold(u)_N
+= c_1 bold(w)_1+...+c_N bold(w)_N
 = F(bold(v))
 = bold(0)_W
 $
-よって$c_1 = dots = c_N = 0$で$bold(v) = bold(0)_V$である。
-次に$bold(v) in V$に対して、$F bold(v) in Img F$より$F bold(v) = c_1 bold(w)_1+dots+c_N bold(w)_N$とでき、
+よって$c_1 = ... = c_N = 0$で$bold(v) = bold(0)_V$である。
+次に$bold(v) in V$に対して、$F bold(v) in Img F$より$F bold(v) = c_1 bold(w)_1+...+c_N bold(w)_N$とでき、
 $
-F(bold(v)-c_1 bold(u)_1-dots-c_N bold(u)_N)
-= F bold(v)-c_1 F bold(u)_1-dots-c_N F bold(u)_N
-= F bold(v)-c_1 bold(w)_1-dots-c_N bold(w)_N
+F(bold(v)-c_1 bold(u)_1-...-c_N bold(u)_N)
+= F bold(v)-c_1 F bold(u)_1-...-c_N F bold(u)_N
+= F bold(v)-c_1 bold(w)_1-...-c_N bold(w)_N
 = bold(0)_W.
 $
-よって、$bold(v)-c_1 bold(u)_1-dots-c_N bold(u)_N in Ker F$である。
+よって、$bold(v)-c_1 bold(u)_1-...-c_N bold(u)_N in Ker F$である。
 以上より$U plus.o Ker F = V$なので、
 $
 dim V = dim U+dim Ker F = rank F+dim Ker F
@@ -589,47 +589,47 @@ $
 まず、数ベクトル空間の次元について述べる。
 
 #proposition[
-$N = 0, 1, 2, 3, dots$とする。
+$N = 0, 1, 2, 3, ...$とする。
 この時、$K$上の$N$次元数ベクトル空間$K^N$は有限次元で$dim K^N = N$であり、
 $N$個のベクトル
 $
-bold(e)_1 = (1, 0, dots, 0),
-quad dots,
-quad bold(e)_N = (0, dots, 0, 1)
+bold(e)_1 = (1, 0, ..., 0),
+quad ...,
+quad bold(e)_N = (0, ..., 0, 1)
 $
 が$K^N$の基底である。
 ]
 
 #proof[
-$bold(e)_1, dots, bold(e)_N$が線形独立かつ$K^N$を線形生成ことを示せばよい。
-線形結合はスカラー$c_1, dots, c_N in K$に対して
+$bold(e)_1, ..., bold(e)_N$が線形独立かつ$K^N$を線形生成ことを示せばよい。
+線形結合はスカラー$c_1, ..., c_N in K$に対して
 $
-c_1 bold(e)_1+dots+c_N bold(e)_N = (c_1, dots, c_N)
+c_1 bold(e)_1+...+c_N bold(e)_N = (c_1, ..., c_N)
 $
 なので、
-これが零ベクトル$(0, dots, 0)$となるのは$c_1 = dots = c_N = 0$であり、
+これが零ベクトル$(0, ..., 0)$となるのは$c_1 = ... = c_N = 0$であり、
 任意の$K^N$の元は上記の形に書ける。
 よって証明できる。
 ]
 
-この時の基底$bold(e)_1, dots, bold(e)_N$を数ベクトル空間$K^N$の_標準基底_という。
+この時の基底$bold(e)_1, ..., bold(e)_N$を数ベクトル空間$K^N$の_標準基底_という。
 
 #proposition[
 $V$を$K$上の有限次元線形空間として次元を$N$とおくと、$V$は$K^N$と線形同型である。
 ]
 
 #proof[
-$V$の基底$bold(v)_1, dots, bold(v)_N$を取ってきて、$K^N$から$V$への線形写像$F$を
+$V$の基底$bold(v)_1, ..., bold(v)_N$を取ってきて、$K^N$から$V$への線形写像$F$を
 $
-F(c_1, dots, c_N) = c_1 bold(v)_1+dots+c_N bold(v)_N
+F(c_1, ..., c_N) = c_1 bold(v)_1+...+c_N bold(v)_N
 $
 で定義する。
-このとき、$bold(v)_1, dots, bold(v)_N$が$V$を線形生成することから$F$は全射で、
+このとき、$bold(v)_1, ..., bold(v)_N$が$V$を線形生成することから$F$は全射で、
 線形独立であることから$Ker F = O_(K^N)$つまり$F$は単射である。
 以上より$F$は線形同型写像であるので、$V tilde.equiv K^N$である。
 ]
 
-$M, N = 1, 2, 3, dots$として$A$を$K$上の$M times N$型の行列とする。
+$M, N = 1, 2, 3, ...$として$A$を$K$上の$M times N$型の行列とする。
 ここで$K^N$から$K^M$への写像
 $
 F_A (bold(v)) = A bold(v)
@@ -640,15 +640,15 @@ $
 
 #definition([表現行列])[
 $V$と$W$を$K$上の有限次元線形空間として、次元をそれぞれ$N$と$M$とする。
-$F$を$V$から$W$への線形写像として$V$の基底$bold(v)_1, dots, bold(v)_N$と$W$の基底$bold(w)_1, dots, bold(w)_M$について、各$j = 1, dots, N$に対して
+$F$を$V$から$W$への線形写像として$V$の基底$bold(v)_1, ..., bold(v)_N$と$W$の基底$bold(w)_1, ..., bold(w)_M$について、各$j = 1, ..., N$に対して
 $
-F(bold(v)_j) = a_(j 1) bold(w)_1+dots+a_(j M) bold(w)_M
+F(bold(v)_j) = a_(j 1) bold(w)_1+...+a_(j M) bold(w)_M
 $
-となる$a_(j 1), dots, a_(j M) in K$が一意に存在して定義される$K$上の$M times N$型の行列
+となる$a_(j 1), ..., a_(j M) in K$が一意に存在して定義される$K$上の$M times N$型の行列
 $
 mat(a_(1 1), dots.c, a_(N 1); dots.v, dots.down, dots.v; a_(1 M), dots.c, a_(N M);)
 $
-を線形写像$F$の$V$の基底$bold(v)_1, dots, bold(v)_N$と$W$の基底$bold(w)_1, dots, bold(w)_M$に関する_表現行列_という。
+を線形写像$F$の$V$の基底$bold(v)_1, ..., bold(v)_N$と$W$の基底$bold(w)_1, ..., bold(w)_M$に関する_表現行列_という。
 ]
 
 表現行列は基底の取り方によって変わってしまうことに注意する。
@@ -663,7 +663,7 @@ $K$上の線形空間$V$からそこへの線形写像$T$を特に_線形変換_
 ]
 
 #definition([基底の変換])[
-$K$上の有限次元線形空間$V$について、$N = dim V$として$V$の基底$bold(v)_1, dots, bold(v)_N$と$bold(v)'_1, dots, bold(v)'_N$について
+$K$上の有限次元線形空間$V$について、$N = dim V$として$V$の基底$bold(v)_1, ..., bold(v)_N$と$bold(v)'_1, ..., bold(v)'_N$について
 TODO
 ]
 

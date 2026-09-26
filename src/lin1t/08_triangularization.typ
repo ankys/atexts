@@ -16,17 +16,17 @@
 #theorem([フロベニウスの定理])[
 $A$を$K$上の$N$次正方行列、$f(x)$を$K$上の多項式とする。
 このとき、$A$の固有値$c in K$に対して、$f(c)$は$f(A)$の固有値である。
-より詳しくは$A$の固有多項式が$c_1, dots, c_N in K$を使って@e_eigenfactor と因数分解されるならば、
+より詳しくは$A$の固有多項式が$c_1, ..., c_N in K$を使って@e_eigenfactor と因数分解されるならば、
 $f(A)$の固有多項式は
 $
-det(x I-f(A)) = (x-f(c_1)) dots (x-f(c_N))
+det(x I-f(A)) = (x-f(c_1)) ... (x-f(c_N))
 $
 と因数分解される。
 ]
 
 #proof[
 $c$を$A$の固有値とするとき、$A bold(v) = c bold(v)$となるベクトル$bold(v) != bold(0)$が取れる。
-$n = 0, 1, 2, 3, dots$に対して、
+$n = 0, 1, 2, 3, ...$に対して、
 $
 A^n bold(v) = c^n bold(v)
 $
@@ -38,7 +38,7 @@ $
 よって、$f(c)$は$f(A)$の固有値である。
 
 $A$の固有多項式が@e_eigenfactor と因数分解されるとき、@t_tri より@e_tri と三角化される。
-$n = 0, 1, 2, 3, dots$に対して、
+$n = 0, 1, 2, 3, ...$に対して、
 $
 A^n
 = P mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N)^n P^(-1)
@@ -71,22 +71,22 @@ T
 $
 の場合に示す。 このとき固有多項式は
 $
-f_T (x) = (x-c_1) dots (x-c_N) $ であり、
+f_T (x) = (x-c_1) ... (x-c_N) $ であり、
 $
-f_T (T) = (T-c_1 I_N) dots (T-c_N I_N)
+f_T (T) = (T-c_1 I_N) ... (T-c_N I_N)
 $
 が成り立つ。
 あとはこれが零行列であることを$N$についての数学的帰納法で示す。
 $N = 1$の時は$T = mat(c_1)$なので$T-c_1 I_1 = O_1$である。
 $N-1$で成立する時、
 $
-(T-c_1 I_N) dots (T-c_(N-1) I_N) = mat(O_(N-1), *; bold(0)_(N-1), *),
+(T-c_1 I_N) ... (T-c_(N-1) I_N) = mat(O_(N-1), *; bold(0)_(N-1), *),
 quad (T-c_N I_N) = mat(*, *; bold(0)_(N-1), 0)
 $
 なので、積を取ると零行列になる。
 以上より$f_T (T) = O$である。
 一般の$A$に対しては@t_tri より、$A$は@e_tri と三角化されて右上三角行列を$T$とおくと、
-$f_A (x) = f_T (x) = (x-c_1) dots (x-c_N)$で
+$f_A (x) = f_T (x) = (x-c_1) ... (x-c_N)$で
 $
 f_A (A) = P f_A (T) P^(- 1)
 $
@@ -96,7 +96,7 @@ $
 以上の二つの定理を使えば例えば以下のことがわかる。
 
 #proposition([べき零行列])[
-代数的閉体$K$上の$N$次正方行列$A$がある$n = 1, 2, 3, dots$で
+代数的閉体$K$上の$N$次正方行列$A$がある$n = 1, 2, 3, ...$で
 $
 A^n = O
 $
@@ -135,7 +135,7 @@ $T$の固有多項式を計算すると$f_T (x) = x^N$であるから、ケイ�
 そのためのアイデアが固有空間を拡張した広義固有空間である。
 
 #definition([広義固有空間])[
-$A$を$K$上の$N$次正方行列として、$x in K$と$n = 0, 1, 2, 3, dots$に対して
+$A$を$K$上の$N$次正方行列として、$x in K$と$n = 0, 1, 2, 3, ...$に対して
 $
 W^n (x) = Ker (x I-A)^n = Set(bold(v) in K^N; (x I-A)^n bold(v) = bold(0))
 $
@@ -145,20 +145,20 @@ $
 
 $W^n (x)$は$n$が大きくなるにつれて大きくなる$K^N$の部分空間であり、
 $
-W^0 (x) = O_(K^N) subset W^1 (x) = W(x) subset W^2 (x) subset W^3 (x) subset dots subset K^N
+W^0 (x) = O_(K^N) subset W^1 (x) = W(x) subset W^2 (x) subset W^3 (x) subset ... subset K^N
 $
 が成り立つ。
 
 #theorem([広義固有空間分解])[
-$A$を$K$上の$N$次元正方行列として、$c_1, dots, c_L in K$を相異なる固有値とし、$A$の固有多項式が
+$A$を$K$上の$N$次元正方行列として、$c_1, ..., c_L in K$を相異なる固有値とし、$A$の固有多項式が
 $
-det(x I-A) = (x-c_1)^(n_1) dots (x-c_L)^(n_L),
-quad n_1+dots+n_L = N
+det(x I-A) = (x-c_1)^(n_1) ... (x-c_L)^(n_L),
+quad n_1+...+n_L = N
 $
 と因数分解されるとする。
-このとき各$i = 1, dots, L$に対して$dim W^(n_i) (c_i) = n_i$であり、
+このとき各$i = 1, ..., L$に対して$dim W^(n_i) (c_i) = n_i$であり、
 $
-W^(n_1) (c_1) plus.o dots plus.o W^(n_L) (c_L) = K^N
+W^(n_1) (c_1) plus.o ... plus.o W^(n_L) (c_L) = K^N
 $
 が成り立つ。
 ]

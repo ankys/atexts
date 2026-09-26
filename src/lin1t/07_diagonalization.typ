@@ -55,9 +55,9 @@ $
 が成り立つ。
 ]
 
-スカラー$K$に共役の構造が入ったら、数ベクトル$bold(v) = (v_1, dots, v_N) in K^N$と行列$A = (a_(i j))^(i = 1, dots, M)_(j = 1, dots, N)$に対する共役を成分ごとに共役をとったもの
+スカラー$K$に共役の構造が入ったら、数ベクトル$bold(v) = (v_1, ..., v_N) in K^N$と行列$A = (a_(i j))^(i = 1, ..., M)_(j = 1, ..., N)$に対する共役を成分ごとに共役をとったもの
 $
-overline(bold(v)) = (overline(v_1), dots, overline(v_N)),
+overline(bold(v)) = (overline(v_1), ..., overline(v_N)),
 quad
 overline(A) = mat(overline(a_(1 1)), dots.c, overline(a_(1 N)); dots.v, dots.down, dots.v; overline(a_(M 1)), dots.c, overline(a_(M N));)
 $
@@ -67,20 +67,20 @@ $
 $
 braket(bold(u), bold(v))
 = overline(bold(u)) dot bold(v)
-= overline(u_1) v_1+dots+overline(u_N) v_N
+= overline(u_1) v_1+...+overline(u_N) v_N
 $
 として定めたものを$K^N$の_標準内積_という。
 ただし、標準内積がちゃんと内積になっているかは非退化性の条件が成り立っているかどうか確認する必要がある。
 
 #definition([非退化な体])[
-共役が定義される体$K$が_非退化_であるとは、任意の$n = 1, 2, 3, dots$と任意の$n$個のスカラー$c_1, dots, c_n in K$について
+共役が定義される体$K$が_非退化_であるとは、任意の$n = 1, 2, 3, ...$と任意の$n$個のスカラー$c_1, ..., c_n in K$について
 $
-overline(c_1) c_1+dots+overline(c_n) c_n = 0
+overline(c_1) c_1+...+overline(c_n) c_n = 0
 $
-ならば、$c_1 = dots = c_n = 0$が成り立つことをいう。
+ならば、$c_1 = ... = c_n = 0$が成り立つことをいう。
 ]
 
-非退化な体$K$上では任意の$N = 1, 2, 3, dots$に対して数ベクトル空間$K^N$は標準内積について内積空間になる。
+非退化な体$K$上では任意の$N = 1, 2, 3, ...$に対して数ベクトル空間$K^N$は標準内積について内積空間になる。
 
 #example[
 実数体$RR$上の共役を$overline(a) = a$で定めるとこれは非退化である。
@@ -109,38 +109,38 @@ braket(bold(v), bold(v)) = 1
 $
 が成り立つことをいう。
 
-$V$の基底$bold(v)_1, dots, bold(v)_N$が各$i != j$, $i, j = 1, dots, N$に対して$bold(v)_i$と$bold(v)_j$が直交することを満たす時、_直交基底_であるという。
-直交基底がさらに各$i = 1, dots, N$に対して$bold(v)_i$が単位ベクトルである時、_正規直交基底_であるという。
+$V$の基底$bold(v)_1, ..., bold(v)_N$が各$i != j$, $i, j = 1, ..., N$に対して$bold(v)_i$と$bold(v)_j$が直交することを満たす時、_直交基底_であるという。
+直交基底がさらに各$i = 1, ..., N$に対して$bold(v)_i$が単位ベクトルである時、_正規直交基底_であるという。
 
 本節の目標は$V$の基底が与えられた時に直交基底あるいは正規直交基底に取り替えることである。
-そのことを表現するために$V$の$N = 1, 2, 3, dots$個の零ベクトルでないベクトル$bold(v)_1, dots, bold(v)_N$が各$i != j$, $i, j = 1, dots, N$に対して$bold(v)_i$と$bold(v)_j$が直交することを満たす時、$V$の_直交系_であるということにする。
+そのことを表現するために$V$の$N = 1, 2, 3, ...$個の零ベクトルでないベクトル$bold(v)_1, ..., bold(v)_N$が各$i != j$, $i, j = 1, ..., N$に対して$bold(v)_i$と$bold(v)_j$が直交することを満たす時、$V$の_直交系_であるということにする。
 また、各$bold(v)_i$が単位ベクトルである時、$V$の_正規直交系_であるという。
 
 #proposition([直交系と線形独立])[
-$bold(v)_1, dots, bold(v)_N$を$K$上の内積空間$V$の直交系とする時、それらは線形独立である。
+$bold(v)_1, ..., bold(v)_N$を$K$上の内積空間$V$の直交系とする時、それらは線形独立である。
 ]
 
 #proof[
-スカラー$c_1, dots, c_N in K$に対して
+スカラー$c_1, ..., c_N in K$に対して
 $
-c_1 bold(v)_1+dots+c_N bold(v)_N = bold(0)
+c_1 bold(v)_1+...+c_N bold(v)_N = bold(0)
 $
-が成り立ったとする時、各$i = 1, dots, N$に対して$bold(v)_i$との内積を取って
+が成り立ったとする時、各$i = 1, ..., N$に対して$bold(v)_i$との内積を取って
 $
-braket(bold(v)_i, c_1 bold(v)_1+dots+c_N bold(v)_N)
+braket(bold(v)_i, c_1 bold(v)_1+...+c_N bold(v)_N)
 = c_i braket(bold(v)_i, bold(v)_i)
 = 0.
 $
-よって$c_i = 0$なので、$bold(v)_1, dots, bold(v)_N$は線形独立である。
+よって$c_i = 0$なので、$bold(v)_1, ..., bold(v)_N$は線形独立である。
 ]
 
-この命題とその証明から内積空間$V$の直交系$bold(v)_1, dots, bold(v)_N$が与えられるとそれは線形独立で$V$の線形部分空間$W = Span(bold(v)_1, dots, bold(v)_N)$が得られる。
-そのベクトル$bold(v) = c_1 bold(v)_1+dots+c_N bold(v)_N in W$と$i = 1, dots, N$に対して、$bold(v)_i$との内積を取ると$braket(bold(v)_i, bold(v)) = c_i braket(bold(v)_i, bold(v)_i)$でありこのスカラー値$c_i$のことを$bold(v)$の$bold(v)_i$_成分_と呼ぶ。
+この命題とその証明から内積空間$V$の直交系$bold(v)_1, ..., bold(v)_N$が与えられるとそれは線形独立で$V$の線形部分空間$W = Span(bold(v)_1, ..., bold(v)_N)$が得られる。
+そのベクトル$bold(v) = c_1 bold(v)_1+...+c_N bold(v)_N in W$と$i = 1, ..., N$に対して、$bold(v)_i$との内積を取ると$braket(bold(v)_i, bold(v)) = c_i braket(bold(v)_i, bold(v)_i)$でありこのスカラー値$c_i$のことを$bold(v)$の$bold(v)_i$_成分_と呼ぶ。
 
 逆に線形独立なベクトルが与えられたときに成分を引くことで直交系を構成するというのがシュミットの直交化である。
 
 #theorem([シュミットの直交化])[
-$V$を内積空間として$bold(v)_1, dots, bold(v)_N$を線形独立なベクトルとして、次の方法によって$V$の新しいベクトル$bold(u)_1, dots, bold(u)_N$を構成する。
+$V$を内積空間として$bold(v)_1, ..., bold(v)_N$を線形独立なベクトルとして、次の方法によって$V$の新しいベクトル$bold(u)_1, ..., bold(u)_N$を構成する。
 $
 &
 bold(u)_1 = bold(v)_1,
@@ -148,11 +148,11 @@ quad
 bold(u)_2 = bold(v)_2-braket(bold(u)_1, bold(v)_2)/braket(bold(u)_1, bold(u)_1) bold(u)_1,
 quad
 bold(u)_3 = bold(v)_3-braket(bold(u)_1, bold(v)_3)/braket(bold(u)_1, bold(u)_1) bold(u)_1-braket(bold(u)_2, bold(v)_3)/braket(bold(u)_2, bold(u)_2) bold(u)_2,
-quad dots, \
+quad ..., \
 &quad
-bold(u)_N = bold(v)_N-braket(bold(u)_1, bold(v)_N)/braket(bold(u)_1, bold(u)_1) bold(u)_1-dots-braket(bold(u)_(N-1), bold(v)_N)/braket(bold(u)_(N-1), bold(u)_(N-1)) bold(u)_(N-1).
+bold(u)_N = bold(v)_N-braket(bold(u)_1, bold(v)_N)/braket(bold(u)_1, bold(u)_1) bold(u)_1-...-braket(bold(u)_(N-1), bold(v)_N)/braket(bold(u)_(N-1), bold(u)_(N-1)) bold(u)_(N-1).
 $
-このとき$bold(u)_1, dots, bold(u)_N$は$V$の直交系であり、$Span(bold(u)_1, dots, bold(u)_N) = Span(bold(v)_1, dots, bold(v)_N)$が成り立つ。
+このとき$bold(u)_1, ..., bold(u)_N$は$V$の直交系であり、$Span(bold(u)_1, ..., bold(u)_N) = Span(bold(v)_1, ..., bold(v)_N)$が成り立つ。
 ]
 
 #proof[
@@ -160,9 +160,9 @@ $N$についての数学的帰納法による。
 $N = 1$の時、$bold(u)_1 = bold(v)_1 != bold(0)$より成立する。
 $N$個で成立した時、$N+1$個目のベクトルを
 $
-bold(u)_(N+1) = bold(v)_(N+1)-braket(bold(u)_1, bold(v)_(N+1))/braket(bold(u)_1, bold(u)_1) bold(u)_1-dots-braket(bold(u)_N, bold(v)_(N+1))/braket(bold(u)_N, bold(u)_N) bold(u)_N
+bold(u)_(N+1) = bold(v)_(N+1)-braket(bold(u)_1, bold(v)_(N+1))/braket(bold(u)_1, bold(u)_1) bold(u)_1-...-braket(bold(u)_N, bold(v)_(N+1))/braket(bold(u)_N, bold(u)_N) bold(u)_N
 $
-で定めると、数学的帰納法の仮定から$bold(u)_1, dots, bold(u)_N$は$V$の直交系より、各$i = 1, dots, N$に対して$bold(u)_i$との内積を取って、
+で定めると、数学的帰納法の仮定から$bold(u)_1, ..., bold(u)_N$は$V$の直交系より、各$i = 1, ..., N$に対して$bold(u)_i$との内積を取って、
 $
 braket(bold(u)_i, bold(u)_(N+1))
 = braket(bold(u)_i, bold(v)_(N+1))-braket(bold(u)_i, bold(v)_(N+1))/braket(bold(u)_i, bold(u)_i) braket(bold(u)_i, bold(u)_i) = 0.
@@ -170,19 +170,19 @@ $
 また、$bold(u)_(N+1) = bold(0)$とすると
 $
 bold(v)_(N+1)
-= braket(bold(u)_1, bold(v)_(N+1))/braket(bold(u)_1, bold(u)_1) bold(u)_1+dots+braket(bold(u)_N, bold(v)_(N+1))/braket(bold(u)_N, bold(u)_N) bold(u)_N
-in Span(bold(u)_1, dots, bold(u)_N)
-= Span(bold(v)_1, dots, bold(v)_N)
+= braket(bold(u)_1, bold(v)_(N+1))/braket(bold(u)_1, bold(u)_1) bold(u)_1+...+braket(bold(u)_N, bold(v)_(N+1))/braket(bold(u)_N, bold(u)_N) bold(u)_N
+in Span(bold(u)_1, ..., bold(u)_N)
+= Span(bold(v)_1, ..., bold(v)_N)
 $
-となるが、これは$bold(v)_1, dots, bold(v)_N, bold(v)_(N+1)$が線形独立であるという仮定に反する。
-よって、$bold(u)_1, dots, bold(u)_N, bold(u)_(N+1)$は$V$の直交系である。
+となるが、これは$bold(v)_1, ..., bold(v)_N, bold(v)_(N+1)$が線形独立であるという仮定に反する。
+よって、$bold(u)_1, ..., bold(u)_N, bold(u)_(N+1)$は$V$の直交系である。
 他の部分の証明も容易であり、定理の主張を得る。
 ]
 
 #remark[
-$bold(u)_1, dots, bold(u)_N$の構成方法から
+$bold(u)_1, ..., bold(u)_N$の構成方法から
 $
-mat(bold(v)_1, dots, bold(v)_N) = mat(bold(u)_1, dots, bold(u)_N) mat(1, dots.c, *; , dots.down, dots.v; , , 1)
+mat(bold(v)_1, ..., bold(v)_N) = mat(bold(u)_1, ..., bold(u)_N) mat(1, dots.c, *; , dots.down, dots.v; , , 1)
 $
 と表示できる。
 ]
@@ -196,7 +196,7 @@ $
 #definition([正規化可能])[
 $K$を非退化な体として、その_正値の部分_を
 $
-K_+ = Set(overline(c_1) c_1+dots+overline(c_n) c_n; n = 1, 2, 3, dots, c_1, dots, c_n in K)
+K_+ = Set(overline(c_1) c_1+...+overline(c_n) c_n; n = 1, 2, 3, ..., c_1, ..., c_n in K)
 $
 とする。
 ここで正値$c in K_+$に対して、
@@ -212,8 +212,8 @@ $0$は$0$の正の平方根であり、$1$は$1$の正の平方根である。
 $overline(x) x = c$と書いたが、正値$x in K_+$の共役は
 $
 overline(x)
-= overline(overline(c_1) c_1+dots+overline(c_n) c_n)
-= c_1 overline(c_1)+dots+c_n overline(c_n)
+= overline(overline(c_1) c_1+...+overline(c_n) c_n)
+= c_1 overline(c_1)+...+c_n overline(c_n)
 = x
 $
 なので、通常の意味での平方根$x^2 = x x = c$と認識したのでよい。
@@ -300,8 +300,8 @@ $
 
 #remark[
 $A = mat(bold(a)_1, dots.c, bold(a)_N)$と区分けすると、
-$A$が直交行列であることと$bold(a)_1, dots, bold(a)_N$が直交基底であることは同値であり、
-$A$が正規直交行列であることと$bold(a)_1, dots, bold(a)_N$が正規直交基底であることは同値である。
+$A$が直交行列であることと$bold(a)_1, ..., bold(a)_N$が直交基底であることは同値であり、
+$A$が正規直交行列であることと$bold(a)_1, ..., bold(a)_N$が正規直交基底であることは同値である。
 ]
 
 一般的な用語としては直交行列は実数上のユニタリ行列のことを指すが、本テキストでは直交基底という用語との兼ね合いでこのように定義する。
@@ -333,8 +333,8 @@ $N$次正方行列$A$に対して、固有多項式が@e_eigenfactor と因数�
 
 #proof[
 @t_tri より正則行列$P$を使って@e_tri と三角化される。
-$P = mat(bold(v)_1, dots.c, bold(v)_N)$と区分けすると$bold(v)_1, dots, bold(v)_N$は$K^N$の基底になっており、
-この基底をシュミットの直交化して直交基底$bold(u)_1, dots, bold(u)_N$を得ると、
+$P = mat(bold(v)_1, dots.c, bold(v)_N)$と区分けすると$bold(v)_1, ..., bold(v)_N$は$K^N$の基底になっており、
+この基底をシュミットの直交化して直交基底$bold(u)_1, ..., bold(u)_N$を得ると、
 直交行列$macron(P) = mat(bold(u)_1, dots.c, bold(u)_N)$により、
 $
 A = macron(P) mat(1, dots.c, *; , dots.down, dots.v; , , 1) mat(c_1, dots.c, *; , dots.down, dots.v; , , c_N) mat(1, dots.c, *; , dots.down, dots.v; , , 1)^(-1) macron(P)^(-1)
@@ -379,7 +379,7 @@ $A$の正規性を継承して$T$も正規になり、正規な三角行列は�
 $A$が正規直交行列（ユニタリ行列）で三角化していたらこれでいいが、今回は少し違うので修正が必要である。
 
 #proof[
-$A$は直交行列$P = mat(bold(v)_1, dots.c, bold(v)_N)$と三角行列$T = (c_(i j))^(i = 1, dots, N)_(j = 1, dots, N)$を使って$A = P T P^(-1)$と表されて、このとき$T$は対角行列であることを示す。
+$A$は直交行列$P = mat(bold(v)_1, dots.c, bold(v)_N)$と三角行列$T = (c_(i j))^(i = 1, ..., N)_(j = 1, ..., N)$を使って$A = P T P^(-1)$と表されて、このとき$T$は対角行列であることを示す。
 ここで、$A^+ A = (P^(-1))^+ T^+ P^+ P T P^(-1)$と$A A^+ = P T P^(-1) (P^(-1))^+ T^+ P^+$で$A$は正規なのでこの二つが等しいので、
 $
 T^+ P^+ P T (P^+ P)^(-1) = P^+ P T (P^+ P)^(-1) T^+.
@@ -388,25 +388,25 @@ $
 $
 D = P^+ P = dmat(braket(bold(v)_1, bold(v)_1), dots.down, braket(bold(v)_N, bold(v)_N))
 $
-なので対角成分を$d_1, dots, d_N$とおくと、
+なので対角成分を$d_1, ..., d_N$とおくと、
 $
 D T D^(-1) = (d_i c_(i j) d_j^(-1))
 $ である。
-よって、$T^+ D T D^(-1) = D T D^(-1) T^+$から、各$i, j = 1, dots, N$に対して
+よって、$T^+ D T D^(-1) = D T D^(-1) T^+$から、各$i, j = 1, ..., N$に対して
 $
 sum_(k = 1)^N overline(c_(k i)) d_k c_(k j) d_j^(-1)
 = sum_(k = 1)^N d_i c_(i k) d_k^(-1) overline(c_(j k)).
 $
 これを対角成分で$i = j$が大きい方から考えると、$T$は三角行列であることに注意して$i = j = N$の時、
 $
-overline(c_(1 N)) d_1 c_(1 N) d_N^(-1)+dots+overline(c_(N N)) d_N c_(N N) d_N^(-1)
+overline(c_(1 N)) d_1 c_(1 N) d_N^(-1)+...+overline(c_(N N)) d_N c_(N N) d_N^(-1)
 = d_N c_(N N) d_N^(-1) overline(c_(N N)).
 $
 つまり
 $
-overline(c_(1 N)) c_(1 N) d_1+dots+overline(c_(N-1 N)) c_(N-1 N) d_(N-1) = 0
+overline(c_(1 N)) c_(1 N) d_1+...+overline(c_(N-1 N)) c_(N-1 N) d_(N-1) = 0
 $
-で、$K$が非退化である条件が使える状況になっていて、$c_(1 N) = dots = c_(N-1 N) = 0$がわかる。
+で、$K$が非退化である条件が使える状況になっていて、$c_(1 N) = ... = c_(N-1 N) = 0$がわかる。
 これを繰り返していけば$T$は対角行列にならざるを得ないことがわかり、定理の証明が完成する。
 ]
 
@@ -457,7 +457,7 @@ $
 
 #theorem([実対称行列の対角化])[
 体$K$を非退化とする。
-$N$次実対称行列$A$に対して、固有多項式が@e_eigenfactor と因数分解されたとすると、$c_1, dots, c_N$は実であり$A$は実直交行列$P$を使って@e_diag と対角化される。
+$N$次実対称行列$A$に対して、固有多項式が@e_eigenfactor と因数分解されたとすると、$c_1, ..., c_N$は実であり$A$は実直交行列$P$を使って@e_diag と対角化される。
 さらに$K$が正規化可能な場合は$P$は実正規直交行列として取れ、@e_diag2 が成り立つ。
 ]
 
