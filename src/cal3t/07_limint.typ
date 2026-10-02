@@ -69,7 +69,7 @@ $
 
 #theorem([リーマン・ルベーグの補題])[
 $f$を有界閉区間$[a, b]$を含む開区間上の$C^1$級関数とする。
-この時、$n = 1, 2, 3, ...として
+この時、$n = 1, 2, 3, ...$として
 $
 lim_(n -> oo) integral_a^b f(x) cos n x dd(x)
 = lim_(n -> oo) integral_a^b f (x) sin n x dd(x)
@@ -105,7 +105,7 @@ $
 f(x, y+L) = f(x, y)
 $
 が成り立つものとする。
-この時、$epsilon > 0$や$n = 1, 2, 3, ...として
+この時、$epsilon > 0$や$n = 1, 2, 3, ...$として
 $
 lim_(epsilon -> 0) integral_a^b f(x, x/epsilon) dd(x)
 = lim_(n -> oo) integral_a^b f(x, n x) dd(x)
