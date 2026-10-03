@@ -8,7 +8,7 @@
 #show: jtemplate
 
 #import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
-#import "/deps/physics.typ": dd
+#import "/deps/physics.typ": Set, dd
 #let area = $op("area")$
 #let vol = $op("vol")$
 
@@ -17,7 +17,7 @@
 正測体とは線分、正方形、立方体といったものを次元について一般化したもので、
 原点を中心とした半径$a > 0$の$N$次元_正測体_を
 $
-C_N (a) = { (x_1, ..., x_N) in RR^N mid(|) max{ abs(x_1), ..., abs(x_N) } <= a }
+C_N (a) = Set((x_1, ..., x_N) in RR^N; max{ abs(x_1), ..., abs(x_N) } <= a)
 $
 として定義される。
 これは$C_N (a) = [-a, +a]^N$とも表記されるため、一辺の長さが$2 a$とも言えるが、次に述べる正軸体との兼ね合いで半径$a$という用語を使って表現する。
@@ -30,7 +30,7 @@ $
 正軸体は線分、正方形、正八面体の一般化で、
 原点を中心とした半径$a > 0$の$N$次元_正軸体_を
 $
-D_N (a) = { (x_1, ..., x_N) in RR^N mid(|) abs(x_1)+...+abs(x_N) <= a }
+D_N (a) = Set((x_1, ..., x_N) in RR^N; abs(x_1)+...+abs(x_N) <= a)
 $
 として定義される。
 この正軸体の体積はカヴァリエリの原理より次数についての帰納法で求めることができる。
@@ -61,7 +61,7 @@ $
 
 原点を中心とした半径$a > 0$の$N$次元_球_
 $
-B_N (a) = { (x_1, ..., x_N) in RR^N mid(|) x_1^2+...+x_N^2 <= a^2 }
+B_N (a) = Set((x_1, ..., x_N) in RR^N; x_1^2+...+x_N^2 <= a^2)
 $
 の体積を考える。
 正軸体の体積同様、カヴァリエリの原理より
@@ -78,7 +78,7 @@ $
 の計算に帰着される。
 
 この計算はできないことはないが面倒なのでここでは別のアプローチを取る。
-つまりカヴァリエリの原理を適用するときに$2$変数分使って$D(a) = { (x, y) in RR^2 mid(|) x^2+y^2 <= a^2 }$として
+つまりカヴァリエリの原理を適用するときに$2$変数分使って$D(a) = Set((x, y) in RR^2; x^2+y^2 <= a^2)$として
 $
 vol(B_(N+2) (a))
 = c_(N+2) a^(N+2)

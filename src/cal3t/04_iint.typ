@@ -8,7 +8,7 @@
 #show: jtemplate
 
 #import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
-#import "/deps/physics.typ": dd
+#import "/deps/physics.typ": Set, dd
 #let area = $op("area")$
 #let vol = $op("vol")$
 #let diag = $op("diag")$
@@ -245,7 +245,7 @@ $f$は$X$上積分可能である。
 #proposition[
 $M = 1, 2, 3, ..., N-1$として$D$を$M$次元面積確定集合とすると$N$次元点集合
 $
-X = { (x, 0) in RR^N = RR^M times RR^(N-M) mid(|) x in D }
+X = Set((x, 0) in RR^N = RR^M times RR^(N-M); x in D)
 $
 は面積零である。
 ]
@@ -436,23 +436,23 @@ $
 以上は長方形領域での議論であるが、一般の形状の積分領域においては$x$（または$y$）を固定すると$y$ ($x$)の動く範囲が$x$ ($y$)によって変わることになる。
 つまり、$(x, y)$が動く集合$D subset A times B$が$x in A$を固定するごとに$y$が$B(x)$を動くとすると
 $
-D = { (x, y) mid(|) x in A, y in B(x) }
+D = Set((x, y); x in A, y in B(x))
 $
 と表されて、この時$D$は_縦線集合_と呼ばれる。
 同様に$y in B$を固定するごとに$x$が$A (y)$を動くとすると
 $
-D = { (x, y) mid(|) y in B, x in A(y) }
+D = Set((x, y); y in B, x in A(y))
 $
 と表されて、この時$D$は_横線集合_と呼ばれる。
 
 #corollary([一般領域での累次積分])[
-$f(x, y)$を縦線集合$D = { (x, y) mid(|) x in A, y in B(x) }$上の積分可能な関数であり各$x in A$に対して$f(x, y)$は$y$について$B(x)$上積分可能とする時、
+$f(x, y)$を縦線集合$D = Set((x, y); x in A, y in B(x))$上の積分可能な関数であり各$x in A$に対して$f(x, y)$は$y$について$B(x)$上積分可能とする時、
 $
 integral.double_D f(x, y) dd((x, y))
 = integral_A integral_(B(x)) f(x, y) dd(y) dd(x)
 $
 が成り立つ。
-$f(x, y)$を横線集合$D = { (x, y) mid(|) y in B, x in A(y) }$上の積分可能な関数であり各$y in B$に対して$f(x, y)$は$x$について$A(y)$上積分可能とする時、
+$f(x, y)$を横線集合$D = Set((x, y); y in B, x in A(y))$上の積分可能な関数であり各$y in B$に対して$f(x, y)$は$x$について$A(y)$上積分可能とする時、
 $
 integral.double_D f(x, y) dd((x, y))
 = integral_B integral_(A(y)) f(x, y) dd(x) dd(y)
@@ -471,7 +471,7 @@ $
 を考える。
 この時、$D$は縦線集合
 $
-D = { (x, y) mid(|) 0 <= x <= 1, 0 <= y <= 1-x }
+D = Set((x, y); 0 <= x <= 1, 0 <= y <= 1-x)
 $
 とみなせるので、
 $
@@ -492,8 +492,8 @@ $
 実は$e^(-y^2)$は原始関数が初等関数では表せない関数なので、このままでは内側の積分が計算できない。
 そこで積分の順序交換を行うために積分領域を縦線集合から横線集合に変更すると
 $
-{ (x, y) mid(|) 0 <= x <= 1, x <= y <= 1 }
-= { (x, y) mid(|) 0 <= y <= 1, 0 <= x <= y }
+Set((x, y); 0 <= x <= 1, x <= y <= 1)
+= Set((x, y); 0 <= y <= 1, 0 <= x <= y)
 $
 より、
 $
@@ -509,13 +509,13 @@ $
 特に$f$を定数関数$1$とすると集合の体積（今までは面積と呼んでいたが次数が上がるので体積と呼ぶ）について次が得られる。
 
 #corollary([カヴァリエリの原理])[
-縦線集合$D = { (x, y) mid(|) x in A, y in B(x) }$の体積は
+縦線集合$D = Set((x, y); x in A, y in B(x))$の体積は
 $
 vol(D)
 = integral_A area(B(x)) dd(x)
 $
 で与えられ、
-横線集合$D = { (x, y) mid(|) y in B, x in A(y) }$の体積は
+横線集合$D = Set((x, y); y in B, x in A(y))$の体積は
 $
 vol(D)
 = integral_B area(A(y)) dd(y)
@@ -524,15 +524,15 @@ $
 ] <t_repvol>
 
 #example[
-単位球$B = { (x, y, z) in  RR^3 mid(|) x^2+y^2+z^2 <= 1 }$の体積を考える。
+単位球$B = Set((x, y, z) in RR^3; x^2+y^2+z^2 <= 1)$の体積を考える。
 これは縦線集合あるいは横線集合として
 $
 B
-&= { (x, y, z) in RR^3 mid(|) x^2+y^2 <= 1, -sqrt(1-x^2-y^2) <= z <= +sqrt(1-x^2-y^2) } \
-&= { (x, y, z) in RR^3 mid(|) -1 <= z <= +1, x^2+y^2 <= 1-z^2 }
+&= Set((x, y, z) in RR^3; x^2+y^2 <= 1, -sqrt(1-x^2-y^2) <= z <= +sqrt(1-x^2-y^2)) \
+&= Set((x, y, z) in RR^3; -1 <= z <= +1, x^2+y^2 <= 1-z^2)
 $
 として表される。
-そのため半径$r$の円板を$D(r) = { (x, y) in RR^2 mid(|) x^2+y^2 <= r^2 }$として、
+そのため半径$r$の円板を$D(r) = Set((x, y) in RR^2; x^2+y^2 <= r^2)$として、
 $
 vol(B)
 = integral_(D(1)) 2 sqrt(1-x^2-y^2) dd((x, y))
@@ -669,7 +669,7 @@ $
 多変数関数$f$の変数のうち一つを$y$としてその他をまとめて$x$とすると、偏微分$f_y$の重積分は以下のように計算される。
 
 #theorem([多変数の微分積分学の基本定理１])[
-$f(x, y)$を縦線集合$D = { (x, y) mid(|) x in A, a(x) <= y <= b(x) }$を含む開集合上の$C^1$級関数であり、$A$は面積確定有界閉集合で$a(x), b(x)$は$A$上の連続関数とする。
+$f(x, y)$を縦線集合$D = Set((x, y); x in A, a(x) <= y <= b(x))$を含む開集合上の$C^1$級関数であり、$A$は面積確定有界閉集合で$a(x), b(x)$は$A$上の連続関数とする。
 このとき
 $
 integral.double_D f_y (x, y) dd((x, y))
@@ -690,7 +690,7 @@ $
 
 この定理は証明を見ても大したことをしていないように見えるが、実際には重積分を境界
 $
-partial D = { (x, y) mid(|) x in A, y = a(x) } union { (x, y) mid(|) x in A, y = b(x) } union { (x, y) mid(|) x in partial A, a(x) <= y <= b(x) }
+partial D = Set((x, y); x in A, y = a(x)) union Set((x, y); x in A, y = b(x)) union Set((x, y); x in partial A, a(x) <= y <= b(x))
 $
 での積分に帰着させるとても重要な定理である。
 実際、$a(x), b(x)$が$C^1$級の時には$n_y$を$partial D$のいわゆる外向き単位法線ベクトル$n$の$y$成分として定理の右辺は
@@ -710,7 +710,7 @@ $
 一致しない場合は次のようになる。
 
 #theorem([多変数の微分積分学の基本定理２])[
-$f(x, y, z)$を縦線集合$D = { (x, y, z) mid(|) x in A, a <= y <= b, c(x, y) <= z <= c(x, y)+d }$を含む開集合上の$C^1$級関数であり、$A$は面積確定有界閉集合、$a, b, d$は定数で$c(x, y)$は$A times [a, b]$上の連続関数とする。
+$f(x, y, z)$を縦線集合$D = Set((x, y, z); x in A, a <= y <= b, c(x, y) <= z <= c(x, y)+d)$を含む開集合上の$C^1$級関数であり、$A$は面積確定有界閉集合、$a, b, d$は定数で$c(x, y)$は$A times [a, b]$上の連続関数とする。
 このとき
 $
 integral.triple_D f_y (x, y, z) dd((x, y, z))

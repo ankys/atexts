@@ -8,6 +8,7 @@
 #show: jtemplate
 
 #import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": Set
 #let proj = $op("proj")$
 
 == 点と空間
@@ -43,8 +44,8 @@ $
 
 点$a in RR^N$と正の数$r > 0$に対して、$a$から半径$r$内の点の集合
 $
-B_r (a) = { x in RR^N mid(|) d(a, x) < r },
-quad overline(B)_r (a) = { x in RR^N mid(|) d(a, x) <= r }
+B_r (a) = Set(x in RR^N; d(a, x) < r),
+quad overline(B)_r (a) = Set(x in RR^N; d(a, x) <= r)
 $
 をそれぞれ点$a$の$r$を半径とする_開円板_と_閉円板_という。
 また、閉円板に関しては$r = 0$でも$overline(B)_0 (a) = { a }$として定義する。
@@ -153,9 +154,9 @@ $X$を空でない有界な$N$次元点集合とする。
 このとき、$i = 1, ..., N$に対して以下で$macron(a)_i, macron(b)_i$を定めると、
 $[macron(a)_1, macron(b)_1] times ... times [macron(a)_N, macron(b)_N]$は有界閉矩形であり、$X subset [macron(a)_1, macron(b)_1] times ... times [macron(a)_N, macron(b)_N]$であり、$X subset [a_1, b_1] times ... times [a_N, b_N]$ならば$[macron(a)_1, macron(b)_1] times ... times [macron(a)_N, macron(b)_N] subset [a_1, b_1] times ... times [a_N, b_N]$を満たす。
 $
-macron(a)_i = sup{ a in RR mid(|) X subset { x in RR^N mid(|) x_i >= a } },
+macron(a)_i = sup Set(a in RR; X subset Set(x in RR^N; x_i >= a)),
 quad
-macron(b)_i = inf{ b in RR mid(|) X subset { x in RR^N mid(|) x_i <= b } }.
+macron(b)_i = inf Set(b in RR; X subset Set(x in RR^N; x_i <= b)).
 $
 ]
 
@@ -558,19 +559,19 @@ $A$を$N$次元点集合とする。
 $f(x)$を$N$次元空間上の連続関数とする。
 このとき、次の$N$次元点集合はいずれも開集合である。
 
-- ${ x in RR^N mid(|) f(x) != 0 } = f^(-1) (RR\\{0})$.
-- ${ x in RR^N mid(|) f(x) < 0 } = f^(-1) ((-oo, 0))$.
-- ${ x in RR^N mid(|) f(x) > 0 } = f^(-1) ((0, +oo))$.
+- $Set(x in RR^N; f(x) != 0) = f^(-1) (RR\\{0})$.
+- $Set(x in RR^N; f(x) < 0) = f^(-1) ((-oo, 0))$.
+- $Set(x in RR^N; f(x) > 0) = f^(-1) ((0, +oo))$.
 
 また、次の$N$次元点集合はいずれも閉集合である。
 
-- ${ x in RR^N mid(|) f(x) = 0 } = f^(-1) ({0})$.
-- ${ x in RR^N mid(|) f(x) <= 0 } = f^(-1) ((-oo, 0])$.
-- ${ x in RR^N mid(|) f(x) >= 0 } = f^(-1) ([0, +oo))$.
+- $Set(x in RR^N; f(x) = 0) = f^(-1) ({0})$.
+- $Set(x in RR^N; f(x) <= 0) = f^(-1) ((-oo, 0])$.
+- $Set(x in RR^N; f(x) >= 0) = f^(-1) ([0, +oo))$.
 ]
 
 #proof[
-$A = { x in RR^N mid(|) f(x) <= 0 }$が閉集合であることを示す。
+$A = Set(x in RR^N; f(x) <= 0)$が閉集合であることを示す。
 $A$上の収束する点列$(a_n)$とその極限$a$を考える。
 このとき、$f(a_n) <= 0$であり、$f$が連続関数なので$f(a_n) -> f(a)$であることから、$f(a) <= 0$が従う。
 よって、$a in A$であるから、$A$は閉集合である。
