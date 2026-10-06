@@ -1,1 +1,1 @@
-#include "atexts.typ"
+#include "typst/atexts.typ"
