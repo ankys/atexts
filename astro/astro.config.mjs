@@ -5,6 +5,8 @@ import { typst } from "astro-typst";
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://ankys.github.io",
+	base: "/atexts",
 	// build: {
 	// 	format: "file"
 	// },
