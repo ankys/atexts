@@ -16,7 +16,7 @@ jobs:
       - name: Build Astro project
         uses: withastro/action@v6
         with:
-          path: astro
+          path: ./astro
   deploy:
     needs: build
     runs-on: ubuntu-latest
