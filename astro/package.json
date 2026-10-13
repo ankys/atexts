@@ -11,6 +11,9 @@
 	"dependencies": {
 		"astro": "^7.3.8",
 		"@astrojs/starlight": "^0.42.6",
-		"astro-typst": "^v0.12.4"
+		"astro-typst": "^v0.12.4",
+		"@myriaddreamin/typst-ts-node-compiler": "v0.8.0-rc3",
+		"@myriaddreamin/typst-ts-renderer": "v0.8.0-rc3",
+		"@myriaddreamin/typst.ts": "v0.8.0-rc3"
 	}
 }

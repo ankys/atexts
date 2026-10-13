@@ -13,10 +13,13 @@ jobs:
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v7
+      # - name: Build Astro project
+      #   uses: withastro/action@v6
+      #   with:
+      #     path: ./astro
       - name: Build Astro project
-        uses: withastro/action@v6
-        with:
-          path: ./astro
+        run: npm install --force && npm run build
+        working-directory: ./astro
   deploy:
     needs: build
     runs-on: ubuntu-latest
