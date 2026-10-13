@@ -20,7 +20,10 @@ jobs:
       - name: Build Astro project
         run: npm install --force && npm run build
         working-directory: ./astro
-  deploy:
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: "./astro/dist/"
     needs: build
     runs-on: ubuntu-latest
     permissions:
