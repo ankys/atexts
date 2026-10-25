@@ -1,13 +1,19 @@
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": grad, div, curl, laplacian, dd
+#metadata((
+  title: "積分",
+  label: <h_vecat_int>,
+)) <frontmatter>
+
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": grad, div, curl, laplacian, dd
 #let opgrad = $op("grad")$
 #let opdiv = $op("div")$
 #let opcurl = $op("curl")$
 #let oprot = $op("rot")$
 #let hesse = $op("H")$
-
-= 積分
 
 == 場の積分
 

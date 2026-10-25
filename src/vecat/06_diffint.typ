@@ -1,13 +1,19 @@
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": grad, div, curl, laplacian, dd, dv
+#metadata((
+  title: "積分の微分",
+  label: <h_vecat_diffint>,
+)) <frontmatter>
+
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": grad, div, curl, laplacian, dd, dv
 #let opgrad = $op("grad")$
 #let opdiv = $op("div")$
 #let opcurl = $op("curl")$
 #let oprot = $op("rot")$
 #let hesse = $op("H")$
-
-= 積分の微分
 
 == 積分記号下での微分
 

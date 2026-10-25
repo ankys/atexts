@@ -1,8 +1,14 @@
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": dd, pdv, grad, div
+#metadata((
+  title: "物理学への応用",
+  label: <h_vecat_physics>,
+)) <frontmatter>
 
-= 物理学への応用
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": dd, pdv, grad, div
 
 == 逆二乗の法則の積分
 

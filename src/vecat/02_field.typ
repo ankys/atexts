@@ -1,5 +1,11 @@
 
-= 場
+#metadata((
+  title: "場",
+  label: <h_vecat_field>,
+)) <frontmatter>
+
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
 
 == 写像の種類
 

@@ -1,14 +1,20 @@
 
-#import "../deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, xca, remark, proof
-#import "../deps/physics.typ": super-T-as-transpose, grad, div, curl, laplacian
+#metadata((
+  title: "微分",
+  label: <h_vecat_diff>,
+)) <frontmatter>
+
+#import "/deps/jtemplate.typ": jtemplate
+#show: jtemplate
+
+#import "/deps/theorem.typ": theorem, lemma, proposition, definition, corollary, example, remark, proof
+#import "/deps/physics.typ": super-T-as-transpose, grad, div, curl, laplacian
 #show: super-T-as-transpose
 #let opgrad = $op("grad")$
 #let opdiv = $op("div")$
 #let opcurl = $op("curl")$
 #let oprot = $op("rot")$
 #let hesse = $op("H")$
-
-= 微分
 
 == 一変数関数の微分
 
