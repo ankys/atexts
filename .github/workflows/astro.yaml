@@ -2,9 +2,9 @@
 name: Pages
 
 on:
-  push:
-    tags:
-      - "*"
+  # push:
+  #   tags:
+  #     - "*"
   workflow_dispatch:
 
 jobs:
